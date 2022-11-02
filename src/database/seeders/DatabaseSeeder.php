@@ -22,5 +22,13 @@ class DatabaseSeeder extends Seeder
         $this->call(TypyInstituciiSeeder::class);
         $this->call(InstitucieSeeder::class);
         $this->call(PouzivateliaSeeder::class);
+        $this->call(DokumentySeeder::class);
+        $this->call(MobilitySeeder::class);
+        $this->call(SpravySeeder::class);
+        $this->call(SuborySeeder::class);
+        $this->call(SuborySpravSeeder::class);
+        $this->call(TypyVyzievSeeder::class);
+        $this->call(UcastniciMobilitSeeder::class);
+        $this->call(VyzvyInstituciiSeeder::class);
     }
 }
