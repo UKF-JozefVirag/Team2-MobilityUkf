@@ -1,0 +1,38 @@
+[
+    {
+        "institucia_idinstitucia": 5,
+        "vyzva_idvyzva": 3
+    },
+    {
+        "institucia_idinstitucia": 3,
+        "vyzva_idvyzva": 2
+    },
+    {
+        "institucia_idinstitucia": 1,
+        "vyzva_idvyzva": 4
+    },
+    {
+        "institucia_idinstitucia": 4,
+        "vyzva_idvyzva": 3
+    },
+    {
+        "institucia_idinstitucia": 7,
+        "vyzva_idvyzva": 3
+    },
+    {
+        "institucia_idinstitucia": 8,
+        "vyzva_idvyzva": 1
+    },
+    {
+        "institucia_idinstitucia": 5,
+        "vyzva_idvyzva": 6
+    },
+    {
+        "institucia_idinstitucia": 1,
+        "vyzva_idvyzva": 8
+    },
+    {
+        "institucia_idinstitucia": 1,
+        "vyzva_idvyzva": 5
+    }
+]

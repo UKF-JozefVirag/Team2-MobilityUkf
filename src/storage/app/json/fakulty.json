@@ -1,0 +1,23 @@
+[
+    {
+        "idfakulta": 0,
+        "nazov": "Fakulta prírodných vied a informatiky"
+    },
+    {
+        "idfakulta": 1,
+        "nazov": "Fakulta sociálnych vied a zdravotníctva"
+    },
+    {
+        "idfakulta": 2,
+        "nazov": "Fakulta stredoeurópskych štúdií"
+    },
+    {
+        "idfakulta": 3,
+        "nazov": "Filozofická fakulta"
+    },
+    {
+        "idfakulta": 4,
+        "nazov": "Pedagogická fakulta"
+    }
+]
+
