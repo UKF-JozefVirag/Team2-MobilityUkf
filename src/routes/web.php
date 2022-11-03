@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\AnotherMobilitiesController;
+use App\Http\Controllers\ErasmusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('mainPage.index'));
 });
+
+Route::resource('mainPage', MainPageController::class);
+Route::resource('messages', MessagesController::class);
+Route::resource('erasmus', ErasmusController::class);
+Route::resource('anotherMobilities', AnotherMobilitiesController::class);

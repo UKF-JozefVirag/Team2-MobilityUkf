@@ -1,0 +1,10 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.bcg-image {
+    position: absolute;
+    top: 0; right: 0;
+    width: 70%
+}
+
