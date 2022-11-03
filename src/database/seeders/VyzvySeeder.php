@@ -16,12 +16,17 @@ class VyzvySeeder extends Seeder
      */
     public function run()
     {
-        $json = Storage::disk('local')->get('/json/typy_vyziev.json');
+        $json = Storage::disk('local')->get('/json/vyzvy.json');
         $vyzvy = json_decode($json, true);
 
         foreach ($vyzvy as $vyzva){
             Vyzva::query()->updateOrCreate([
-                'typ' => $vyzva['typ']
+                'datum_od' => $vyzva['datum_od'],
+                'datum_do' => $vyzva['datum_do'],
+                'pokyny' => $vyzva['pokyny'],
+                'stav_idstav' => $vyzva['stav_idstav'],
+                'typ_vyzvy_idtyp_vyzvy' => $vyzva['typ_vyzvy_idtyp_vyzvy'],
+                'fakulta_idfakulta' => $vyzva['fakulta_idfakulta']
             ]);
         }
     }

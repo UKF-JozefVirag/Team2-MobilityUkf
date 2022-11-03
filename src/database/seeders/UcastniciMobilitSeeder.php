@@ -20,7 +20,7 @@ class UcastniciMobilitSeeder extends Seeder
         $ucastnici = json_decode($json, true);
 
         foreach ($ucastnici as $ucastnik){
-            Institucia::query()->updateOrCreate([
+            UcastnikMobility::query()->updateOrCreate([
                 'pouzivatel_idpouzivatel' => $ucastnik['pouzivatel_idpouzivatel'],
                 'mobilita_idmobilita' => $ucastnik['mobilita_idmobilita']
             ]);

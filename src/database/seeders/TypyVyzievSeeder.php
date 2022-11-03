@@ -20,8 +20,7 @@ class TypyVyzievSeeder extends Seeder
         $typyvyziev = json_decode($json, true);
 
         foreach ($typyvyziev as $typvyzvy){
-            Institucia::query()->updateOrCreate([
-                'idtyp_vyzvy' => $typvyzvy['idtyp_vyzvy'],
+            TypVyzvy::query()->updateOrCreate([
                 'typ' => $typvyzvy['typ']
             ]);
         }

@@ -20,7 +20,7 @@ class SuborySeeder extends Seeder
         $subory = json_decode($json, true);
 
         foreach ($subory as $subor){
-            Institucia::query()->updateOrCreate([
+            Subor::query()->updateOrCreate([
                 'url' => $subor['url']
             ]);
         }
