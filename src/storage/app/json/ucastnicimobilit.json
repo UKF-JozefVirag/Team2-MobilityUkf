@@ -1,0 +1,22 @@
+[
+    {
+        "pouzivatel_idpouzivatel": 5,
+        "mobilita_idmobilita": 1
+    },
+    {
+        "pouzivatel_idpouzivatel": 6,
+        "mobilita_idmobilita": 4
+    },
+    {
+        "pouzivatel_idpouzivatel": 7,
+        "mobilita_idmobilita": 2
+    },
+    {
+        "pouzivatel_idpouzivatel": 5,
+        "mobilita_idmobilita": 3
+    },
+    {
+        "pouzivatel_idpouzivatel": 3,
+        "mobilita_idmobilita": 5
+    }
+]

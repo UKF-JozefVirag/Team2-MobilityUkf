@@ -15,8 +15,6 @@ class CreateSuborTable extends Migration
     {
         Schema::create('subor', function (Blueprint $table) {
             $table->integer('idsubor', true);
-            $table->string('nazov', 100);
-            $table->string('typ', 10);
             $table->string('url');
         });
     }

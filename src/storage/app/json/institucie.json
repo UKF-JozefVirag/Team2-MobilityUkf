@@ -1,0 +1,137 @@
+[
+    {
+        "nazov": "Technische Universität Berlin",
+        "mesto": "Berlin",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2022-09-21",
+        "zmluva_do": "2022-11-30",
+        "krajina_idkrajina": 0,
+        "typ_institucie_idtyp_institucie": 1
+    },
+    {
+        "nazov": "Lorem ipsum",
+        "mesto": "Madrid",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2022-09-21",
+        "zmluva_do": "2023-2-20",
+        "krajina_idkrajina": 3,
+        "typ_institucie_idtyp_institucie": 2
+    },
+    {
+        "nazov": "Second ipsum",
+        "mesto": "Praha",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2021-05-10",
+        "zmluva_do": "2025-11-20",
+        "krajina_idkrajina": 1,
+        "typ_institucie_idtyp_institucie": 1
+    },
+    {
+        "nazov": "Third Lorem",
+        "mesto": "Montgomery",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2020-06-11",
+        "zmluva_do": "2024-11-1",
+        "krajina_idkrajina": 2,
+        "typ_institucie_idtyp_institucie": 2
+    },
+    {
+        "nazov": "Fourth Lorem",
+        "mesto": "Helsinki",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2022-09-21",
+        "zmluva_do": "2022-11-30",
+        "krajina_idkrajina": 7,
+        "typ_institucie_idtyp_institucie": 5
+    },
+    {
+        "nazov": "Fifth Lorem",
+        "mesto": "Leskovac",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2022-09-21",
+        "zmluva_do": "2022-11-30",
+        "krajina_idkrajina": 6,
+        "typ_institucie_idtyp_institucie": 6
+    },
+    {
+        "nazov": "Sixth Lorem",
+        "mesto": "Belehrad",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2022-09-21",
+        "zmluva_do": "2022-11-30",
+        "krajina_idkrajina": 6,
+        "typ_institucie_idtyp_institucie": 11
+    },
+    {
+        "nazov": "Seventh ipsum",
+        "mesto": "Haag",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2022-09-21",
+        "zmluva_do": "2022-11-30",
+        "krajina_idkrajina": 0,
+        "typ_institucie_idtyp_institucie": 4
+    },
+    {
+        "nazov": "Eighth Lorem",
+        "mesto": "Amsterdam",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2022-09-21",
+        "zmluva_do": "2022-11-30",
+        "krajina_idkrajina": 0,
+        "typ_institucie_idtyp_institucie": 4
+    },
+    {
+        "nazov": "Nineth ipsum",
+        "mesto": "Hamburg",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2022-09-21",
+        "zmluva_do": "2022-11-30",
+        "krajina_idkrajina": 0,
+        "typ_institucie_idtyp_institucie": 3
+    },
+    {
+        "nazov": "Tenth Lorem",
+        "mesto": "Bonn",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2022-09-21",
+        "zmluva_do": "2022-11-30",
+        "krajina_idkrajina": 0,
+        "typ_institucie_idtyp_institucie": 3
+    },
+    {
+        "nazov": "Eleventh ipsum",
+        "mesto": "Lisbon",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2022-09-21",
+        "zmluva_do": "2022-11-30",
+        "krajina_idkrajina": 0,
+        "typ_institucie_idtyp_institucie": 5
+    },
+    {
+        "nazov": "Twelveth Lorem",
+        "mesto": "Copenhagen",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2022-09-21",
+        "zmluva_do": "2022-11-30",
+        "krajina_idkrajina": 0,
+        "typ_institucie_idtyp_institucie": 8
+    },
+    {
+        "nazov": "Thirtheenth ipsum",
+        "mesto": "Varna",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2022-09-21",
+        "zmluva_do": "2022-11-30",
+        "krajina_idkrajina": 0,
+        "typ_institucie_idtyp_institucie": 9
+    },
+    {
+        "nazov": "Fourtheenth Lorem ipsum",
+        "mesto": "Sofia",
+        "url_fotka": "https://via.placeholder.com/500",
+        "zmluva_od": "2022-09-21",
+        "zmluva_do": "2022-11-30",
+        "krajina_idkrajina": 0,
+        "typ_institucie_idtyp_institucie": 10
+    }
+]

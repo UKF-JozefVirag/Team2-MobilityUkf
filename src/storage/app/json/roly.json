@@ -1,0 +1,14 @@
+[
+    {
+        "idrola": 0,
+        "nazov": "ucastnik_mobility"
+    },
+    {
+        "idrola": 1,
+        "nazov": "referent_oddelenia"
+    },
+    {
+        "idrola": 2,
+        "nazov": "administrator"
+    }
+]
