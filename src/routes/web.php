@@ -1,10 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MainPageController;
-use App\Http\Controllers\MessagesController;
-use App\Http\Controllers\AnotherMobilitiesController;
-use App\Http\Controllers\ErasmusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +14,11 @@ use App\Http\Controllers\ErasmusController;
 */
 
 Route::get('/', function () {
-    return redirect(route('mainPage.index'));
+    return view('mainPage.index');
 });
 
-Route::resource('mainPage', MainPageController::class);
-Route::resource('messages', MessagesController::class);
-Route::resource('erasmus', ErasmusController::class);
-Route::resource('anotherMobilities', AnotherMobilitiesController::class);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+require __DIR__.'/auth.php';
