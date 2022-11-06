@@ -17,6 +17,11 @@ class VyzvyController extends Controller
         return view('mainPage.index');
     }
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
