@@ -99,7 +99,92 @@
 @yield('content')
 
 <!-- FOOTER = KONTAKTY -->
-<footer>
+<footer class="bg-footer">
+    <h2 class="h2-footer" style="padding-top: 2%; color: white">Kontakty</h2>
+    <div style="padding-left: 4%; padding-right: 4%">
+        <div class="row">
+            <div class="col text-center" style="color:white">
+                <b style="color: white">Oddelenie medzinárodných vzťahov
+                    a jeho pracovníci</b>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col" style="text-align: left; font-size: 15px; padding-left: 40px">
+                        Ing. Katarína Butorová, PhD<br>
+                        Mgr. Michaela Ivaničová<br>
+                        Mgr. Pavol Vakoš
+                    </div>
+                    <div class="col" style="text-align: right; padding-bottom: 6%; padding-right: 40px">
+                        kbutorova@ukf.sk<br>
+                        mivanicova@ukf.sk<br>
+                        pvakos@ukf.sk
+                    </div>
+                </div>
+                <b style="color: white">Úradné hodiny pre študentov</b>
+                <br>
+                <br>
+                <div class="row justify-content-md-center">
+                    <div class="col" style="text-align: left; font-size: 15px; padding-left: 90px">
+                        pondelok<br>
+                        utorok<br>
+                        streda
+                    </div>
+                    <div class="col" style="text-align: center">
+                        8:30-11:00<br>
+                        8:30-11:00<br>
+                        8:30-11:00
+                    </div>
+                    <div class="col" style="text-align: right; padding-right: 80px">
+                        Tr. A. Hlinku 1<br>
+                        949 74 Nitra
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="text-align: left; color:white; padding-left: 4%; padding-top: 2%">
+                <b style="color: white">Katedroví koordinátori mobilít</b>
+                <br>
+                <p style="padding-top: 2%">Katedra botaniky a genetiky, Katedra zoológie a antropológie
+                    Katedra ekológie a environmentalistiky<br>
+                    Katedra fyziky<br>
+                    Katedra geografie a regionálneho rozvoja<br>
+                    Katedra chémie<br>
+                    Katedra informatiky<br>
+                    Katedra matematiky<br>
+                    Ústav ekonomiky a manažmentu</p>
+                <b style="color: white">Koordinátor na Fakulte prírodných vied a  informatiky</b>
+            </div>
+            <div class="col" style="">
+                <div class="row" style="padding-top: 8%">
+                    <div class="col text-center" style="color:white;">
+                        <div class="row">
+                            <div class="col" style="text-align: left; font-size: 15px;padding-top: 5%">
+                                <p>PaedDr. Anna Sandanusová, PhD.<br>
+                                    doc. Ing. Viera Petlušová, PhD.<br>
+                                    doc. RNDr. Anton Trník, PhD.<br>
+                                    doc. RNDr. Alfred Krogmann, PhD.<br>
+                                    Ing. Lenka Kucková, PhD.<br>
+                                    PaedDr. Viera Michaličková, PhD.<br>
+                                    doc. PaedDr. Janka Medová, PhD.<br>
+                                    Ing. Michal Levický, PhD.<br></p>
+                                <p style="padding-top: 10px">doc. Mgr. Martin Drlík, PhD.
+                                    prodekan pre vonkajšie vzťahy a rozvoj</p>
+                            </div>
+                            <div class="col" style="text-align: right; padding-bottom: 4%;padding-top: 5%;padding-right: 35px">
+                                <p>asandanusova@ukf.sk<br>
+                                    vpetlusova@ukf.sk<br>
+                                    atrnik@ukf.sk<br>
+                                    akrogmann@ukf.sk<br>
+                                    lkuckova@ukf.sk<br>
+                                    vmichalickova@ukf.sk<br>
+                                    jmedova@ukf.sk<br>
+                                    mlevicky@ukf.sk<br></p>
+                                <p style="padding-top: 2%; padding-right: 25px">mdrlik@ukf.sk</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>

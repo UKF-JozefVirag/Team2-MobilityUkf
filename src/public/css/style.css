@@ -16,7 +16,21 @@ h2 {
     line-height: 45px !important;
     text-align: center !important;
     text-transform: capitalize !important;
-    color: #000000 !important;
+    color: #000000;
+}
+.h2-footer{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 45px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+.bg-footer{
+    background: #099364;
 }
 
 h3 {
