@@ -1,8 +1,8 @@
 [
     {
-        "typ": "Študijný pobyt"
+        "nazov": "Študijný pobyt"
     },
     {
-        "typ": "Pracovná stáž"
+        "nazov": "Pracovná stáž"
     }
 ]

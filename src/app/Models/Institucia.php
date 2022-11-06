@@ -18,6 +18,6 @@ class Institucia extends Model
         'zmluva_od',
         'zmluva_do',
         'krajina_idkrajina',
-        'typ_institucie_idtyp_institucie',
+        'typ_institucie_id',
     ];
 }

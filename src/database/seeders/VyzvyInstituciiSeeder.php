@@ -21,8 +21,8 @@ class VyzvyInstituciiSeeder extends Seeder
 
         foreach ($vyzvyinstitucii as $vyzvainstitucie){
             VyzvaInstitucie::query()->updateOrCreate([
-                'institucia_idinstitucia' => $vyzvainstitucie['institucia_idinstitucia'],
-                'vyzva_idvyzva' => $vyzvainstitucie['vyzva_idvyzva'],
+                'institucia_id' => $vyzvainstitucie['institucia_id'],
+                'vyzva_id' => $vyzvainstitucie['vyzva_id'],
             ]);
         }
     }

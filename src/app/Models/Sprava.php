@@ -13,6 +13,6 @@ class Sprava extends Model
     public $timestamps = false;
     protected $fillable = [
         'nadpis',
-        'sprava'
+        'popis'
     ];
 }

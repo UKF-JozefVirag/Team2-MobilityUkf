@@ -21,7 +21,7 @@ class TypyVyzievSeeder extends Seeder
 
         foreach ($typyvyziev as $typvyzvy){
             TypVyzvy::query()->updateOrCreate([
-                'typ' => $typvyzvy['typ']
+                'nazov' => $typvyzvy['nazov']
             ]);
         }
     }

@@ -22,9 +22,8 @@ class DokumentySeeder extends Seeder
 
         foreach ($dokumenty as $dokument){
             Dokument::query()->updateOrCreate([
-                'iddokument' => $dokument['iddokument'],
                 'url' => $dokument['url'],
-                'vyzva_idvyzva' => $dokument['vyzva_idvyzva']
+                'vyzva_id' => $dokument['vyzva_id']
             ]);
         }
     }

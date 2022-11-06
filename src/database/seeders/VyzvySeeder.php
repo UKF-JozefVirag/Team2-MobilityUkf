@@ -24,9 +24,10 @@ class VyzvySeeder extends Seeder
                 'datum_od' => $vyzva['datum_od'],
                 'datum_do' => $vyzva['datum_do'],
                 'pokyny' => $vyzva['pokyny'],
-                'stav_idstav' => $vyzva['stav_idstav'],
-                'typ_vyzvy_idtyp_vyzvy' => $vyzva['typ_vyzvy_idtyp_vyzvy'],
-                'fakulta_idfakulta' => $vyzva['fakulta_idfakulta']
+                'url' => $vyzva['url'],
+                'fakulta_id' => $vyzva['fakulta_id'],
+                'stav_id' => $vyzva['stav_id'],
+                'typ_vyzvy_id' => $vyzva['typ_vyzvy_id']
             ]);
         }
     }

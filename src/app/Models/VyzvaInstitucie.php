@@ -9,10 +9,10 @@ class VyzvaInstitucie extends Model
 {
     use HasFactory;
 
-    protected $table = 'institucia_has_vyzva';
+    protected $table = 'vyzva_has_institucia';
     public $timestamps = false;
     protected $fillable = [
-        'institucia_idinstitucia',
-        'vyzva_idvyzva'
+        'institucia_id',
+        'vyzva_id'
     ];
 }

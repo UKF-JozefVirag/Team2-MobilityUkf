@@ -1,22 +1,14 @@
 [
     {
-        "pouzivatel_idpouzivatel": 5,
-        "mobilita_idmobilita": 1
+        "users_id": 1,
+        "mobilita_id": 1
     },
     {
-        "pouzivatel_idpouzivatel": 6,
-        "mobilita_idmobilita": 4
+        "users_id": 2,
+        "mobilita_id": 4
     },
     {
-        "pouzivatel_idpouzivatel": 7,
-        "mobilita_idmobilita": 2
-    },
-    {
-        "pouzivatel_idpouzivatel": 5,
-        "mobilita_idmobilita": 3
-    },
-    {
-        "pouzivatel_idpouzivatel": 3,
-        "mobilita_idmobilita": 5
+        "users_id": 1,
+        "mobilita_id": 2
     }
 ]

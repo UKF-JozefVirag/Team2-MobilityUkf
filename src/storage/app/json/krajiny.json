@@ -1,42 +1,32 @@
 [
     {
-        "idkrajina": 0,
-        "krajina": "Nemecko"
+        "nazov": "Nemecko"
     },
     {
-        "idkrajina": 1,
-        "krajina": "Česko"
+        "nazov": "Česko"
     },
     {
-        "idkrajina": 2,
-        "krajina": "Alabama"
+        "nazov": "Alabama"
     },
     {
-        "idkrajina": 3,
-        "krajina": "Španielsko"
+        "nazov": "Španielsko"
     },
     {
-        "idkrajina": 4,
-        "krajina": "Holandsko"
+        "nazov": "Holandsko"
     },
     {
-        "idkrajina": 5,
-        "krajina": "Portugalsko"
+        "nazov": "Portugalsko"
     },
     {
-        "idkrajina": 6,
-        "krajina": "Srbsko"
+        "nazov": "Srbsko"
     },
     {
-        "idkrajina": 7,
-        "krajina": "Fínsko"
+        "nazov": "Fínsko"
     },
     {
-        "idkrajina": 8,
-        "krajina": "Dánsko"
+        "nazov": "Dánsko"
     },
     {
-        "idkrajina": 9,
-        "krajina": "Bulharsko"
+        "nazov": "Bulharsko"
     }
 ]

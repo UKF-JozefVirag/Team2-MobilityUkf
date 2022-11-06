@@ -5,8 +5,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2022-09-21",
         "zmluva_do": "2022-11-30",
-        "krajina_idkrajina": 0,
-        "typ_institucie_idtyp_institucie": 1
+        "krajina_idkrajina": 1,
+        "typ_institucie_id": 1
     },
     {
         "nazov": "Lorem ipsum",
@@ -14,8 +14,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2022-09-21",
         "zmluva_do": "2023-2-20",
-        "krajina_idkrajina": 3,
-        "typ_institucie_idtyp_institucie": 2
+        "krajina_idkrajina": 4,
+        "typ_institucie_id": 2
     },
     {
         "nazov": "Second ipsum",
@@ -23,8 +23,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2021-05-10",
         "zmluva_do": "2025-11-20",
-        "krajina_idkrajina": 1,
-        "typ_institucie_idtyp_institucie": 1
+        "krajina_idkrajina": 2,
+        "typ_institucie_id": 1
     },
     {
         "nazov": "Third Lorem",
@@ -32,8 +32,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2020-06-11",
         "zmluva_do": "2024-11-1",
-        "krajina_idkrajina": 2,
-        "typ_institucie_idtyp_institucie": 2
+        "krajina_idkrajina": 3,
+        "typ_institucie_id": 2
     },
     {
         "nazov": "Fourth Lorem",
@@ -41,8 +41,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2022-09-21",
         "zmluva_do": "2022-11-30",
-        "krajina_idkrajina": 7,
-        "typ_institucie_idtyp_institucie": 5
+        "krajina_idkrajina": 8,
+        "typ_institucie_id": 5
     },
     {
         "nazov": "Fifth Lorem",
@@ -50,8 +50,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2022-09-21",
         "zmluva_do": "2022-11-30",
-        "krajina_idkrajina": 6,
-        "typ_institucie_idtyp_institucie": 6
+        "krajina_idkrajina": 7,
+        "typ_institucie_id": 6
     },
     {
         "nazov": "Sixth Lorem",
@@ -59,8 +59,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2022-09-21",
         "zmluva_do": "2022-11-30",
-        "krajina_idkrajina": 6,
-        "typ_institucie_idtyp_institucie": 11
+        "krajina_idkrajina": 7,
+        "typ_institucie_id": 11
     },
     {
         "nazov": "Seventh ipsum",
@@ -68,8 +68,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2022-09-21",
         "zmluva_do": "2022-11-30",
-        "krajina_idkrajina": 0,
-        "typ_institucie_idtyp_institucie": 4
+        "krajina_idkrajina": 1,
+        "typ_institucie_id": 4
     },
     {
         "nazov": "Eighth Lorem",
@@ -77,8 +77,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2022-09-21",
         "zmluva_do": "2022-11-30",
-        "krajina_idkrajina": 0,
-        "typ_institucie_idtyp_institucie": 4
+        "krajina_idkrajina": 5,
+        "typ_institucie_id": 4
     },
     {
         "nazov": "Nineth ipsum",
@@ -86,8 +86,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2022-09-21",
         "zmluva_do": "2022-11-30",
-        "krajina_idkrajina": 0,
-        "typ_institucie_idtyp_institucie": 3
+        "krajina_idkrajina": 1,
+        "typ_institucie_id": 3
     },
     {
         "nazov": "Tenth Lorem",
@@ -95,8 +95,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2022-09-21",
         "zmluva_do": "2022-11-30",
-        "krajina_idkrajina": 0,
-        "typ_institucie_idtyp_institucie": 3
+        "krajina_idkrajina": 1,
+        "typ_institucie_id": 3
     },
     {
         "nazov": "Eleventh ipsum",
@@ -104,8 +104,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2022-09-21",
         "zmluva_do": "2022-11-30",
-        "krajina_idkrajina": 0,
-        "typ_institucie_idtyp_institucie": 5
+        "krajina_idkrajina": 2,
+        "typ_institucie_id": 5
     },
     {
         "nazov": "Twelveth Lorem",
@@ -113,8 +113,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2022-09-21",
         "zmluva_do": "2022-11-30",
-        "krajina_idkrajina": 0,
-        "typ_institucie_idtyp_institucie": 8
+        "krajina_idkrajina": 1,
+        "typ_institucie_id": 8
     },
     {
         "nazov": "Thirtheenth ipsum",
@@ -122,8 +122,8 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2022-09-21",
         "zmluva_do": "2022-11-30",
-        "krajina_idkrajina": 0,
-        "typ_institucie_idtyp_institucie": 9
+        "krajina_idkrajina": 1,
+        "typ_institucie_id": 9
     },
     {
         "nazov": "Fourtheenth Lorem ipsum",
@@ -131,7 +131,7 @@
         "url_fotka": "https://via.placeholder.com/500",
         "zmluva_od": "2022-09-21",
         "zmluva_do": "2022-11-30",
-        "krajina_idkrajina": 0,
-        "typ_institucie_idtyp_institucie": 10
+        "krajina_idkrajina": 1,
+        "typ_institucie_id": 10
     }
 ]

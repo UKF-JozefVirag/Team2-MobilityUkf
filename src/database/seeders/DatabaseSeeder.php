@@ -15,14 +15,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(FakultySeeder::class);
-        $this->call(RolySeeder::class);
         $this->call(KrajinySeeder::class);
         $this->call(StavySeeder::class);
         $this->call(TypyVyzievSeeder::class);
         $this->call(VyzvySeeder::class);
         $this->call(TypyInstituciiSeeder::class);
         $this->call(InstitucieSeeder::class);
-        $this->call(PouzivateliaSeeder::class);
         $this->call(DokumentySeeder::class);
         $this->call(SuborySeeder::class);
         $this->call(SpravySeeder::class);

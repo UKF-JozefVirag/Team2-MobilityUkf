@@ -22,7 +22,7 @@ class SpravySeeder extends Seeder
         foreach ($spravy as $sprava){
             Sprava::query()->updateOrCreate([
                 'nadpis' => $sprava['nadpis'],
-                'sprava' => $sprava['sprava']
+                'popis' => $sprava['popis']
             ]);
         }
     }

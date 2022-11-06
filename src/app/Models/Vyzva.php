@@ -15,8 +15,9 @@ class Vyzva extends Model
         'datum_od',
         'datum_do',
         'pokyny',
-        'stav_idstav',
-        'typ_vyzvy_idtyp_vyzvy',
-        'fakulta_idfakulta'
+        'url',
+        'stav_id',
+        'typ_vyzvy_id',
+        'fakulta_id'
     ];
 }

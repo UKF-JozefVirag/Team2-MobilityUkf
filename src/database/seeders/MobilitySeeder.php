@@ -23,8 +23,8 @@ class MobilitySeeder extends Seeder
             Mobilita::query()->updateOrCreate([
                 'nazov' => $mobilita['nazov'],
                 'popis' => $mobilita['popis'],
-                'sprava_idsprava' => $mobilita['sprava_idsprava'],
-                'vyzva_idvyzva' => $mobilita['vyzva_idvyzva']
+                'sprava_id' => $mobilita['sprava_id'],
+                'vyzva_id' => $mobilita['vyzva_id']
             ]);
         }
     }

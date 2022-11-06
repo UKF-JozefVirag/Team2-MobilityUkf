@@ -12,8 +12,7 @@ class Dokument extends Model
     protected $table = 'dokument';
     public $timestamps = false;
     protected $fillable = [
-        'iddokument',
         'url',
-        'vyzva_idvyzva'
+        'vyzva_id'
     ];
 }

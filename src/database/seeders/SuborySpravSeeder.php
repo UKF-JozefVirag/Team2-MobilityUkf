@@ -21,8 +21,8 @@ class SuborySpravSeeder extends Seeder
 
         foreach ($suborysprav as $suborspravy){
             SuborSprav::query()->updateOrCreate([
-                'sprava_idsprava' => $suborspravy['sprava_idsprava'],
-                'subor_idsubor' => $suborspravy['subor_idsubor']
+                'sprava_id' => $suborspravy['sprava_id'],
+                'subor_id' => $suborspravy['subor_id']
             ]);
         }
     }

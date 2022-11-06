@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\VyzvyController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('mainPage.index');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::resource('/', VyzvyController::class);
 
 require __DIR__.'/auth.php';

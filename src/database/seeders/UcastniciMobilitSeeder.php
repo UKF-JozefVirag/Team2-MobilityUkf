@@ -21,8 +21,8 @@ class UcastniciMobilitSeeder extends Seeder
 
         foreach ($ucastnici as $ucastnik){
             UcastnikMobility::query()->updateOrCreate([
-                'pouzivatel_idpouzivatel' => $ucastnik['pouzivatel_idpouzivatel'],
-                'mobilita_idmobilita' => $ucastnik['mobilita_idmobilita']
+                'users_id' => $ucastnik['users_id'],
+                'mobilita_id' => $ucastnik['mobilita_id']
             ]);
         }
     }

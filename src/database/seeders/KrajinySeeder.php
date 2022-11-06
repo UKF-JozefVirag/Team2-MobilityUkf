@@ -21,8 +21,7 @@ class KrajinySeeder extends Seeder
 
         foreach ($krajiny as $krajina){
             Krajina::query()->updateOrCreate([
-                'idkrajina' => $krajina['idkrajina'],
-                'krajina' => $krajina['krajina']
+                'nazov' => $krajina['nazov']
             ]);
         }
     }

@@ -12,7 +12,6 @@ class Krajina extends Model
     protected $table = 'krajina';
     public $timestamps = false;
     protected $fillable = [
-        'idkrajina',
-        'krajina',
+        'nazov',
     ];
 }

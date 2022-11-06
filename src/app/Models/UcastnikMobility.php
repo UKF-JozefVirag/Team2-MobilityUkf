@@ -9,10 +9,10 @@ class UcastnikMobility extends Model
 {
     use HasFactory;
 
-    protected $table = 'ucastnici_mobilit';
+    protected $table = 'mobilita_has_users';
     public $timestamps = false;
     protected $fillable = [
-        'pouzivatel_idpouzivatel',
-        'mobilita_idmobilita'
+        'users_id',
+        'mobilita_id'
     ];
 }

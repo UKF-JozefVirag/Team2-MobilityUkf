@@ -1,39 +1,39 @@
 [
     {
-        "sprava_idsprava": 1,
-        "subor_idsubor": 1
+        "sprava_id": 1,
+        "subor_id": 1
     },
     {
-        "sprava_idsprava": 2,
-        "subor_idsubor": 1
+        "sprava_id": 2,
+        "subor_id": 1
     },
     {
-        "sprava_idsprava": 3,
-        "subor_idsubor": 1
+        "sprava_id": 3,
+        "subor_id": 1
     },
     {
-        "sprava_idsprava": 4,
-        "subor_idsubor": 1
+        "sprava_id": 4,
+        "subor_id": 1
     },
     {
-        "sprava_idsprava": 5,
-        "subor_idsubor": 1
+        "sprava_id": 5,
+        "subor_id": 1
     },
     {
-        "sprava_idsprava": 6,
-        "subor_idsubor": 1
+        "sprava_id": 6,
+        "subor_id": 1
     },
     {
-        "sprava_idsprava": 7,
-        "subor_idsubor": 1
+        "sprava_id": 7,
+        "subor_id": 1
     },
     {
-        "sprava_idsprava": 8,
-        "subor_idsubor": 1
+        "sprava_id": 8,
+        "subor_id": 1
     },
     {
-        "sprava_idsprava": 9,
-        "subor_idsubor": 1
+        "sprava_id": 9,
+        "subor_id": 1
     }
 
 ]

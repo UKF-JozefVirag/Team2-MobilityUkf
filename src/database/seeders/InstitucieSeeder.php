@@ -27,7 +27,7 @@ class InstitucieSeeder extends Seeder
                 'zmluva_od' => $institucia['zmluva_od'],
                 'zmluva_do' => $institucia['zmluva_do'],
                 'krajina_idkrajina' => $institucia['krajina_idkrajina'],
-                'typ_institucie_idtyp_institucie' => $institucia['typ_institucie_idtyp_institucie']
+                'typ_institucie_id' => $institucia['typ_institucie_id']
             ]);
         }
     }

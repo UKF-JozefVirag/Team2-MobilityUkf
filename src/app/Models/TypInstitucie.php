@@ -12,6 +12,6 @@ class TypInstitucie extends Model
     protected $table = 'typ_institucie';
     public $timestamps = false;
     protected $fillable = [
-        'name',
+        'nazov',
     ];
 }
