@@ -99,6 +99,18 @@ h3 {
     }
 }
 
+.grey-bg-section{
+    background: #F4F4F4;
+    padding-bottom: 3%;
+}
+.block-padding-section{
+    padding-left: 16.3%;
+    padding-right: 16%;
+}
+.top-padding-section{
+    padding-top: 134px;
+}
+
 /* Main Page - 1.Section */
 .section-text-map .bcg-image {
     position: absolute;

@@ -23,7 +23,7 @@
 
 <!-- MENU -->
 <nav class="navbar navbar-expand-lg navbar-light" style="background: transparent !important; position: absolute;left: 0; right: 0; z-index: 3;">
-    <div class="container" style="padding: 0; width: 1277px; margin-top: 29px;">
+    <div class="container" style="padding: 0;margin-top: 29px;">
         <div class="menu-logo">
             <img src="{{ asset('img/logo.png') }}" alt="logo FPVaI UKF" style="width: 340px;">
         </div>
@@ -32,19 +32,19 @@
         </button>
         <div class="menu-items collapse navbar-collapse" style="margin-left: 75px">
             <ul class="navbar-nav nav ml-auto" style="font-style: normal; font-weight: 700; font-size: 15px; line-height: 22px;">
-                <li class="nav-item" style="padding-right: 30px">
+                <li class="nav-item" style="padding-right: 20px">
                     <a href="#" class="nav-link active"><span>Domov</span></a>
                 </li>
-                <li class="nav-item" style="padding-right: 30px">
+                <li class="nav-item" style="padding-right: 20px">
                     <a href="#" class="nav-link"><span>Erasmus+</span></a>
                 </li>
-                <li class="nav-item" style="padding-right: 30px">
+                <li class="nav-item" style="padding-right: 20px">
                     <a href="#" class="nav-link"><span>Iné mobility</span></a>
                 </li>
-                <li class="nav-item" style="padding-right: 30px">
+                <li class="nav-item" style="padding-right: 20px">
                     <a href="#" class="nav-link"><span>Správy účasníkov</span></a>
                 </li>
-                <li class="nav-item" style="padding-right: 30px">
+                <li class="nav-item" style="padding-right: 20px">
                     <a href="#" class="nav-link"><span>Kontakty</span></a>
                 </li>
 

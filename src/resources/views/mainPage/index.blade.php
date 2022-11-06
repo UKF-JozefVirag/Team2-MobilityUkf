@@ -1,8 +1,276 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <section>
+    <section class="section-text-map">
         <img src="{{ asset('img/bcg-green.png') }}" alt="background-image" class="bcg-image">
+        <img src="{{ asset('img/map.png') }}" alt="map" class="image-map">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="col-text-title">
+                        <h1>Nikdy <br>
+                            neprestávaj <br>
+                            objavovať!</h1>
+                    </div>
+                    <div>
+                        <p>Vycestuj kdekoľvek už počas štúdia a zaži vlastnú výnimočnú medzinárodnú skúsenosť</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-search">
+        <div class="container">
+            <div class="row">
+                <h2>Vyhľadaj si tú najlepšiu možnosť</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="search-wrap">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-2 align-items-end">
+                                    <label for="inputTypMobility"></label>
+                                    <select id="inputTypMobility" class="custom-select custom-select-md">
+                                        <option selected>Stáž</option>
+                                        <option>Študijný pobyt</option>
+                                        <option>Prednáškový pobyt</option>
+                                        <option>Školenie</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2 align-items-end">
+                                    <label for="inputFakulty"></label>
+                                    <select id="inputFakulty" class="custom-select custom-select-md">
+                                        <option selected>Fakulta prírodných vied a informatiky</option>
+                                        <option>Pedagogická fakulta</option>
+                                        <option>Fakulta sociálnych vied a zdravotníctva</option>
+                                        <option>Fakulta stredoeurópskych štúdií</option>
+                                        <option>Filozofická fakulta</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2 align-items-end">
+                                    <label for="inputInstitucia"></label>
+                                    <select id="inputInstitucia" class="custom-select custom-select-md">
+                                        <option selected>Erasmus+</option>
+                                        <option>SAIA</option>
+                                        <option>DAAD</option>
+                                        <option>IVF</option>
+                                        <option>Študijno-prednáškové pobyty</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2 align-items-end">
+                                    <label for="inputRocnik"></label>
+                                    <select id="inputRocnik" class="custom-select custom-select-md">
+                                        <option selected>1.Bc</option>
+                                        <option>2.Bc</option>
+                                        <option>3.Bc</option>
+                                        <option>1.Mgr</option>
+                                        <option>2.Mgr</option>
+                                        <option>1.Phd</option>
+                                        <option>2.Phd</option>
+                                        <option>3.Phd</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2 align-items-end">
+                                    <label for="inputKrajina"></label>
+                                    <select id="inputKrajina" class="custom-select custom-select-md">
+                                        <option selected>Česká republika</option>
+                                        <option>USA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2 align-self-end">
+                                    <input type="submit" value="Vyhľadaj mobilitu" class="form-control">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-actualMobilities">
+        <div class="container">
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-12">
+                    <h2>Aktuálne mobility</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="mobility-card">
+                        <div class="card-img">
+                            <div class="vr">
+                                <span>Voľné</span>
+                            </div>
+                            <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
+                        </div>
+                        <div class="card-text">
+                            <h4 class="termin">Prihlasovanie do 30.10.2022</h4>
+                            <span>Česká republika</span>
+                            <h3>
+                                <a href="#">Masarykova univerzita</a>
+                            </h3>
+                            <div class="d-flex">
+                                <div class="mr-auto float-left">
+                                    <span>študijný pobyt</span>
+                                </div>
+                                <div class="float-right">
+                                    <span>KI</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center pt-4 mb-2">
+                                <button type="button" class="btn btn-dark">Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="mobility-card">
+                        <div class="card-img">
+                            <div class="vr">
+                                <span>Voľné</span>
+                            </div>
+                            <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
+                        </div>
+                        <div class="card-text">
+                            <h4 class="termin">Prihlasovanie do 30.10.2022</h4>
+                            <span>Česká republika</span>
+                            <h3>
+                                <a href="#">Masarykova univerzita</a>
+                            </h3>
+                            <div class="d-flex">
+                                <div class="mr-auto float-left">
+                                    <span>študijný pobyt</span>
+                                </div>
+                                <div class="float-right">
+                                    <span>KI</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center pt-4 mb-2">
+                                <button type="button" class="btn btn-dark">Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="mobility-card">
+                        <div class="card-img">
+                            <div class="vr">
+                                <span>Voľné</span>
+                            </div>
+                            <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
+                        </div>
+                        <div class="card-text">
+                            <h4 class="termin">Prihlasovanie do 30.10.2022</h4>
+                            <span>Česká republika</span>
+                            <h3>
+                                <a href="#">Masarykova univerzita</a>
+                            </h3>
+                            <div class="d-flex">
+                                <div class="mr-auto float-left">
+                                    <span>študijný pobyt</span>
+                                </div>
+                                <div class="float-right">
+                                    <span>KI</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center pt-4 mb-2">
+                                <button type="button" class="btn btn-dark">Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="mobility-card">
+                        <div class="card-img">
+                            <div class="vr">
+                                <span>Voľné</span>
+                            </div>
+                            <img src="{{ asset('img/img_1.png') }}" alt="image of mobility" class="img-fluid">
+                        </div>
+                        <div class="card-text">
+                            <h4 class="termin">Prihlasovanie do 30.10.2022</h4>
+                            <span>USA</span>
+                            <h3>
+                                <a href="#">Piedmont college</a>
+                            </h3>
+                            <div class="d-flex">
+                                <div class="mr-auto float-left">
+                                    <span>študijný pobyt</span>
+                                </div>
+                                <div class="float-right">
+                                    <span>FF</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center pt-4 mb-2">
+                                <button type="button" class="btn btn-dark">Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="mobility-card">
+                        <div class="card-img">
+                            <div class="vr">
+                                <span>Voľné</span>
+                            </div>
+                            <img src="{{ asset('img/img_1.png') }}" alt="image of mobility" class="img-fluid">
+                        </div>
+                        <div class="card-text">
+                            <h4 class="termin">Prihlasovanie do 30.10.2022</h4>
+                            <span>USA</span>
+                            <h3>
+                                <a href="#">Piedmont college</a>
+                            </h3>
+                            <div class="d-flex">
+                                <div class="mr-auto float-left">
+                                    <span>študijný pobyt</span>
+                                </div>
+                                <div class="float-right">
+                                    <span>FF</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center pt-4 mb-2">
+                                <button type="button" class="btn btn-dark">Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="mobility-card">
+                        <div class="card-img">
+                            <div class="vr">
+                                <span>Voľné</span>
+                            </div>
+                            <img src="{{ asset('img/img_1.png') }}" alt="image of mobility" class="img-fluid">
+                        </div>
+                        <div class="card-text">
+                            <h4 class="termin">Prihlasovanie do 30.10.2022</h4>
+                            <span>USA</span>
+                            <h3>
+                                <a href="#">Piedmont college</a>
+                            </h3>
+                            <div class="d-flex">
+                                <div class="mr-auto float-left">
+                                    <span>študijný pobyt</span>
+                                </div>
+                                <div class="float-right">
+                                    <span>FF</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center pt-4 mb-2">
+                                <button type="button" class="btn btn-dark">Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 @endsection
+
