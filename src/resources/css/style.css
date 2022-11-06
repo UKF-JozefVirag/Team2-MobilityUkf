@@ -1,0 +1,28 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.bcg-image {
+    position: absolute;
+    top: 0; right: 0;
+    width: 70%
+}
+h3{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 38px;
+    text-transform:uppercase;
+}
+.grey-bg-section{
+    background: #F4F4F4;
+    padding-bottom: 3%;
+}
+.block-padding-section{
+    padding-left: 16.3%;
+    padding-right: 16%;
+}
+.top-padding-section{
+    padding-top: 134px;
+}
