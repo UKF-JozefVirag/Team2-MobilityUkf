@@ -16,6 +16,7 @@ class Vyzva extends Model
         'datum_do',
         'pokyny',
         'url',
+        'program',
         'stav_id',
         'typ_vyzvy_id',
         'fakulta_id'

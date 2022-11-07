@@ -33,16 +33,16 @@
         <div class="menu-items collapse navbar-collapse" style="margin-left: 75px">
             <ul class="navbar-nav nav ml-auto" style="font-style: normal; font-weight: 700; font-size: 15px; line-height: 22px;">
                 <li class="nav-item" style="padding-right: 20px">
-                    <a href="#" class="nav-link active"><span>Domov</span></a>
+                    <a href="/" class="nav-link active"><span>Domov</span></a>
                 </li>
                 <li class="nav-item" style="padding-right: 20px">
-                    <a href="#" class="nav-link"><span>Erasmus+</span></a>
+                    <a href="/erasmus" class="nav-link"><span>Erasmus+</span></a>
                 </li>
                 <li class="nav-item" style="padding-right: 20px">
-                    <a href="#" class="nav-link"><span>Iné mobility</span></a>
+                    <a href="/anotherMobilities" class="nav-link"><span>Iné mobility</span></a>
                 </li>
                 <li class="nav-item" style="padding-right: 20px">
-                    <a href="#" class="nav-link"><span>Správy účasníkov</span></a>
+                    <a href="/messages" class="nav-link"><span>Správy účasníkov</span></a>
                 </li>
                 <li class="nav-item" style="padding-right: 20px">
                     <a href="#" class="nav-link"><span>Kontakty</span></a>
@@ -185,6 +185,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>

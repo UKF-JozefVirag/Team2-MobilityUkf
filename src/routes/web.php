@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\VyzvyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view ('mainpage.index');
-});
-
 require __DIR__.'/auth.php';
 
+Route::resource('/', VyzvyController::class);
+
+Route::get('/anotherMobilities', function (){
+    return view('anotherMobilities.index');
+});
+
+Route::get('/erasmus', function (){
+    return view('erasmus.index');
+});
+
+Route::get('/anotherMobilities', function (){
+    return view('anotherMobilities.index');
+});
+
+Route::get('/messages', function (){
+    return view('messages.index');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -27,3 +41,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

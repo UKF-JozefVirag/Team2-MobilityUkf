@@ -1,4 +1,4 @@
-@extends('layouts.dontdelete')
+@extends('layouts.app')
 
 @section('content')
 @endsection

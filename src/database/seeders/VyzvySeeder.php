@@ -25,6 +25,7 @@ class VyzvySeeder extends Seeder
                 'datum_do' => $vyzva['datum_do'],
                 'pokyny' => $vyzva['pokyny'],
                 'url' => $vyzva['url'],
+                'program' => $vyzva['program'],
                 'fakulta_id' => $vyzva['fakulta_id'],
                 'stav_id' => $vyzva['stav_id'],
                 'typ_vyzvy_id' => $vyzva['typ_vyzvy_id']

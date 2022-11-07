@@ -1,51 +1,20 @@
 [
     {
-        "meno": "Jozef",
-        "priezvisko": "Virág",
-        "login": 112233,
-        "heslo": "test123",
-        "rola_idrola": 3
+        "name": "John Doe",
+        "email": "jdoe@ukf.sk",
+        "password": "123456789",
+        "role": 1
     },
     {
-        "meno": "Veronika",
-        "priezvisko": "Nemogova",
-        "login": 445566,
-        "heslo": "test1234",
-        "rola_idrola": 2
+        "name": "Miranda Doe",
+        "email": "mdoe@ukf.sk",
+        "password": "123456789",
+        "role": 2
     },
     {
-        "meno": "Filip",
-        "priezvisko": "Ďuriač",
-        "login": 778899,
-        "heslo": "test12345",
-        "rola_idrola": 1
-    },
-    {
-        "meno": "Marek",
-        "priezvisko": "Bóna",
-        "login": 123456,
-        "heslo": "test123456",
-        "rola_idrola": 2
-    },
-    {
-        "meno": "Martin",
-        "priezvisko": "Bílik",
-        "login": 456789,
-        "heslo": "test1234567",
-        "rola_idrola": 1
-    },
-    {
-        "meno": "John",
-        "priezvisko": "Doe",
-        "login": 121212,
-        "heslo": "test12345678",
-        "rola_idrola": 1
-    },
-    {
-        "meno": "Doe",
-        "priezvisko": "Joe",
-        "login": 232323,
-        "heslo": "test123456789",
-        "rola_idrola": 1
+        "name": "Peter Doe",
+        "email": "pdoe@ukf.sk",
+        "password": "123456789",
+        "role": 3
     }
 ]

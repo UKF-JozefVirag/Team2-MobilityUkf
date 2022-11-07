@@ -19,6 +19,7 @@ class CreateVyzvaTable extends Migration
             $table->date('datum_do');
             $table->text('pokyny');
             $table->string('url',255);
+            $table->string('program',60);
             $table->integer('fakulta_id')->index('fk_vyzva_fakulta1_idx');
             $table->integer('stav_id')->index('fk_vyzva_stav1_idx');
             $table->integer('typ_vyzvy_id')->index('fk_vyzva_typ_vyzvy1_idx');

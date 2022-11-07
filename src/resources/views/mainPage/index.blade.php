@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+{{--    @if(Auth::check() && auth()->user()->role == "R1")--}}
+{{--        <h1>R1</h1>--}}
+{{--    @elseif(Auth::check() && auth()->user()->role == "R2")--}}
+{{--        <h1>R2</h1>--}}
+{{--    @elseif(Auth::check() && auth()->user()->role == "R3")--}}
+{{--        <h1>R3</h1>--}}
+{{--    @else--}}
+{{--        @endif--}}
     <section class="section-text-map">
         <img src="{{ asset('img/bcg-green.png') }}" alt="background-image" class="bcg-image">
         <img src="{{ asset('img/map.png') }}" alt="map" class="image-map">
@@ -42,11 +52,10 @@
                                 <div class="form-group col-md-2 align-items-end">
                                     <label for="inputFakulty"></label>
                                     <select id="inputFakulty" class="custom-select custom-select-md">
-                                        <option selected>Fakulta prírodných vied a informatiky</option>
-                                        <option>Pedagogická fakulta</option>
-                                        <option>Fakulta sociálnych vied a zdravotníctva</option>
-                                        <option>Fakulta stredoeurópskych štúdií</option>
-                                        <option>Filozofická fakulta</option>
+{{--                                        Vypíše všetky fakulty zapísané v databaze a fakulta s id==1 bude vždy selected--}}
+                                        @foreach($fakulty as $fakulta)
+                                            <option value="{{$fakulta->id}}" {{ $loop->first ? 'selected="selected"' : '' }}>{{ $fakulta->nazov }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group col-md-2 align-items-end">
@@ -97,91 +106,40 @@
                     <h2>Aktuálne mobility</h2>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="mobility-card">
-                        <div class="card-img">
-                            <div class="vr">
-                                <span>Voľné</span>
-                            </div>
-                            <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
-                        </div>
-                        <div class="card-text">
-                            <h4 class="termin">Prihlasovanie do 30.10.2022</h4>
-                            <span>Česká republika</span>
-                            <h3>
-                                <a href="#">Masarykova univerzita</a>
-                            </h3>
-                            <div class="d-flex">
-                                <div class="mr-auto float-left">
-                                    <span>študijný pobyt</span>
+            @foreach($vyzvy as $vyzva)
+                    <div class="col-md-6 col-lg-4">
+                        <div class="mobility-card">
+                            <div class="card-img">
+                                <div class="vr">
+                                    <span>{{ Carbon\Carbon::parse($vyzva->datum_do)->isPast() ? "Ukončený" : "Otvorený" }}</span>
                                 </div>
-                                <div class="float-right">
-                                    <span>KI</span>
+                                <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
+                            </div>
+                            <div class="card-text">
+                                <h4 class="termin">Prihlasovanie do {{ $vyzva->datum_do }}</h4>
+                                <span>Česká republika</span>
+                                <h3>
+                                    <a href="#">{{ $vyzva->nazov_mobility }}</a>
+                                </h3>
+                                <div class="d-flex">
+                                    <div class="mr-auto float-left">
+                                        <span>{{ $vyzva->nazov_vyzvy }}</span>
+                                    </div>
+
+                                    <div class="float-right">
+                                        <span>{{  $vyzva->nazov_fakulty }}</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="d-flex justify-content-center pt-4 mb-2">
-                                <button type="button" class="btn btn-dark">Detail</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="mobility-card">
-                        <div class="card-img">
-                            <div class="vr">
-                                <span>Voľné</span>
-                            </div>
-                            <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
-                        </div>
-                        <div class="card-text">
-                            <h4 class="termin">Prihlasovanie do 30.10.2022</h4>
-                            <span>Česká republika</span>
-                            <h3>
-                                <a href="#">Masarykova univerzita</a>
-                            </h3>
-                            <div class="d-flex">
-                                <div class="mr-auto float-left">
-                                    <span>študijný pobyt</span>
+                                <div class="d-flex justify-content-center pt-4 mb-2">
+                                    <button type="button" class="btn btn-dark">Detail</button>
                                 </div>
-                                <div class="float-right">
-                                    <span>KI</span>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-center pt-4 mb-2">
-                                <button type="button" class="btn btn-dark">Detail</button>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="mobility-card">
-                        <div class="card-img">
-                            <div class="vr">
-                                <span>Voľné</span>
-                            </div>
-                            <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
-                        </div>
-                        <div class="card-text">
-                            <h4 class="termin">Prihlasovanie do 30.10.2022</h4>
-                            <span>Česká republika</span>
-                            <h3>
-                                <a href="#">Masarykova univerzita</a>
-                            </h3>
-                            <div class="d-flex">
-                                <div class="mr-auto float-left">
-                                    <span>študijný pobyt</span>
-                                </div>
-                                <div class="float-right">
-                                    <span>KI</span>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-center pt-4 mb-2">
-                                <button type="button" class="btn btn-dark">Detail</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            @endforeach
+
             </div>
             <hr>
             <div class="row">
