@@ -19,7 +19,6 @@ h2 {
     color: #000000;
 }
 .h2-footer{
-    font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
@@ -51,9 +50,13 @@ h3 {
         padding-right: 8px !important;
     }
 
-    .navbar-expand-lg .menu-btn .btn {
+    .navbar-expand-lg .menu-btn a {
         font-size: 12px !important;
         width: 100px !important;
+    }
+
+    .navbar-expand-lg .navbar-brand img {
+        width: 250px !important;
     }
 }
 
@@ -68,12 +71,16 @@ h3 {
     }
 
     .menu-navbar .menu-items {
-        margin-left: 0px !important;
+        margin-left: 0 !important;
     }
 
-    .navbar-expand-lg .menu-btn .btn {
+    .navbar-expand-lg .menu-btn a {
         background: #099364 !important;
-        width: 50% !important;
+    }
+
+    .navbar-expand-lg .menu-btn {
+        align-self: center;
+        padding-top: 10px;
     }
 
     .section-text-map {
@@ -113,6 +120,10 @@ h3 {
     }
 }
 
+.navbar-expand-lg .navbar-brand img {
+    width: 340px;
+}
+
 .grey-bg-section{
     background: #F4F4F4;
     padding-bottom: 3%;
@@ -130,7 +141,7 @@ h3 {
     position: absolute;
     top: 0;
     right: 0;
-    width: 70%
+    width: 65%
 }
 
 .section-text-map .image-map {
@@ -149,7 +160,7 @@ h3 {
 }
 
 .section-text-map .container .row .col {
-    top: 150px;
+    padding-top: 250px;
 }
 
 .section-text-map .container .row .col .col-text-title {
@@ -164,7 +175,7 @@ h3 {
 
 /* Main Page - 2.Section */
 .section-search {
-    padding-top: 350px;
+    padding-top: 250px;
 }
 
 .section-search .col-md-12 {
@@ -173,8 +184,10 @@ h3 {
 }
 
 .section-search select {
-    border: 2px solid #099364; !important;
+    border: 2px solid #099364 !important;
     color: #000000;
+    border-radius: 5px;
+    height: 50%;
 }
 
 .section-search .form-control {
@@ -184,6 +197,9 @@ h3 {
     border: 1px solid #3B5D6B;
 }
 
+.section-actualMobilities {
+    padding-top: 50px;
+}
 
 .section-actualMobilities .mobility-card {
     position: relative;

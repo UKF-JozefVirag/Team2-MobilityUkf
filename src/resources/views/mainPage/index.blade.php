@@ -32,16 +32,16 @@
 
     <section class="section-search">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 <h2>Vyhľadaj si tú najlepšiu možnosť</h2>
             </div>
-            <div class="row">
+            <div class="row pt-4">
                 <div class="col-md-12">
                     <div class="search-wrap">
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-2 align-items-end">
-                                    <label for="inputTypMobility"></label>
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-lg align-items-end">
+                                    <label for="inputTypMobility">Typ mobility</label>
                                     <select id="inputTypMobility" class="custom-select custom-select-md">
                                         <option selected>Stáž</option>
                                         <option>Študijný pobyt</option>
@@ -49,8 +49,8 @@
                                         <option>Školenie</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-2 align-items-end">
-                                    <label for="inputFakulty"></label>
+                                <div class="col-lg align-items-end">
+                                    <label for="inputFakulty">Fakulty</label>
                                     <select id="inputFakulty" class="custom-select custom-select-md">
 {{--                                        Vypíše všetky fakulty zapísané v databaze a fakulta s id==1 bude vždy selected--}}
                                         @foreach($fakulty as $fakulta)
@@ -58,8 +58,8 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group col-md-2 align-items-end">
-                                    <label for="inputInstitucia"></label>
+                                <div class="col-lg align-items-end">
+                                    <label for="inputInstitucia">Inštitúcia</label>
                                     <select id="inputInstitucia" class="custom-select custom-select-md">
                                         <option selected>Erasmus+</option>
                                         <option>SAIA</option>
@@ -68,8 +68,8 @@
                                         <option>Študijno-prednáškové pobyty</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-2 align-items-end">
-                                    <label for="inputRocnik"></label>
+                                <div class="col-lg align-items-end">
+                                    <label for="inputRocnik">Ročník</label>
                                     <select id="inputRocnik" class="custom-select custom-select-md">
                                         <option selected>1.Bc</option>
                                         <option>2.Bc</option>
@@ -81,14 +81,14 @@
                                         <option>3.Phd</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-2 align-items-end">
-                                    <label for="inputKrajina"></label>
+                                <div class="col-lg align-items-end">
+                                    <label for="inputKrajina">Krajina</label>
                                     <select id="inputKrajina" class="custom-select custom-select-md">
                                         <option selected>Česká republika</option>
                                         <option>USA</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-2 align-self-end">
+                                <div class="col-lg align-self-end">
                                     <input type="submit" value="Vyhľadaj mobilitu" class="form-control">
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
 
     <section class="section-actualMobilities">
         <div class="container">
-            <div class="row justify-content-center pb-5">
+            <div class="row justify-content-center pb-3">
                 <div class="col-md-12">
                     <h2>Aktuálne mobility</h2>
                 </div>

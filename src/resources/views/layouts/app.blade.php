@@ -5,59 +5,56 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSRF Token -->
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
 
     <title>UKF Mobility</title>
 
-    <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
 
 <!-- MENU -->
-<nav class="navbar navbar-expand-lg navbar-light" style="background: transparent !important; position: absolute;left: 0; right: 0; z-index: 3;">
+<nav class="navbar navbar-expand-lg navbar-light menu-navbar" style="position: absolute;left: 0; right: 0; z-index: 3;">
     <div class="container" style="padding: 0;margin-top: 29px;">
-        <div class="menu-logo">
-            <img src="{{ asset('img/logo.png') }}" alt="logo FPVaI UKF" style="width: 340px;">
+        <div class="navbar-brand menu-logo">
+            <img src="{{ asset('img/logo.png') }}" alt="logo FPVaI UKF">
         </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="menu-items collapse navbar-collapse" style="margin-left: 75px">
-            <ul class="navbar-nav nav ml-auto" style="font-style: normal; font-weight: 700; font-size: 15px; line-height: 22px;">
-                <li class="nav-item" style="padding-right: 20px">
-                    <a href="/" class="nav-link active"><span>Domov</span></a>
+        <div class="collapse navbar-collapse menu-items" id="navbarSupportedContent" style="margin-left: 40px">
+            <ul class="navbar-nav mr-auto" style="font-style: normal; font-weight: 700; font-size: 15px; line-height: 22px;">
+                <li class="nav-item active pr-1">
+                    <a href="/" class="nav-link"><span>Domov</span></a>
                 </li>
-                <li class="nav-item" style="padding-right: 20px">
+                <li class="nav-item pr-1">
                     <a href="/erasmus" class="nav-link"><span>Erasmus+</span></a>
                 </li>
-                <li class="nav-item" style="padding-right: 20px">
+                <li class="nav-item pr-1">
                     <a href="/anotherMobilities" class="nav-link"><span>Iné mobility</span></a>
                 </li>
-                <li class="nav-item" style="padding-right: 20px">
+                <li class="nav-item pr-1">
                     <a href="/messages" class="nav-link"><span>Správy účasníkov</span></a>
                 </li>
-                <li class="nav-item" style="padding-right: 20px">
+                <li class="nav-item pr-1">
                     <a href="#" class="nav-link"><span>Kontakty</span></a>
                 </li>
 
                 @guest
                     @if (Route::has('login'))
                         <li class="menu-btn">
-                            <a class="nav-link btn btn-dark" href="{{ route('login') }}" style="border-radius: 5px; background: #3B5D6B; border-style: none; width: 150px; height: 40px; font-style: normal;font-weight: 700;font-size: 15px;line-height: 22px;">{{ __('Prihlásiť sa') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background: transparent; border-color: #3B5D6B;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;height: 40px; font-style: normal;font-weight: 700;font-size: 15px;line-height: 22px;">{{ __('Prihlásiť sa') }}</a>
                         </li>
                     @endif
 
                     @if (Route::has('register'))
                         <li class="menu-btn">
-                            <a class="nav-link btn btn-dark" href="{{ route('register') }}" style="border-radius: 5px; background: #3B5D6B; border-style: none; width: 150px; height: 40px; font-style: normal;font-weight: 700;font-size: 15px;line-height: 22px;">{{ __('Registrovať sa') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;  background: #3B5D6B; border-style: none;height: 40px; font-style: normal;font-weight: 700;font-size: 15px;line-height: 22px;">{{ __('Registrovať sa') }}</a>
                         </li>
                     @endif
                 @else
@@ -109,32 +106,32 @@
                 <br>
                 <br>
                 <div class="row">
-                    <div class="col" style="text-align: left; font-size: 15px; padding-left: 40px">
-                        Ing. Katarína Butorová, PhD<br>
+                    <div class="col" style="text-align: left; font-size: 15px; padding: 0">
+                        <p>Ing. Katarína Butorová, PhD<br>
                         Mgr. Michaela Ivaničová<br>
-                        Mgr. Pavol Vakoš
+                            Mgr. Pavol Vakoš </p>
                     </div>
-                    <div class="col" style="text-align: right; padding-bottom: 6%; padding-right: 40px">
-                        kbutorova@ukf.sk<br>
+                    <div class="col" style="text-align: right; padding: 0">
+                        <p>kbutorova@ukf.sk<br>
                         mivanicova@ukf.sk<br>
-                        pvakos@ukf.sk
+                        pvakos@ukf.sk</p>
                     </div>
                 </div>
                 <b style="color: white">Úradné hodiny pre študentov</b>
                 <br>
                 <br>
                 <div class="row justify-content-md-center">
-                    <div class="col" style="text-align: left; font-size: 15px; padding-left: 90px">
+                    <div class="col" style="text-align: right; font-size: 15px;">
                         pondelok<br>
                         utorok<br>
                         streda
                     </div>
-                    <div class="col" style="text-align: center">
+                    <div class="col" style="text-align: left">
                         8:30-11:00<br>
                         8:30-11:00<br>
                         8:30-11:00
                     </div>
-                    <div class="col" style="text-align: right; padding-right: 80px">
+                    <div class="col" style="text-align: center;">
                         Tr. A. Hlinku 1<br>
                         949 74 Nitra
                     </div>
@@ -188,10 +185,9 @@
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
