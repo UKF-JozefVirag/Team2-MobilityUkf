@@ -26,19 +26,5 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo;
-
-    public function __construct(){
-        if(Auth::check() && Auth::user()->role == "3"){
-            $this->redirectTo = route('admin.index');
-        }
-        elseif(Auth::check() && Auth::user()->role == '2'){
-            $this->redirectTo = route('referent.index');
-        }
-        elseif(Auth::check() && Auth::user()->role == '1'){
-            $this->redirectTo = route('ucastnik.index');
-        }
-
-        $this->middleware('guest')->except('logout');
-    }
+    protected $redirectTo = RouteServiceProvider::HOME;
 }

@@ -17,19 +17,16 @@ class RedirectIfAuthenticated
      * @param  string|null  ...$guards
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next, $guard = null)
+    public function handle(Request $request, Closure $next, ...$guards)
     {
-        if (Auth::guard($guard)->check() && Auth::user()->role == "R3") {
-            return redirect()->route('admin.index');
+        $guards = empty($guards) ? [null] : $guards;
+
+        foreach ($guards as $guard) {
+            if (Auth::guard($guard)->check()) {
+                return redirect(RouteServiceProvider::HOME);
+            }
         }
-        elseif(Auth::guard($guard)->check() && Auth::user()->role == "R2"){
-            return redirect()->route('referent.index');
-        }
-        elseif(Auth::guard($guard)->check() && Auth::user()->role == "R1"){
-            return redirect()->route('ucastnik.index');
-        }
-        else {
-            return $next($request);
-        }
+
+        return $next($request);
     }
 }

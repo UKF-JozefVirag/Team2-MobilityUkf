@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+require __DIR__.'/auth.php';
+
 Route::resource('/', VyzvyController::class);
 
 Route::get('/anotherMobilities', function (){
@@ -31,29 +34,11 @@ Route::get('/messages', function (){
     return view('messages.index');
 });
 
-
 Auth::routes();
 
-Route::group(['as'=>'admin.','prefix' => 'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function () {
-    Route::get('avyzvy', 'VyzvyController@index')->name('avyzvy');
-});
-
-Route::group(['as'=>'referent.','prefix' => 'referent','namespace'=>'Referent','middleware'=>['auth','referent']], function () {
-    Route::get('rvyzvy', 'VyzvyController@index')->name('vyzvy');
-});
-
-Route::group(['as'=>'ucastnik.','prefix' => 'ucastnik','namespace'=>'Ucastnik','middleware'=>['auth','ucastnik']], function () {
-    Route::get('uvyzvy', 'VyzvyController@index')->name('vyzvy');
-});
-
-require __DIR__.'/auth.php';
-
-
-/*
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-*/
