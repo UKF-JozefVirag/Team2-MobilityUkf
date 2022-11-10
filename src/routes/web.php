@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\VyzvyController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,30 @@ require __DIR__.'/auth.php';
 
 Route::resource('/', VyzvyController::class);
 
+Route::group(['middleware' => 'auth'], function (){
+   Route::group([
+     'prefix' => 'admin',
+     'middleware'=> 'is_admin',
+     'as'=>'admin.',
+   ], function (){
+       Route::resource('vyzvy', VyzvyController::class);
+       Route::resource('dashboard', DashboardController::class);
+
+   });
+
+   Route::group([
+      'prefix' => 'ucastnik',
+      'as' => 'ucastnik.',
+   ], function (){
+       Route::get('vyzvy', [\App\Http\Controllers\Ucastnik\VyzvyController::class, 'index'])
+           ->name('vyzvy.index');
+   });
+
+});
+
+
+
+
 Route::get('/anotherMobilities', function (){
     return view('anotherMobilities.index');
 });
@@ -33,12 +59,4 @@ Route::get('/anotherMobilities', function (){
 Route::get('/messages', function (){
     return view('messages.index');
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

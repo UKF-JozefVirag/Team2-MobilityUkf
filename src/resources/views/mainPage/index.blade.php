@@ -118,7 +118,7 @@
                                 <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
                             </div>
                             <div class="card-text">
-                                <h4 class="termin">Prihlasovanie do {{ $vyzva->datum_do }}</h4>
+                                <h4 class="termin">Prihlasovanie do {{ Carbon\Carbon::parse($vyzva->datum_do)->format('d.m.Y') }}</h4>
                                 <span>Česká republika</span>
                                 <h3>
                                     <a href="#">{{ $vyzva->nazov_mobility }}</a>
