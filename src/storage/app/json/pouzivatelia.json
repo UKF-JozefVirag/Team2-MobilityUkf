@@ -16,5 +16,47 @@
         "email": "pdoe@ukf.sk",
         "password": "123456789",
         "role": 3
+    },
+    {
+        "name": "Miro",
+        "email": "Miropele@ukf.sk",
+        "password": "123456789",
+        "role": 1
+    },
+    {
+        "name": "Ferko",
+        "email": "ferko@ukf.sk",
+        "password": "123456789",
+        "role": 2
+    },
+    {
+        "name": "Jozko",
+        "email": "Jozo@ukf.sk",
+        "password": "123456789",
+        "role": 3
+    },
+    {
+        "name": "Janka",
+        "email": "jana@spu.sk",
+        "password": "123456789",
+        "role": 2
+    },
+    {
+        "name": "Lenka",
+        "email": "lenka@ukf.sk",
+        "password": "123456789",
+        "role": 1
+    },
+    {
+        "name": "Miska",
+        "email": "miska@ukf.sk",
+        "password": "123456789",
+        "role": 1
+    },
+    {
+        "name": "Jonatan",
+        "email": "jotanan@ukf.sk",
+        "password": "123456789",
+        "role": 1
     }
 ]

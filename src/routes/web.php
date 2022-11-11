@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\InstitutionsController;
 use App\Http\Controllers\VyzvyController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,7 +28,8 @@ Route::group(['middleware' => 'auth'], function (){
      'as'=>'admin.',
    ], function (){
        Route::resource('vyzvy', VyzvyController::class);
-       Route::resource('dashboard', DashboardController::class);
+       Route::resource('/dashboard', DashboardController::class);
+       Route::resource('/institutions', InstitutionsController::class);
 
    });
 

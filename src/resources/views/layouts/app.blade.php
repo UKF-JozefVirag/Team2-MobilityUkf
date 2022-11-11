@@ -64,8 +64,10 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            {{--            Only for admin                --}}
                             @if(\Illuminate\Support\Facades\Auth::user()->hasRole('3'))
-                            <a class="dropdown-item" href="/admin/dashboard">Admin Dashboard</a>
+                                <a class="dropdown-item" href="/admin/dashboard">User Dashboard</a>
+                                <a class="dropdown-item" href="/admin/institutions">Institutions Dashboard</a>
                             @endif
 
                             <a class="dropdown-item" href="{{ route('logout') }}"

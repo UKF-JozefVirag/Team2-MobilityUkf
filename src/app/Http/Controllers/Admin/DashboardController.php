@@ -26,12 +26,20 @@ class DashboardController extends Controller
         dd($user);
     }
 
-    public function destroy(User $user)
+    public function show(User $user)
+    {
+        //
+    }
+
+    public function destroy(int $user)
     {
         if (Auth::user()->hasRole('3')) {
 
+            DB::table('users')->where('id', $user)->delete();
+            $users = DB::table('users')
+                ->get();
+            return view('admin.dashboard', compact('users'));
 //            $user->delete();
-            return view('admin.dashboard');
         }
         else return response('503', 503);
     }

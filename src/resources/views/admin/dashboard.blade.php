@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <br><br><br><br><br><br><br><br>
-    <h1 class="text-center py-5">admin dashboard</h1>
+    <h1 class="text-center py-5">users dashboard</h1>
     <div class="container">
         <table class="table">
             <thead>
@@ -23,7 +23,7 @@
                         <a class="btn btn-sm btn-outline-success" href="{{ url('admin.dashboard.edit/'.$user->id) }}">E</a>
                         <form method="post"  class="d-inline-block" action="{{ route('admin.dashboard.destroy', $user->id) }}">
                             @csrf
-                            @method('delete')
+                            @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-outline-danger">X</button>
                         </form>
                     </td>
