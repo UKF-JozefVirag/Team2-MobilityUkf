@@ -42,9 +42,23 @@ h3 {
 }
 
 /* Media styles */
-@media (min-width: 1500px) {
+@media (min-width: 1600px) {
+    .section-text-map .container-images {
+        text-align: right;
+    }
+
     .section-text-map .bcg-image {
-        position: unset;
+        position: unset !important;
+        width: 70% !important;
+    }
+
+    .section-text-map .image-map {
+        position: unset !important;
+        margin-top: -450px !important;
+    }
+
+    .section-text-map .container-text {
+        margin-top: -800px !important;
     }
 }
 

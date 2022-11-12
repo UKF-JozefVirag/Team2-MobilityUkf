@@ -15,7 +15,7 @@
             <img src="{{ asset('img/bcg-green.png') }}" alt="background-image" class="bcg-image">
             <img src="{{ asset('img/map.png') }}" alt="map" class="image-map">
         </div>
-        <div class="container">
+        <div class="container container-text">
             <div class="row">
                 <div class="col">
                     <div class="col-text-title">
