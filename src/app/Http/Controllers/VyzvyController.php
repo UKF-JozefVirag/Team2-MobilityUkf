@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Vyzva;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\View;
 
 
 class VyzvyController extends Controller

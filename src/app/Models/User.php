@@ -45,6 +45,6 @@ class User extends Authenticatable
     ];
 
     public function hasRole(string $role):bool{
-        return $this->getAttribute('role')===$role;
+        return $this->role == $role;
     }
 }
