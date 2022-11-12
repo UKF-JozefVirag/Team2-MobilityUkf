@@ -2,18 +2,19 @@
 
 @section('content')
 
-
-{{--    @if(Auth::check() && auth()->user()->role == "R1")--}}
-{{--        <h1>R1</h1>--}}
-{{--    @elseif(Auth::check() && auth()->user()->role == "R2")--}}
-{{--        <h1>R2</h1>--}}
-{{--    @elseif(Auth::check() && auth()->user()->role == "R3")--}}
-{{--        <h1>R3</h1>--}}
-{{--    @else--}}
-{{--        @endif--}}
+    {{--    @if(Auth::check() && auth()->user()->role == "R1")--}}
+    {{--        <h1>R1</h1>--}}
+    {{--    @elseif(Auth::check() && auth()->user()->role == "R2")--}}
+    {{--        <h1>R2</h1>--}}
+    {{--    @elseif(Auth::check() && auth()->user()->role == "R3")--}}
+    {{--        <h1>R3</h1>--}}
+    {{--    @else--}}
+    {{--        @endif--}}
     <section class="section-text-map">
-        <img src="{{ asset('img/bcg-green.png') }}" alt="background-image" class="bcg-image">
-        <img src="{{ asset('img/map.png') }}" alt="map" class="image-map">
+        <div class="container container-images">
+            <img src="{{ asset('img/bcg-green.png') }}" alt="background-image" class="bcg-image">
+            <img src="{{ asset('img/map.png') }}" alt="map" class="image-map">
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -52,7 +53,7 @@
                                 <div class="col-lg align-items-end">
                                     <label for="inputFakulty">Fakulty</label>
                                     <select id="inputFakulty" class="custom-select custom-select-md">
-{{--                                        Vypíše všetky fakulty zapísané v databaze a fakulta s id==1 bude vždy selected--}}
+                                        {{--                                        Vypíše všetky fakulty zapísané v databaze a fakulta s id==1 bude vždy selected--}}
                                         @foreach($fakulty as $fakulta)
                                             <option value="{{$fakulta->id}}" {{ $loop->first ? 'selected="selected"' : '' }}>{{ $fakulta->nazov }}</option>
                                         @endforeach
@@ -108,7 +109,7 @@
             </div>
 
             <div class="row">
-            @foreach($vyzvy as $vyzva)
+                @foreach($vyzvy as $vyzva)
                     <div class="col-md-6 col-lg-4">
                         <div class="mobility-card">
                             <div class="card-img">
@@ -118,7 +119,7 @@
                                 <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
                             </div>
                             <div class="card-text">
-                                <h4 class="termin">Prihlasovanie do {{ $vyzva->datum_do }}</h4>
+                                <h4 class="termin">Prihlasovanie do {{ Carbon\Carbon::parse($vyzva->datum_do)->format('d.m.Y') }}</h4>
                                 <span>Česká republika</span>
                                 <h3>
                                     <a href="#">{{ $vyzva->nazov_mobility }}</a>
@@ -138,7 +139,7 @@
                             </div>
                         </div>
                     </div>
-            @endforeach
+                @endforeach
 
             </div>
             <hr>
@@ -231,4 +232,3 @@
         </div>
     </section>
 @endsection
-

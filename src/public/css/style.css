@@ -28,6 +28,7 @@ h2 {
     color: #FFFFFF;
 }
 
+
 .bg-footer{
     background: #099364;
 }
@@ -41,6 +42,12 @@ h3 {
 }
 
 /* Media styles */
+@media (min-width: 1500px) {
+    .section-text-map .bcg-image {
+        position: unset;
+    }
+}
+
 @media (max-width: 1200px) { /* screen smaller then 1200px */
     .navbar-expand-lg .navbar-nav {
         font-size: 12px !important;
@@ -138,10 +145,10 @@ h3 {
 
 /* Main Page - 1.Section */
 .section-text-map .bcg-image {
+    width: 65%;
     position: absolute;
     top: 0;
     right: 0;
-    width: 65%
 }
 
 .section-text-map .image-map {
