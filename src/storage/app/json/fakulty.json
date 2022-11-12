@@ -1,23 +1,23 @@
 [
     {
         "idfakulta": 0,
-        "nazov": "Fakulta prírodných vied a informatiky"
+        "nazov": "FPVaI"
     },
     {
         "idfakulta": 1,
-        "nazov": "Fakulta sociálnych vied a zdravotníctva"
+        "nazov": "FSVaZ"
     },
     {
         "idfakulta": 2,
-        "nazov": "Fakulta stredoeurópskych štúdií"
+        "nazov": "FSS"
     },
     {
         "idfakulta": 3,
-        "nazov": "Filozofická fakulta"
+        "nazov": "FF"
     },
     {
         "idfakulta": 4,
-        "nazov": "Pedagogická fakulta"
+        "nazov": "PdF"
     }
 ]
 
