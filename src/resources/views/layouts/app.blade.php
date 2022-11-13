@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
 
     <title>UKF Mobility</title>
@@ -106,7 +106,7 @@
     <h2 class="h2-footer" style="padding-top: 2%; color: white">Kontakty</h2>
     <div style="padding-left: 4%; padding-right: 4%">
         <div class="row">
-            <div class="col text-center" style="color:white">
+            <div class="col-lg-4 text-center" style="color:white">
                 <b style="color: white">Oddelenie medzinárodných vzťahov
                     a jeho pracovníci</b>
                 <br>
@@ -117,7 +117,7 @@
                         Mgr. Michaela Ivaničová<br>
                             Mgr. Pavol Vakoš </p>
                     </div>
-                    <div class="col" style="text-align: right; padding: 0">
+                    <div class="col-lg-4" style="text-align: right; padding: 0">
                         <p>kbutorova@ukf.sk<br>
                         mivanicova@ukf.sk<br>
                         pvakos@ukf.sk</p>
@@ -143,7 +143,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col" style="text-align: left; color:white; padding-left: 4%; padding-top: 2%">
+            <div class="col-lg-4" style="text-align: left; color:white; padding-left: 4%; padding-top: 2%">
                 <b style="color: white">Katedroví koordinátori mobilít</b>
                 <br>
                 <p style="padding-top: 2%">Katedra botaniky a genetiky, Katedra zoológie a antropológie
@@ -156,7 +156,7 @@
                     Ústav ekonomiky a manažmentu</p>
                 <b style="color: white">Koordinátor na Fakulte prírodných vied a  informatiky</b>
             </div>
-            <div class="col" style="">
+            <div class="col-lg-4" style="">
                 <div class="row" style="padding-top: 8%">
                     <div class="col text-center" style="color:white;">
                         <div class="row">

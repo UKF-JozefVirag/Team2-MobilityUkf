@@ -9,12 +9,30 @@
                 <a class="btn btn-md btn-primary" href="{{ route('admin.institutions.create') }}">Create</a>
             </div>
             <div class="ms-auto p-2">
-                <button id="export-btn" class="btn btn-sm btn-success">Export to xlsx <i class="bi bi-file-spreadsheet"></i>
+                <button id="export-btn" class="btn btn-sm btn-success" onclick="ExportToExcel('xlsx')">Export to xlsx <i class="bi bi-file-spreadsheet"></i>
                 </button>
+                <script>
+                    function ExportToExcel(type, fn, dl) {
+                        var elt = document.getElementById('tblExport');
+                        var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+                        return dl ?
+                            XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
+                            XLSX.writeFile(wb, fn || ('Export.' + (type || 'xlsx')));
+                    }
+                </script>
             </div>
             <div class="p-2">
-                <button id="export-btn-csv" class="btn btn-sm btn-success">Export to csv <i
+                <button id="export-btn-csv" class="btn btn-sm btn-success" onclick="ExportToCsv('csv')">Export to csv <i
                         class="bi bi-file-earmark-spreadsheet"></i></button>
+                <script>
+                    function ExportToCsv(type, fn, dl) {
+                        var elt = document.getElementById('tblExport');
+                        var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+                        return dl ?
+                            XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
+                            XLSX.writeFile(wb, fn || ('Export.' + (type || 'csv')));
+                    }
+                </script>
             </div>
             <div class="p-2">
                 <button id="export-btn-pdf" class="btn btn-sm btn-danger">Export to pdf <i
@@ -23,7 +41,7 @@
         </div>
 
 
-        <table class="table table-image">
+        <table class="table table-image" id ="tblExport">
             <thead>
             <tr>
                 <th scope="col">ID</th>
