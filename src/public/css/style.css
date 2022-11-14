@@ -304,3 +304,128 @@ h3 {
     color: #FFFFFF;
     padding: 5px 20px;
 }
+
+/* Admin - Dashboard */
+.section-dashboard-title .container{
+    padding-top: 134px !important;
+}
+
+.section-dashboard-table-users .container-table {
+    background-color: #F4F4F4;
+    border-radius: 20px;
+}
+
+.section-dashboard-reports .container-reports {
+    background-color: #F4F4F4;
+    border-radius: 20px;
+}
+
+.section-dashboard-reports .container-reports .btn {
+    background: #3B5D6B;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    color: #ffffff;
+}
+
+.section-dashboard-table-users .container-table .container-table-title .btn {
+    background: #3B5D6B;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    color: #ffffff;
+}
+
+.section-dashboard-table-users .container-table .container-table-title .btn-export {
+    border: 2px solid #099364 !important;
+    color: #099364;
+    background: transparent;
+}
+
+.section-dashboard-table-users .container-table .container-table-title .btn-export:hover {
+    border: 2px solid #099364 !important;
+    color: #ffffff;
+    background: #099364;
+}
+
+.section-dashboard-table-users .container-table .table thead tr {
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #808285;
+    font-size: 15px;
+}
+
+.section-dashboard-table-users .container-table .table th:first-child{
+    border-radius:10px 0 0 10px;
+}
+
+.section-dashboard-table-users .container-table .table th:last-child{
+    border-radius:0 10px 10px 0;
+}
+
+.section-dashboard-table-users .container-table .table thead th {
+    border-top: none;
+    border-bottom: none;
+}
+
+.section-dashboard-table-users .container-table .table tbody {
+    font-size: 15px;
+}
+
+.section-dashboard-table-users .container-table .table tbody tr:first-child th {
+    border-top: none;
+}
+
+.section-dashboard-table-users .container-table .table tbody th {
+    vertical-align: middle;
+}
+
+.section-dashboard-table-users .container-table .table tbody tr:first-child td {
+    border-top: none;
+}
+
+.section-dashboard-table-users .container-table .table tbody tr td:last-child {
+    text-align: center;
+}
+
+.section-dashboard-table-users .container-table .table tbody td {
+    vertical-align: middle;
+}
+
+.section-dashboard-table-users .container-table .table tbody td a {
+    color: black;
+    text-decoration: none;
+}
+
+.section-dashboard-table-users .container-table .table tbody td a:hover {
+    color: #F2BB66;
+}
+
+.section-dashboard-table-users .container-table .table tbody td .fa{
+    vertical-align: middle;
+}
+
+.section-dashboard-table-users .container-table .table tbody button:hover {
+    color: #D21404;
+}
+
+/* Admin - Dashboard - Modal */
+.modal-body .btn {
+    background: #3B5D6B;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    color: #ffffff;
+}
+
+.modal-body input {
+    border: 2px solid #099364 !important;
+    color: #000000;
+    border-radius: 5px;
+}
+
+.modal-body select {
+    border: 2px solid #099364 !important;
+    color: #000000;
+    border-radius: 5px;
+}

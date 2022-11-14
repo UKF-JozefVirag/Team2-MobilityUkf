@@ -9,6 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
 
@@ -66,8 +68,7 @@
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             {{--            Only for admin                --}}
                             @if(\Illuminate\Support\Facades\Auth::user()->hasRole('3'))
-                                <a class="dropdown-item" href="/admin/dashboard">User Dashboard</a>
-                                <a class="dropdown-item" href="/admin/institutions">Institutions Dashboard</a>
+                                <a class="dropdown-item" href="/admin/dashboard">Dashboard</a>
                             @endif
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -86,10 +87,10 @@
 
             </ul>
         </div>
-{{--        --}}
-{{--        <div class="menu-btn">--}}
-{{--            <button type="button" class="btn btn-dark" style="border-radius: 5px; background: #3B5D6B; border-style: none; width: 150px; height: 40px; font-style: normal;font-weight: 700;font-size: 15px;line-height: 22px;">Prihlásiť sa</button>--}}
-{{--        </div>--}}
+        {{--        --}}
+        {{--        <div class="menu-btn">--}}
+        {{--            <button type="button" class="btn btn-dark" style="border-radius: 5px; background: #3B5D6B; border-style: none; width: 150px; height: 40px; font-style: normal;font-weight: 700;font-size: 15px;line-height: 22px;">Prihlásiť sa</button>--}}
+        {{--        </div>--}}
 
         <!-- Authentication Links -->
 
@@ -106,7 +107,7 @@
     <h2 class="h2-footer" style="padding-top: 2%; color: white">Kontakty</h2>
     <div style="padding-left: 4%; padding-right: 4%">
         <div class="row">
-            <div class="col-lg-4 text-center" style="color:white">
+            <div class="col text-center" style="color:white">
                 <b style="color: white">Oddelenie medzinárodných vzťahov
                     a jeho pracovníci</b>
                 <br>
@@ -114,13 +115,13 @@
                 <div class="row">
                     <div class="col" style="text-align: left; font-size: 15px; padding: 0">
                         <p>Ing. Katarína Butorová, PhD<br>
-                        Mgr. Michaela Ivaničová<br>
+                            Mgr. Michaela Ivaničová<br>
                             Mgr. Pavol Vakoš </p>
                     </div>
-                    <div class="col-lg-4" style="text-align: right; padding: 0">
+                    <div class="col" style="text-align: right; padding: 0">
                         <p>kbutorova@ukf.sk<br>
-                        mivanicova@ukf.sk<br>
-                        pvakos@ukf.sk</p>
+                            mivanicova@ukf.sk<br>
+                            pvakos@ukf.sk</p>
                     </div>
                 </div>
                 <b style="color: white">Úradné hodiny pre študentov</b>
@@ -143,7 +144,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4" style="text-align: left; color:white; padding-left: 4%; padding-top: 2%">
+            <div class="col" style="text-align: left; color:white; padding-left: 4%; padding-top: 2%">
                 <b style="color: white">Katedroví koordinátori mobilít</b>
                 <br>
                 <p style="padding-top: 2%">Katedra botaniky a genetiky, Katedra zoológie a antropológie
@@ -156,7 +157,7 @@
                     Ústav ekonomiky a manažmentu</p>
                 <b style="color: white">Koordinátor na Fakulte prírodných vied a  informatiky</b>
             </div>
-            <div class="col-lg-4" style="">
+            <div class="col" style="">
                 <div class="row" style="padding-top: 8%">
                     <div class="col text-center" style="color:white;">
                         <div class="row">
@@ -198,6 +199,73 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-</body>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        /* Add new institution/user */
+        $('#new-institution').click(function () {
+            $('#new-institution-modal').modal('show');
+        });
+    });
+
+    /* Edit modal for admin - users */
+    $(document).on('click', '#editUserButton', function(event) {
+        event.preventDefault();
+        let href = $(this).attr('data-attr');
+        $.ajax({
+            url: href,
+            success: function(result) {
+                $('#editUserModal').modal("show");
+                $('#editUserBody').html(result).show();
+            },
+            error: function(jqXHR, testStatus, error) {
+                console.log(error);
+                alert("Stránka " + href + " sa nedá otvoriť. Chyba:" + error);
+                $('#loader').hide();
+            },
+            timeout: 8000
+        })
+    });
+
+    /* Edit modal for admin - institutions */
+    $(document).on('click', '#editInstitutionButton', function(event) {
+        event.preventDefault();
+        let href = $(this).attr('data-attr');
+        $.ajax({
+            url: href,
+            success: function(result) {
+                $('#editInstitutionModal').modal("show");
+                $('#editInstitutionBody').html(result).show();
+            },
+            error: function(jqXHR, testStatus, error) {
+                console.log(error);
+                alert("Stránka " + href + " sa nedá otvoriť. Chyba:" + error);
+                $('#loader').hide();
+            },
+            timeout: 8000
+        })
+    });
+</script>
+
+<script>
+    /* Scripts for exporting Institutions table in Admin */
+    function ExportToExcel(type, fn, dl) {
+        var elt = document.getElementById('tblExport');
+        var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+        return dl ?
+            XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
+            XLSX.writeFile(wb, fn || ('Export.' + (type || 'xlsx')));
+    }
+
+    function ExportToCsv(type, fn, dl) {
+        var elt = document.getElementById('tblExport');
+        var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+        return dl ?
+            XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
+            XLSX.writeFile(wb, fn || ('Export.' + (type || 'csv')));
+    }
+</script>
+
+</body>
 </html>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Institucia extends Model
 {
@@ -20,4 +21,12 @@ class Institucia extends Model
         'krajina_idkrajina',
         'typ_institucie_id',
     ];
+
+    public function country(): BelongsTo {
+        return $this->belongsTo(Krajina::class);
+    }
+
+    public function type(): BelongsTo {
+        return $this->belongsTo(TypInstitucie::class);
+    }
 }

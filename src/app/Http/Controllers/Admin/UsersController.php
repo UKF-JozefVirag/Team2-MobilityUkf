@@ -4,49 +4,28 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Institucia;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class InstitutionsController extends Controller
+class UsersController extends Controller
 {
-    public function index(){
-        // ak ma user rolu 3 tak redirect inak 403
-        /*if (Auth::user()->hasRole('3')) {
-            $institutions = DB::table('institucia')
-                ->get();
+    public function index() {}
 
-            return view('admin.institutions', compact('institutions'));
-        }
-
-        else return response('503', 503);*/
-    }
-
-    public function edit(Institucia $institution){
-        //dd($institution);
+    public function edit(User $user) {
         if (Auth::user()->hasRole('3')) {
-            $users = DB::table('users')->get();
+            $institutions = DB::table('institucia')->get();
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
 
-            return view('admin.institutions_create_edit', compact('institution', 'users', 'countries', 'types'));
-        } else return response('503', 503);
-    }
-
-    public function create() {
-        if (Auth::user()->hasRole('3')) {
-            $institution = new Institucia();
-            $countries = DB::table('krajina')->get();
-            $types = DB::table('typ_institucie')->get();
-            $users = DB::table('users')->get();
-
-            return view('admin.institutions_create_edit', compact('institution', 'countries', 'types', 'users'));
+            return view('admin.users_create_edit', compact('user', 'institutions', 'countries', 'types'));
         } else return response('503', 503);
     }
 
     public function store(Request $request) {
         if (Auth::user()->hasRole('3')) {
-            Institucia::create($request->all());
+            User::create($request->all());
 
             $institutions = DB::table('institucia')->get();
             $users = DB::table('users')->get();
@@ -56,11 +35,22 @@ class InstitutionsController extends Controller
         } else return response('503', 503);
     }
 
-    public function show(Institucia $institution) {}
-
-    public function update(Request $request, Institucia $institution) {
+    public function create() {
         if (Auth::user()->hasRole('3')) {
-            $institution->update($request->all());
+            $user = new User();
+            $countries = DB::table('krajina')->get();
+            $types = DB::table('typ_institucie')->get();
+            $institutions = DB::table('institucia')->get();
+
+            return view('admin.users_create_edit', compact('user', 'countries', 'types', 'institutions'));
+        } else return response('503', 503);
+    }
+
+    public function show(User $user) {}
+
+    public function update(Request $request, User $user) {
+        if (Auth::user()->hasRole('3')) {
+            $user->update($request->all());
 
             $institutions = DB::table('institucia')->get();
             $users = DB::table('users')->get();
@@ -70,17 +60,16 @@ class InstitutionsController extends Controller
         } else return response('503', 503);
     }
 
-    public function destroy(int $institution)
-    {
+    public function destroy(int $user) {
         if (Auth::user()->hasRole('3')) {
-            DB::table('institucia')->where('id', $institution)->delete();
+            DB::table('users')->where('id', $user)->delete();
 
             $institutions = DB::table('institucia')->get();
             $users = DB::table('users')->get();
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
             return view('admin.dashboard', compact('users', 'institutions', 'countries', 'types'));
-
         } else return response('503', 503);
     }
+
 }
