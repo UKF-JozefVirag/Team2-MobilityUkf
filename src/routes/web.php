@@ -53,7 +53,7 @@ Route::get('/anotherMobilities', function (){
 });
 
 Route::get('/erasmus', function (){
-    return view('erasmus.index');
+    return view('erasmus.detail');
 });
 
 Route::get('/anotherMobilities', function (){

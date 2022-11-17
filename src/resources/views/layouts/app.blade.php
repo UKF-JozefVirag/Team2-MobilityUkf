@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+    <script src= "https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
 
     <title>UKF Mobility</title>
@@ -320,11 +321,19 @@
     }
 
     function ExportToCsv(type, fn, dl) {
-        var elt = document.getElementById('tblExport');
+        var elt = document.getElementById(table);
         var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
         return dl ?
             XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
             XLSX.writeFile(wb, fn || ('Export.' + (type || 'csv')));
+    }
+    function ExportToPDF(){
+        const element = document.getElementById("tblExport");
+        html2pdf()
+        .from(element)
+        .save();
+
+
     }
 </script>
 
