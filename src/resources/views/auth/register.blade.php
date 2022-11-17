@@ -1,10 +1,6 @@
-@extends('layouts.app')
-
-@section('content')
-    <br><br><br><br><br><br><br>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+<div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">{{ __('Register') }}</div>
 
@@ -13,8 +9,7 @@
                             @csrf
 
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
+                                    <label for="name" class="col-form-label">{{ __('Name') }}</label>
                                 <div class="col-md-6">
                                     <input id="name" type="text"
                                            class="form-control @error('name') is-invalid @enderror" name="name"
@@ -29,8 +24,7 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="email"
-                                       class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                                <label for="email" class="col-form-label">{{ __('Email Address') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -46,8 +40,7 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="password"
-                                       class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                                <label for="password" class="col-form-label">{{ __('Password') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -63,8 +56,7 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="password-confirm"
-                                       class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+                                <label for="password-confirm" class="col-form-label">{{ __('Confirm Password') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
@@ -84,6 +76,4 @@
                 </div>
             </div>
         </div>
-    </div>
-    <br><br><br><br><br><br><br>
-@endsection
+</div>

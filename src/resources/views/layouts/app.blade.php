@@ -49,14 +49,13 @@
 
                 @guest
                     @if (Route::has('login'))
-                        <li class="menu-btn">
-                            <a class="nav-link" href="{{ route('login') }}" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background: transparent; border-color: #3B5D6B;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;height: 40px; font-style: normal;font-weight: 700;font-size: 15px;line-height: 22px;">{{ __('Prihlásiť sa') }}</a>
-                        </li>
+                        <li class="menu-btn d-flex">
+                            <!--<a class="nav-link" href="{{ route('login') }}" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background: transparent; border-color: #3B5D6B;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;height: 40px; font-style: normal;font-weight: 700;font-size: 15px;line-height: 22px;">{{ __('Prihlásiť sa') }}</a>-->
+                            <a class="nav-link" data-toggle="modal" data-target="#logInModal" id="logInButton" data-attr="{{ route('login') }}" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px;  background: transparent; border-color: #3B5D6B;border-top-style: solid;border-bottom-style: solid;border-left-style: solid;height: 40px; font-style: normal;font-weight: 700;font-size: 15px;line-height: 22px;">{{ __('Prihlásiť sa') }}</a>
                     @endif
 
                     @if (Route::has('register'))
-                        <li class="menu-btn">
-                            <a class="nav-link" href="{{ route('register') }}" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;  background: #3B5D6B; border-style: none;height: 40px; font-style: normal;font-weight: 700;font-size: 15px;line-height: 22px;">{{ __('Registrovať sa') }}</a>
+                            <a class="nav-link" data-toggle="modal" data-target="#registerModal" id="registerButton" data-attr="{{ route('register') }}" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;  background: #3B5D6B; border-style: none;height: 40px; font-style: normal;font-weight: 700;font-size: 15px;line-height: 22px;">{{ __('Registrovať sa') }}</a>
                         </li>
                     @endif
                 @else
@@ -84,7 +83,6 @@
                     </li>
                 @endguest
 
-
             </ul>
         </div>
         {{--        --}}
@@ -94,11 +92,36 @@
 
         <!-- Authentication Links -->
 
-
-
-
     </div>
 </nav>
+
+<!-- LogIn Modal -->
+<div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><strong>Prihlásiť sa</strong></h5>
+            </div>
+            <div class="modal-body" id="logInBody">
+                <!-- everything what is in login.blade -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><strong>Prihlásiť sa</strong></h5>
+            </div>
+            <div class="modal-body" id="registerBody">
+                <!-- everything what is in register.blade -->
+            </div>
+        </div>
+    </div>
+</div>
 
 @yield('content')
 
@@ -237,6 +260,44 @@
             success: function(result) {
                 $('#editInstitutionModal').modal("show");
                 $('#editInstitutionBody').html(result).show();
+            },
+            error: function(jqXHR, testStatus, error) {
+                console.log(error);
+                alert("Stránka " + href + " sa nedá otvoriť. Chyba:" + error);
+                $('#loader').hide();
+            },
+            timeout: 8000
+        })
+    });
+
+    /* Modal for login */
+    $(document).on('click', '#logInButton', function(event) {
+        event.preventDefault();
+        let href = $(this).attr('data-attr');
+        $.ajax({
+            url: href,
+            success: function(result) {
+                $('#logInModal').modal("show");
+                $('#logInBody').html(result).show();
+            },
+            error: function(jqXHR, testStatus, error) {
+                console.log(error);
+                alert("Stránka " + href + " sa nedá otvoriť. Chyba:" + error);
+                $('#loader').hide();
+            },
+            timeout: 8000
+        })
+    });
+
+    /* Modal for register */
+    $(document).on('click', '#registerButton', function(event) {
+        event.preventDefault();
+        let href = $(this).attr('data-attr');
+        $.ajax({
+            url: href,
+            success: function(result) {
+                $('#registerModal').modal("show");
+                $('#registerBody').html(result).show();
             },
             error: function(jqXHR, testStatus, error) {
                 console.log(error);

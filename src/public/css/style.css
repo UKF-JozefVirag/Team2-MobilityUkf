@@ -73,7 +73,6 @@ h3 {
 
     .navbar-expand-lg .menu-btn a {
         font-size: 12px !important;
-        width: 100px !important;
     }
 
     .navbar-expand-lg .navbar-brand img {
@@ -95,8 +94,18 @@ h3 {
         margin-left: 0 !important;
     }
 
-    .navbar-expand-lg .menu-btn a {
+    .navbar-expand-lg .menu-btn #logInButton {
         background: #099364 !important;
+        width: 100px !important;
+        border-radius: 5px !important;
+        margin-right: 10px;
+        border-color: #099364 !important;
+    }
+
+    .navbar-expand-lg .menu-btn #registerButton {
+        background: #099364 !important;
+        width: 100px !important;
+        border-radius: 5px !important;
     }
 
     .navbar-expand-lg .menu-btn {
@@ -105,7 +114,12 @@ h3 {
     }
 
     .section-text-map {
+        padding-top: 80px !important;
+    }
+
+    .section-text-map .container-text{
         background: #099364;
+        border-radius: 20px;
     }
 
     .section-text-map .bcg-image {
@@ -113,25 +127,41 @@ h3 {
     }
 
     .section-text-map .image-map {
-        width: 50% !important;
+        visibility: hidden;
     }
 
     .section-text-map .container {
-        padding-bottom: 70px !important;
+        padding-top: 20px !important;
+        color: #ffffff;
+    }
+
+    .section-text-map .container .row {
+        margin: 0 !important;
+        text-align: center;
+        width: 100% !important;
     }
 
     .section-text-map .container .row .col {
-        top: 20px !important;
+        padding-top: 0 !important;
     }
 
     .section-text-map .col-text-title h1 {
         font-size: 30px;
         line-height: 40px !important;
+        color: #ffffff;
     }
 
     .section-text-map .container .row .col p {
         font-size: 20px !important;
         line-height: 40px !important;
+    }
+
+    .section-search {
+        padding-top: 50px !important;
+    }
+
+    .section-search .search-wrap .row .col-lg {
+        padding-bottom: 20px !important;
     }
 }
 
