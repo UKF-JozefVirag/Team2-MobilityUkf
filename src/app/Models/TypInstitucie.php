@@ -16,7 +16,7 @@ class TypInstitucie extends Model
         'nazov',
     ];
 
-    public function institutions(): HasMany {
+    public function institucia(): HasMany {
         return $this->hasMany(Institucia::class);
     }
 }

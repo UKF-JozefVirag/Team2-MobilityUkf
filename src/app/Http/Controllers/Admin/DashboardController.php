@@ -16,7 +16,7 @@ class DashboardController extends Controller
         // ak ma user rolu 3 tak redirect inak 403
         if (Auth::user()->hasRole('3')) {
             $users = DB::table('users')->get();
-            $institutions = DB::table('institucia')->get();
+            $institutions = Institucia::with('krajina')->get();
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
 

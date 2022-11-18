@@ -15,7 +15,7 @@ class UsersController extends Controller
 
     public function edit(User $user) {
         if (Auth::user()->hasRole('3')) {
-            $institutions = DB::table('institucia')->get();
+            $institutions = Institucia::with('krajina')->get();
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
 
@@ -27,7 +27,7 @@ class UsersController extends Controller
         if (Auth::user()->hasRole('3')) {
             User::create($request->all());
 
-            $institutions = DB::table('institucia')->get();
+            $institutions = Institucia::with('krajina')->get();
             $users = DB::table('users')->get();
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
@@ -36,23 +36,18 @@ class UsersController extends Controller
     }
 
     public function create() {
-        if (Auth::user()->hasRole('3')) {
-            $user = new User();
-            $countries = DB::table('krajina')->get();
-            $types = DB::table('typ_institucie')->get();
-            $institutions = DB::table('institucia')->get();
-
-            return view('admin.users_create_edit', compact('user', 'countries', 'types', 'institutions'));
-        } else return response('503', 503);
+        //
     }
 
-    public function show(User $user) {}
+    public function show(User $user) {
+        //
+    }
 
     public function update(Request $request, User $user) {
         if (Auth::user()->hasRole('3')) {
             $user->update($request->all());
 
-            $institutions = DB::table('institucia')->get();
+            $institutions = Institucia::with('krajina')->get();
             $users = DB::table('users')->get();
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
@@ -64,7 +59,7 @@ class UsersController extends Controller
         if (Auth::user()->hasRole('3')) {
             DB::table('users')->where('id', $user)->delete();
 
-            $institutions = DB::table('institucia')->get();
+            $institutions = Institucia::with('krajina')->get();
             $users = DB::table('users')->get();
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();

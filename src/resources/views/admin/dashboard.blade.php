@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
     <section class="section-dashboard-title">
         <div class="container">
             <h1 class="text-center py-5">Dashboard administrátora</h1>
@@ -86,6 +87,7 @@
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
+                    <th scope="col">Fotka</th>
                     <th scope="col">Názov</th>
                     <th scope="col">Mesto</th>
                     <th scope="col">Krajina</th>
@@ -99,11 +101,13 @@
                 @foreach($institutions as $institution)
                     <tr>
                         <th scope="row">{{ $institution->id }}</th>
+                        <td>
+                            <img src="{{ asset('institucie/'.$institution->url_fotka) }}" alt="fotka" width="200px;" />
+                        </td>
                         <td>{{ $institution->nazov }}</td>
                         <td>{{ $institution->mesto }}</td>
-                        <td>Slovensko</td>
-                        <td style="display: none">{{ $institution->typ_institucie_id}}</td>
-                        <td>študijný pobyt</td>
+                        <td>{{ $institution->krajina->nazov}}</td>
+                        <td>{{ $institution->typ_institucie->nazov}}</td>
                         <td>{{ $institution->zmluva_od }}</td>
                         <td>{{ $institution->zmluva_do }}</td>
                         <td>
@@ -185,6 +189,13 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <!-- Edit modal institutions -->
     <div class="modal fade" id="editInstitutionModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">

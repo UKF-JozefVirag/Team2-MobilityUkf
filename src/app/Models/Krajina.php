@@ -16,7 +16,8 @@ class Krajina extends Model
         'nazov',
     ];
 
-    public function institutions(): HasMany {
-        return $this->hasMany(Institucia::class);
+    public function institucia(): HasMany
+    {
+        return $this->hasMany(Institucia::class, 'krajina_idkrajina', 'idkrajina');
     }
 }

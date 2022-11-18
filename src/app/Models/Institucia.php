@@ -22,11 +22,12 @@ class Institucia extends Model
         'typ_institucie_id',
     ];
 
-    public function country(): BelongsTo {
-        return $this->belongsTo(Krajina::class);
+    public function krajina(): BelongsTo
+    {
+        return $this->belongsTo(Krajina::class, 'krajina_idkrajina', 'idkrajina');
     }
 
-    public function type(): BelongsTo {
+    public function typ_institucie(): BelongsTo {
         return $this->belongsTo(TypInstitucie::class);
     }
 }

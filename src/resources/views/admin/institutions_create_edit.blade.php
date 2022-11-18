@@ -1,5 +1,5 @@
 <div class="modal-body">
-    <form method="POST" action="{{ $institution->exists ? route('admin.institutions.update', $institution->id) : route('admin.institutions.store') }}">
+    <form method="POST" action="{{ $institution->exists ? route('admin.institutions.update', $institution->id) : route('admin.institutions.store') }}" enctype="multipart/form-data">
         @csrf
         @if($institution->exists)
             @method('PUT')
@@ -21,8 +21,9 @@
             <input type="date" value="{{old('zmluva_do', $institution->zmluva_do)}}" name="zmluva_do" class="form-control" id="zmluva_do">
         </div>
         <div class="mb-3">
-            <label for="url_fotka" class="form-label">Url adresa obrázka</label>
-            <input type="text" value="{{old('url_fotka', $institution->url_fotka)}}" name="url_fotka" class="form-control" id="url_fotka">
+            <label for="url_fotka" class="form-label">Obrázok</label>
+{{--            <input type="text" value="{{old('url_fotka', $institution->url_fotka)}}" name="url_fotka" class="form-control" id="url_fotka">--}}
+            <input type="file" accept="image/jpeg, image/png" name="url_fotka" class="form-control" id="url_fotka">
         </div>
         <div class="mb-3">
             <div class="form-group">
@@ -32,9 +33,15 @@
                         <option selected></option>
                     @endunless
                     @foreach($countries as $country)
-                        <option value="{{ $country->idkrajina }}"{{ $country->idkrajina === old('krajina_idkrajina',$institution->country->idkrajina ?? '') ? 'selected' : '' }}>
-                            {{ $country->nazov }}
-                        </option>
+                            @if($institution->krajina_idkrajina == $country->idkrajina)
+                                <option selected value="{{ $country->idkrajina }}"{{ $country->idkrajina === old('krajina_idkrajina',$institution->country->idkrajina ?? '')}}>
+                                    {{ $country->nazov }}
+                                </option>
+                            @else
+                                <option value="{{ $country->idkrajina }}"{{ $country->idkrajina === old('krajina_idkrajina',$institution->country->idkrajina ?? '') ? 'selected="selected"' : '' }}>
+                                    {{ $country->nazov }}
+                                </option>
+                            @endif
                     @endforeach
                 </select>
             </div>
@@ -47,9 +54,15 @@
                         <option selected></option>
                     @endunless
                     @foreach($types as $type)
-                        <option value="{{ $type->id }}"{{ $type->id === old('typ_institucie_id',$institution->type->id ?? '') ? 'selected' : '' }}>
-                            {{ $type->nazov }}
-                        </option>
+                            @if($institution->typ_institucie_id == $type->id)
+                                <option selected value="{{ $type->id }}"{{ $type->id === old('typ_institucie_id',$institution->type->id ?? '')}}>
+                                    {{ $type->nazov }}
+                                </option>
+                            @else
+                                <option value="{{ $type->id }}"{{ $type->id === old('typ_institucie_id',$institution->type->id ?? '') ? 'selected' : '' }}>
+                                    {{ $type->nazov }}
+                                </option>
+                            @endif
                     @endforeach
                 </select>
             </div>

@@ -7,6 +7,7 @@ use App\Models\Institucia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class InstitutionsController extends Controller
 {
@@ -48,7 +49,7 @@ class InstitutionsController extends Controller
         if (Auth::user()->hasRole('3')) {
             Institucia::create($request->all());
 
-            $institutions = DB::table('institucia')->get();
+            $institutions = Institucia::with('krajina')->get();
             $users = DB::table('users')->get();
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
@@ -60,9 +61,31 @@ class InstitutionsController extends Controller
 
     public function update(Request $request, Institucia $institution) {
         if (Auth::user()->hasRole('3')) {
-            $institution->update($request->all());
+//            $institution->update($request->all());
+//            $IMG = $request->file('url_fotka');
+//            dd($IMG);
+            //dd($files = Storage::disk('institucie')->allFiles());
+//            dd(asset('institucie/institution-1668688039.jpg'));
+            $idcko = $institution->id;
+            $nazov = $request->get('nazov');
+            $mesto = $request->get('mesto');
+            if(empty($request->file('url_fotka')))
+                $url_fotka = $institution->url_fotka;
+            else
+            {
+                $nazov_fotky = "institution-".time().'.jpg';
+                $url_fotka = $nazov_fotky;
+                //$request->file('url_fotka')->storeAs('public/institucie', $nazov_fotky);
+                $request->file('url_fotka')->move(public_path('institucie'), $nazov_fotky);
 
-            $institutions = DB::table('institucia')->get();
+            }
+            $zmluva_od = $request->get('zmluva_od');
+            $zmluva_do = $request->get('zmluva_do');
+            $typ_institucie_id = $request->get('typ_institucie_id');
+            $krajina_idkrajina = $request->get('krajina_idkrajina');
+            DB::update('update institucia set nazov = ?, mesto = ?, url_fotka = ?, zmluva_od = ?, zmluva_do = ?, typ_institucie_id = ?, krajina_idkrajina = ? where id = ?', [$nazov, $mesto, $url_fotka, $zmluva_od, $zmluva_do, $typ_institucie_id, $krajina_idkrajina, $idcko]);
+
+            $institutions = Institucia::with('krajina')->get();
             $users = DB::table('users')->get();
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
@@ -75,7 +98,7 @@ class InstitutionsController extends Controller
         if (Auth::user()->hasRole('3')) {
             DB::table('institucia')->where('id', $institution)->delete();
 
-            $institutions = DB::table('institucia')->get();
+            $institutions = Institucia::with('krajina')->get();
             $users = DB::table('users')->get();
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
