@@ -1,5 +1,11 @@
 [
     {
-        "url": "subory/test.PDF"
+        "url": "test.PDF"
+    },
+    {
+        "url": "test.jpg"
+    },
+    {
+        "url": "test.pptx"
     }
 ]

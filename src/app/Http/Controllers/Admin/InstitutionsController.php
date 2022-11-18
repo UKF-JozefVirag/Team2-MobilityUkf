@@ -61,11 +61,6 @@ class InstitutionsController extends Controller
 
     public function update(Request $request, Institucia $institution) {
         if (Auth::user()->hasRole('3')) {
-//            $institution->update($request->all());
-//            $IMG = $request->file('url_fotka');
-//            dd($IMG);
-            //dd($files = Storage::disk('institucie')->allFiles());
-//            dd(asset('institucie/institution-1668688039.jpg'));
             $idcko = $institution->id;
             $nazov = $request->get('nazov');
             $mesto = $request->get('mesto');
@@ -75,9 +70,7 @@ class InstitutionsController extends Controller
             {
                 $nazov_fotky = "institution-".time().'.jpg';
                 $url_fotka = $nazov_fotky;
-                //$request->file('url_fotka')->storeAs('public/institucie', $nazov_fotky);
                 $request->file('url_fotka')->move(public_path('institucie'), $nazov_fotky);
-
             }
             $zmluva_od = $request->get('zmluva_od');
             $zmluva_do = $request->get('zmluva_do');

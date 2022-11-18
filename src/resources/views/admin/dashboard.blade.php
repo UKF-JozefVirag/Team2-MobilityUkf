@@ -22,9 +22,9 @@
                     <div class="col-lg-2 text-left">
                         <button id="btn-export-pdf" class="btn btn-dark btn-export" onclick="ExportToPDF()"  >Export do pdf</button>
                     </div>
-                    <div class="col-lg-3" style="text-align: right">
-                        <a id="new-institution" type="button" class="btn btn-dark" data-toggle=modal">Vytvoriť nového používateľa</a>
-                    </div>
+{{--                    <div class="col-lg-3" style="text-align: right">--}}
+{{--                        <a id="new-institution" type="button" class="btn btn-dark" data-toggle=modal">Vytvoriť nového používateľa</a>--}}
+{{--                    </div>--}}
                 </div>
             </div>
 
