@@ -45,7 +45,7 @@
                     <a href="/messages" class="nav-link"><span>Správy účasníkov</span></a>
                 </li>
                 <li class="nav-item pr-1">
-                    <a href="#" class="nav-link"><span>Kontakty</span></a>
+                    <a onclick="showContacts()" class="nav-link"><span>Kontakty</span></a>
                 </li>
 
                 @guest
@@ -127,7 +127,7 @@
 @yield('content')
 
 <!-- FOOTER = KONTAKTY -->
-<footer class="bg-footer">
+<footer class="bg-footer" id="contacts">
     <h2 class="h2-footer" style="padding-top: 2%; color: white">Kontakty</h2>
     <div style="padding-left: 4%; padding-right: 4%">
         <div class="row">
@@ -334,6 +334,14 @@
         .save();
 
 
+    }
+</script>
+
+<script>
+    function showContacts(){
+        document.getElementById('contacts').scrollIntoView({
+            behavior: 'smooth'
+        });
     }
 </script>
 
