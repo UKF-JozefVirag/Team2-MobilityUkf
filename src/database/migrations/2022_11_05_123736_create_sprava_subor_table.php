@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSpravaHasSuborTable extends Migration
+class CreateSpravaSuborTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSpravaHasSuborTable extends Migration
      */
     public function up()
     {
-        Schema::create('sprava_has_subor', function (Blueprint $table) {
+        Schema::create('sprava_subor', function (Blueprint $table) {
             $table->integer('id', true);
             $table->integer('sprava_id')->index('fk_sprava_has_subor_sprava_idx');
             $table->integer('subor_id')->index('fk_sprava_has_subor_subor1_idx');

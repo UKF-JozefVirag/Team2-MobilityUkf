@@ -9,7 +9,7 @@ class SuborSprav extends Model
 {
     use HasFactory;
 
-    protected $table = 'sprava_has_subor';
+    protected $table = 'sprava_subor';
     public $timestamps = false;
     protected $fillable = [
         'sprava_idsprava',

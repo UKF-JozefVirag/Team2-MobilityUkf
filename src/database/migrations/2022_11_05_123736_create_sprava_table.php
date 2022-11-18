@@ -17,6 +17,7 @@ class CreateSpravaTable extends Migration
             $table->integer('id', true);
             $table->string('nadpis', 100);
             $table->text('popis');
+            $table->integer('zverejnena')->default(0);
         });
     }
 

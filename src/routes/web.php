@@ -32,6 +32,7 @@ Route::group(['middleware' => 'auth'], function (){
        Route::resource('/dashboard', DashboardController::class);
        Route::resource('/institutions', InstitutionsController::class);
        Route::resource('/users', UsersController::class);
+       Route::resource('/messages', \App\Http\Controllers\admin\MessagesController::class);
 
    });
 

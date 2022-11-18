@@ -14,4 +14,8 @@ class Subor extends Model
     protected $fillable = [
         'url'
     ];
+
+    public function spravy(){
+        return $this->belongsToMany(Sprava::class);
+    }
 }
