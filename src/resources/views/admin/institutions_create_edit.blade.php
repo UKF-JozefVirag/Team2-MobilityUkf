@@ -24,6 +24,7 @@
             <label for="url_fotka" class="form-label">Obrázok</label>
 {{--            <input type="text" value="{{old('url_fotka', $institution->url_fotka)}}" name="url_fotka" class="form-control" id="url_fotka">--}}
             <input type="file" accept="image/jpeg, image/png" name="url_fotka" class="form-control" id="url_fotka">
+
         </div>
         <div class="mb-3">
             <div class="form-group">

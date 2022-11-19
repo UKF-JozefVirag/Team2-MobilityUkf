@@ -135,7 +135,7 @@
                     <h5 class="modal-title"><strong>Pridať novú výzvu</strong></h5>
                 </div>
                 <div class="modal-body">
-                    <form name="userForm" action="{{ route('admin.institutions.store') }}" method="POST">
+                    <form name="userForm" action="{{ route('admin.institutions.store') }}" method="POST"  enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="nazov" class="form-label">Názov inštitúcie</label>
@@ -154,8 +154,8 @@
                             <input type="date" name="zmluva_do" class="form-control" id="zmluva_do">
                         </div>
                         <div class="mb-3">
-                            <label for="url_fotka" class="form-label">Url adresa obrázka</label>
-                            <input type="text" name="url_fotka" class="form-control" id="url_fotka">
+                            <label for="url_fotka" class="form-label">Obrázok</label>
+                            <input type="file" accept="image/jpeg, image/png" name="url_fotka" class="form-control" id="url_fotka" required>
                         </div>
                         <div class="mb-3">
                             <div class="form-group">
@@ -189,13 +189,6 @@
             </div>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
     <!-- Edit modal institutions -->
     <div class="modal fade" id="editInstitutionModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">

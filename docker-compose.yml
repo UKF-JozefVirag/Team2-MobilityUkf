@@ -10,7 +10,7 @@ services:
     image: nginx:1.17
     container_name: webserver
     ports:
-      - "8080:80"
+      - "8081:81"
     volumes:
       - ./src:/var/www/html
       - ./config/nginx:/etc/nginx/conf.d/

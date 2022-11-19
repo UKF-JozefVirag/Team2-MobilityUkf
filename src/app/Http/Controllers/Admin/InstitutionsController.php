@@ -47,7 +47,19 @@ class InstitutionsController extends Controller
 
     public function store(Request $request) {
         if (Auth::user()->hasRole('3')) {
-            Institucia::create($request->all());
+            $nazov = $request->get('nazov');
+            $mesto = $request->get('mesto');
+            $nazov_fotky = "institution-".time().'.jpg';
+            $url_fotka = $nazov_fotky;
+            $request->file('url_fotka')->move(public_path('institucie'), $nazov_fotky);
+            $zmluva_od = $request->get('zmluva_od');
+            $zmluva_do = $request->get('zmluva_do');
+            $typ_institucie_id = $request->get('typ_institucie_id');
+            $krajina_idkrajina = $request->get('krajina_idkrajina');
+
+
+            DB::insert('insert into institucia (nazov, mesto, url_fotka, zmluva_od, zmluva_do, typ_institucie_id, krajina_idkrajina) values (?, ?, ?, ?, ?, ?, ?)', [$nazov, $mesto, $url_fotka, $zmluva_od, $zmluva_do, $typ_institucie_id, $krajina_idkrajina]);
+
 
             $institutions = Institucia::with('krajina')->get();
             $users = DB::table('users')->get();
@@ -57,7 +69,9 @@ class InstitutionsController extends Controller
         } else return response('503', 503);
     }
 
-    public function show(Institucia $institution) {}
+    public function show(Institucia $institution) {
+
+    }
 
     public function update(Request $request, Institucia $institution) {
         if (Auth::user()->hasRole('3')) {

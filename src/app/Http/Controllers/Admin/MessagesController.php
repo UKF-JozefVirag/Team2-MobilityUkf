@@ -19,6 +19,12 @@ class MessagesController extends Controller
         else return response('503', 503);
     }
 
+    public function update(Request $request, Sprava $sprava){
+        if (Auth::user()->hasRole('3')) {
+            return "xd";
+        } else return response('503', 503);
+    }
+
     public function destroy(){
 
     }
