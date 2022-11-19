@@ -10,16 +10,16 @@
         <div class="container container-table py-3 px-5">
             <div class="container container-table-title px-0 pb-2">
                 <div class="row">
-                    <div class="col-lg-3" style="text-align: left">
+                    <div class="col-md-6" style="text-align: left">
                         <h3>Používatelia</h3>
                     </div>
-                    <div class="col-lg-2 text-right">
+                    <div class="col-md-2 text-right">
                         <button id="btn-export-xlsx" class="btn btn-dark btn-export" onclick="ExportToExcel('xlsx')">Export do xlsx</button>
                     </div>
-                    <div class="col-lg-2 text-center">
+                    <div class="col-md-2 text-center">
                         <button id="btn-export-csv" class="btn btn-dark btn-export" onclick="ExportToCsv('csv')">Export do csv</button>
                     </div>
-                    <div class="col-lg-2 text-left">
+                    <div class="col-md-2 text-left">
                         <button id="btn-export-pdf" class="btn btn-dark btn-export" onclick="ExportToPDF()"  >Export do pdf</button>
                     </div>
 {{--                    <div class="col-lg-3" style="text-align: right">--}}
@@ -62,23 +62,23 @@
         </div>
     </section>
 
-    <section class="section-dashboard-table-users my-5">
+    <section id="institution-table" class="section-dashboard-table-users my-5">
         <div class="container container-table py-3 px-5">
             <div class="container container-table-title px-0 pb-2">
                 <div class="row">
-                    <div class="col-lg-3" style="text-align: left">
+                    <div class="col-md-3" style="text-align: left">
                         <h3>Inštitúcie</h3>
                     </div>
-                    <div class="col-lg-2 text-right">
+                    <div class="col-md-2 text-right">
                         <button id="btn-export-xlsx" class="btn btn-dark btn-export" onclick="ExportToExcel('xlsx')">Export do xlsx</button>
                     </div>
-                    <div class="col-lg-2 text-center">
+                    <div class="col-md-2 text-center">
                         <button id="btn-export-csv" class="btn btn-dark btn-export" onclick="ExportToCsv('csv')">Export do csv</button>
                     </div>
-                    <div class="col-lg-2 text-left">
+                    <div class="col-md-2 text-left">
                         <button id="btn-export-pdf" class="btn btn-dark btn-export" onclick="ExportToPDF()"  >Export do pdf</button>
                     </div>
-                    <div class="col-lg-3" style="text-align: right">
+                    <div class="col-md-3" style="text-align: right">
                         <a id="new-institution" type="button" class="btn btn-dark" data-toggle=modal">Vytvoriť novú inštitúciu</a>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                     <tr>
                         <th scope="row">{{ $institution->id }}</th>
                         <td>
-                            <img src="{{ asset('institucie/'.$institution->url_fotka) }}" alt="fotka" width="200px;" />
+                            <img src="{{ asset('institucie/'.$institution->url_fotka) }}" alt="fotka" width="150px;" />
                         </td>
                         <td>{{ $institution->nazov }}</td>
                         <td>{{ $institution->mesto }}</td>
@@ -189,13 +189,6 @@
             </div>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
     <!-- Edit modal institutions -->
     <div class="modal fade" id="editInstitutionModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
