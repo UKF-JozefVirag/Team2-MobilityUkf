@@ -9,6 +9,7 @@ use App\Models\Krajina;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class DashboardController extends Controller
 {
@@ -21,19 +22,14 @@ class DashboardController extends Controller
             $types = DB::table('typ_institucie')->get();
 
             return view('admin.dashboard', compact('users','institutions', 'countries', 'types'));
-        }
-
-        else return response('503', 503);
+        } else return Redirect::to('')->with('message', 'Neoprávnený prístup k údajom');
     }
 
     public function edit(User $user){
         dd($user);
     }
 
-    public function show(User $user)
-    {
-        //
-    }
+    public function show(User $user) {}
 
     public function destroy(int $user)
     {
@@ -47,6 +43,6 @@ class DashboardController extends Controller
             return view('admin.dashboard', compact('users', 'institutions', 'countries', 'types'));
 //            $user->delete();
         }
-        else return response('503', 503);
+        else return Redirect::to('')->with('message', 'Neoprávnený prístup k údajom');
     }
 }

@@ -10,6 +10,11 @@
     {{--        <h1>R3</h1>--}}
     {{--    @else--}}
     {{--        @endif--}}
+
+    @if ($message = Session::get('message'))
+            <?php echo '<script>alert("Neoprávnený prístup k údajom")</script>'; ?>
+    @endif
+
     <section class="section-text-map">
         <div class="container container-images">
             <img src="{{ asset('img/bcg-green.png') }}" alt="background-image" class="bcg-image">
