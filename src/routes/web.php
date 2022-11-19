@@ -65,3 +65,14 @@ Route::get('/messages', function (){
     return view('messages.index');
 });
 
+Route::get('/messages/detail', function (){
+    return view('messages.detail');
+});
+
+Route::get('/ucastnik/sprava', function (){
+    return view('ucastnik.sprava');
+});
+
+Route::get('/ucastnik', function (){
+    return view('ucastnik.index');
+});

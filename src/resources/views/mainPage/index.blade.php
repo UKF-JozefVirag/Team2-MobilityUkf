@@ -140,6 +140,14 @@
                                 </div>
                                 <div class="d-flex justify-content-center pt-4 mb-2">
                                     <button type="button" class="btn btn-dark">Detail</button>
+{{--                                    @if(\Illuminate\Support\Facades\Auth::user()->hasRole('1'))--}}
+{{--                                        <a href="/ucastnik">--}}
+{{--                                            <button type="button" class="btn btn-dark" style="margin-left: 15px" href="/erasmus">Správa</button>--}}
+{{--                                        </a>--}}
+{{--                                    @endif--}}
+                                    <a href="/ucastnik/sprava">
+                                        <button type="button" class="btn btn-dark" style="margin-left: 15px">Správa</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
