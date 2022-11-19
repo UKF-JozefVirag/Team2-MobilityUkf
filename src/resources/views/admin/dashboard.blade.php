@@ -14,13 +14,13 @@
                         <h3>Používatelia</h3>
                     </div>
                     <div class="col-md-2 text-right">
-                        <button id="btn-export-xlsx" class="btn btn-dark btn-export" onclick="ExportToExcel('xlsx')">Export do xlsx</button>
+                        <button id="btn-export-xlsx" class="btn btn-dark btn-export" onclick="ExportToExcel('pouzivateliaExport','xlsx')">Export do xlsx</button>
                     </div>
                     <div class="col-md-2 text-center">
-                        <button id="btn-export-csv" class="btn btn-dark btn-export" onclick="ExportToCsv('csv')">Export do csv</button>
+                        <button id="btn-export-csv" class="btn btn-dark btn-export" onclick="ExportToCsv('pouzivateliaExport','csv')">Export do csv</button>
                     </div>
                     <div class="col-md-2 text-left">
-                        <button id="btn-export-pdf" class="btn btn-dark btn-export" onclick="ExportToPDF()"  >Export do pdf</button>
+                        <button id="btn-export-pdf" class="btn btn-dark btn-export" onclick="ExportToPDF('pouzivateliaExport')"  >Export do pdf</button>
                     </div>
 {{--                    <div class="col-lg-3" style="text-align: right">--}}
 {{--                        <a id="new-institution" type="button" class="btn btn-dark" data-toggle=modal">Vytvoriť nového používateľa</a>--}}

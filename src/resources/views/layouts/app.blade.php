@@ -320,15 +320,15 @@
             XLSX.writeFile(wb, fn || ('Export.' + (type || 'xlsx')));
     }
 
-    function ExportToCsv(type, fn, dl) {
-        var elt = document.getElementById('tblExport');
+    function ExportToCsv(table, type, fn, dl) {
+        var elt = document.getElementById(table);
         var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
         return dl ?
             XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
             XLSX.writeFile(wb, fn || ('Export.' + (type || 'csv')));
     }
-    function ExportToPDF(){
-        const element = document.getElementById("tblExport");
+    function ExportToPDF(table){
+        const element = document.getElementById(table);
         html2pdf()
         .from(element)
         .save();
