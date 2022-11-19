@@ -312,8 +312,8 @@
 
 <script>
     /* Scripts for exporting Institutions table in Admin */
-    function ExportToExcel(type, fn, dl) {
-        var elt = document.getElementById('tblExport');
+    function ExportToExcel(table, type, fn, dl ) {
+        var elt = document.getElementById(table);
         var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
         return dl ?
             XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
@@ -321,7 +321,7 @@
     }
 
     function ExportToCsv(type, fn, dl) {
-        var elt = document.getElementById(table);
+        var elt = document.getElementById('tblExport');
         var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
         return dl ?
             XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
