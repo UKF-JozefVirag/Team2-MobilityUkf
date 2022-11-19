@@ -7,21 +7,12 @@ use App\Models\Institucia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
 class InstitutionsController extends Controller
 {
-    public function index(){
-        // ak ma user rolu 3 tak redirect inak 403
-        /*if (Auth::user()->hasRole('3')) {
-            $institutions = DB::table('institucia')
-                ->get();
-
-            return view('admin.institutions', compact('institutions'));
-        }
-
-        else return response('503', 503);*/
-    }
+    public function index(){}
 
     public function edit(Institucia $institution){
         //dd($institution);
@@ -31,7 +22,7 @@ class InstitutionsController extends Controller
             $types = DB::table('typ_institucie')->get();
 
             return view('admin.institutions_create_edit', compact('institution', 'users', 'countries', 'types'));
-        } else return response('503', 503);
+        } else return Redirect::to('')->with('message', 'Neoprávnený prístup k údajom');
     }
 
     public function create() {
@@ -42,7 +33,7 @@ class InstitutionsController extends Controller
             $users = DB::table('users')->get();
 
             return view('admin.institutions_create_edit', compact('institution', 'countries', 'types', 'users'));
-        } else return response('503', 503);
+        } else return Redirect::to('')->with('message', 'Neoprávnený prístup k údajom');
     }
 
     public function store(Request $request) {
@@ -66,7 +57,7 @@ class InstitutionsController extends Controller
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
             return view('admin.dashboard', compact('institutions', 'users', 'countries', 'types'));
-        } else return response('503', 503);
+        } else return Redirect::to('')->with('message', 'Neoprávnený prístup k údajom');
     }
 
     public function show(Institucia $institution) {
@@ -97,7 +88,7 @@ class InstitutionsController extends Controller
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
             return view('admin.dashboard', compact('institutions', 'users', 'countries', 'types'));
-        } else return response('503', 503);
+        } else return Redirect::to('')->with('message', 'Neoprávnený prístup k údajom');
     }
 
     public function destroy(int $institution)
@@ -111,6 +102,6 @@ class InstitutionsController extends Controller
             $types = DB::table('typ_institucie')->get();
             return view('admin.dashboard', compact('users', 'institutions', 'countries', 'types'));
 
-        } else return response('503', 503);
+        } else return Redirect::to('')->with('message', 'Neoprávnený prístup k údajom');
     }
 }

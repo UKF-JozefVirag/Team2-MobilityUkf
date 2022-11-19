@@ -1,0 +1,5 @@
+config/mysql/ib_buffer_pool
+config/mysql/ib_logfile0
+config/mysql/ib_logfile1
+config/mysql/ibdata1
+config/mysql/ibtmp1

@@ -10,6 +10,11 @@
     {{--        <h1>R3</h1>--}}
     {{--    @else--}}
     {{--        @endif--}}
+
+    @if ($message = Session::get('message'))
+            <?php echo '<script>alert("Neoprávnený prístup k údajom")</script>'; ?>
+    @endif
+
     <section class="section-text-map">
         <div class="container container-images">
             <img src="{{ asset('img/bcg-green.png') }}" alt="background-image" class="bcg-image">
@@ -135,6 +140,14 @@
                                 </div>
                                 <div class="d-flex justify-content-center pt-4 mb-2">
                                     <button type="button" class="btn btn-dark">Detail</button>
+{{--                                    @if(\Illuminate\Support\Facades\Auth::user()->hasRole('1'))--}}
+{{--                                        <a href="/ucastnik">--}}
+{{--                                            <button type="button" class="btn btn-dark" style="margin-left: 15px" href="/erasmus">Správa</button>--}}
+{{--                                        </a>--}}
+{{--                                    @endif--}}
+                                    <a href="/ucastnik/sprava">
+                                        <button type="button" class="btn btn-dark" style="margin-left: 15px">Správa</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

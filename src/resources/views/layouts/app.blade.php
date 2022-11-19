@@ -45,7 +45,7 @@
                     <a href="/messages" class="nav-link"><span>Správy účasníkov</span></a>
                 </li>
                 <li class="nav-item pr-1">
-                    <a href="#" class="nav-link"><span>Kontakty</span></a>
+                    <a onclick="showContacts()" class="nav-link"><span>Kontakty</span></a>
                 </li>
 
                 @guest
@@ -127,7 +127,7 @@
 @yield('content')
 
 <!-- FOOTER = KONTAKTY -->
-<footer class="bg-footer">
+<footer class="bg-footer" id="contacts">
     <h2 class="h2-footer" style="padding-top: 2%; color: white">Kontakty</h2>
     <div style="padding-left: 4%; padding-right: 4%">
         <div class="row">
@@ -312,28 +312,36 @@
 
 <script>
     /* Scripts for exporting Institutions table in Admin */
-    function ExportToExcel(type, fn, dl) {
-        var elt = document.getElementById('tblExport');
+    function ExportToExcel(table, type, fn, dl ) {
+        var elt = document.getElementById(table);
         var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
         return dl ?
             XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
             XLSX.writeFile(wb, fn || ('Export.' + (type || 'xlsx')));
     }
 
-    function ExportToCsv(type, fn, dl) {
+    function ExportToCsv(table, type, fn, dl) {
         var elt = document.getElementById(table);
         var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
         return dl ?
             XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
             XLSX.writeFile(wb, fn || ('Export.' + (type || 'csv')));
     }
-    function ExportToPDF(){
-        const element = document.getElementById("tblExport");
+    function ExportToPDF(table){
+        const element = document.getElementById(table);
         html2pdf()
         .from(element)
         .save();
 
 
+    }
+</script>
+
+<script>
+    function showContacts(){
+        document.getElementById('contacts').scrollIntoView({
+            behavior: 'smooth'
+        });
     }
 </script>
 

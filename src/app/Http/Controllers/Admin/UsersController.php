@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class UsersController extends Controller
 {
@@ -20,7 +21,7 @@ class UsersController extends Controller
             $types = DB::table('typ_institucie')->get();
 
             return view('admin.users_create_edit', compact('user', 'institutions', 'countries', 'types'));
-        } else return response('503', 503);
+        } else return Redirect::to('')->with('message', 'Neoprávnený prístup k údajom');
     }
 
     public function store(Request $request) {
@@ -32,7 +33,7 @@ class UsersController extends Controller
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
             return view('admin.dashboard', compact('institutions', 'users', 'countries', 'types'));
-        } else return response('503', 503);
+        } else return Redirect::to('')->with('message', 'Neoprávnený prístup k údajom');
     }
 
     public function create() {
@@ -52,7 +53,7 @@ class UsersController extends Controller
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
             return view('admin.dashboard', compact('institutions', 'users', 'countries', 'types'));
-        } else return response('503', 503);
+        } else return Redirect::to('')->with('message', 'Neoprávnený prístup k údajom');
     }
 
     public function destroy(int $user) {
@@ -64,7 +65,7 @@ class UsersController extends Controller
             $countries = DB::table('krajina')->get();
             $types = DB::table('typ_institucie')->get();
             return view('admin.dashboard', compact('users', 'institutions', 'countries', 'types'));
-        } else return response('503', 503);
+        } else return Redirect::to('')->with('message', 'Neoprávnený prístup k údajom');
     }
 
 }
