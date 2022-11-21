@@ -69,6 +69,7 @@
                             {{--            Only for admin                --}}
                             @if(\Illuminate\Support\Facades\Auth::user()->hasRole('3'))
                                 <a class="dropdown-item" href="/admin/dashboard">Dashboard</a>
+                                <a class="dropdown-item" href="/admin/messages">Messages</a>
                             @endif
 
                             <a class="dropdown-item" href="{{ route('logout') }}"

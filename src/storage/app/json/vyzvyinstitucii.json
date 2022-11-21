@@ -34,5 +34,9 @@
     {
         "institucia_id": 1,
         "vyzva_id": 5
+    },
+    {
+        "institucia_id": 13,
+        "vyzva_id": 9
     }
 ]

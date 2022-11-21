@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\InstitutionsController;
+use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\VyzvyController;
 use Illuminate\Support\Facades\Route;
@@ -32,7 +33,7 @@ Route::group(['middleware' => 'auth'], function (){
        Route::resource('/dashboard', DashboardController::class);
        Route::resource('/institutions', InstitutionsController::class);
        Route::resource('/users', UsersController::class);
-       Route::resource('/messages', \App\Http\Controllers\admin\MessagesController::class);
+       Route::resource('/messages', MessagesController::class);
 
    });
 
@@ -46,7 +47,7 @@ Route::group(['middleware' => 'auth'], function (){
 
 });
 
-
+Route::resource('/messages', \App\Http\Controllers\MessagesController::class);
 
 
 Route::get('/anotherMobilities', function (){
@@ -61,9 +62,9 @@ Route::get('/anotherMobilities', function (){
     return view('anotherMobilities.index');
 });
 
-Route::get('/messages', function (){
-    return view('messages.index');
-});
+//Route::get('/messages', function (){
+//    return view('messages.index');
+//});
 
 Route::get('/messages/detail', function (){
     return view('messages.detail');

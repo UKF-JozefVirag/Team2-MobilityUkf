@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Mobilita extends Model
 {
@@ -17,4 +18,8 @@ class Mobilita extends Model
         'sprava_idsprava',
         'vyzva_idvyzva'
     ];
+
+    public function spravy(): BelongsTo{
+        return $this->belongsTo(Sprava::class);
+    }
 }

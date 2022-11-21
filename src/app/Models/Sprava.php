@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Sprava extends Model
 {
@@ -14,10 +15,15 @@ class Sprava extends Model
     public $timestamps = false;
     protected $fillable = [
         'nadpis',
-        'popis'
+        'popis',
+        'zverejnena'
     ];
 
     public function subory(): BelongsToMany{
         return $this->belongsToMany(Subor::class);
+    }
+
+    public function mobility(): HasMany{
+        return $this->hasMany(Mobilita::class);
     }
 }
