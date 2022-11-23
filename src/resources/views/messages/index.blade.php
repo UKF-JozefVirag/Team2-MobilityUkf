@@ -3,84 +3,55 @@
 @section('content')
 
     <div class="top-padding-section">
-        <div>
-            <h1 style="font-family: 'Poppins'; font-style: normal; font-weight: 700; font-size: 40px; line-height: 60px; padding: 40px; text-align: center">Prečítaj si informácie o mobilitách priamo od účastníkov</h1>
+        <div class="container px-0">
+            <h1 style="padding-top: 40px; text-align: center">Prečítaj si informácie o mobilitách priamo od účastníkov</h1>
         </div>
-        @foreach($spravy as $sprava)
-            <form method="get" action="{{ route('messages.show', $sprava->id) }}">
-                <h1> {{ $sprava->id }}</h1>
-                <h1> {{ $sprava->nadpis }}</h1>
-                <div class="container text-left" style="padding-left: 1.5%">
-                    <div class="row">
-                        <div class="col-7" style="padding-left: 0%">
-                            <div class="container-pic-msg">
-                                 <img src="{{ asset('institucie/'.$sprava->fotka) }}" style="width: 100%;height: auto;object-fit: cover;">
-                            </div>
-                        </div>
-                    <div class="col" style="padding-left: 2%; position:relative;">
-                            <div class="container" style="padding-left: 0.2%">
-                                <div class="row">
-                                    <div class="col-sm" style="text-align: left; padding-left: 2%; font-family: 'Poppins';font-style: normal;font-weight: 400;font-size: 20px;line-height: 30px;">
-                                        {{ $sprava->krajina }}
+        <div class="container px-0 pb-5">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="controls-top text-center py-3">
+                    <a class="btn-floating" href="#carouselExampleControls" data-slide="prev"><i class="fa fa-chevron-circle-left fa-2x" style="color:#099364"></i></a>
+                    <a class="btn-floating" href="#carouselExampleControls" data-slide="next"><i class="fa fa-chevron-circle-right fa-2x" style="color:#099364"></i></a>
+                </div>
+                <div class="carousel-inner p-3">
+                    <?php $counter = 1; ?>
+                    @foreach($spravy as $sprava)
+                    <div class="carousel-item <?php if($counter <= 1){echo " active"; } ?>">
+                        <form method="GET" action="{{ route('messages.show', $sprava->id) }}">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="container-pic-msg">
+                                        <img src="{{ asset('institucie/'.$sprava->fotka) }}" style="width: 100%;height: auto;object-fit: cover;">
                                     </div>
-                                    <div class="col-sm" style="text-align: right; font-family: 'Poppins';font-style: normal;font-weight: 400;font-size: 15px;line-height: 22px;">
-                                        {{ \Illuminate\Support\Str::limit($sprava->datum, 4) }}
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row pb-3">
+                                        <div class="col-sm-6 text-left message-country">
+                                            {{ $sprava->krajina }}
+                                        </div>
+                                        <div class="col-sm-6 text-right message-year">
+                                            {{ Carbon\Carbon::createFromFormat('Y-m-d', $sprava->datum)->year }}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 px-0 message-university">
+                                        <h3>{{ $sprava->nadpis }}</h3>
+                                    </div>
+                                    <div class="col-sm-12 px-0 message-author pb-4">
+                                        <p>Autor: {{ $sprava->ucastnik_mobility }}</p>
+                                    </div>
+                                    <div class="col-sm-12 px-0 message-text pb-5">
+                                        <p> {{ \Illuminate\Support\Str::words($sprava->popis, 40) }} </p>
+                                    </div>
+                                    <div class="col-sm-12 text-left px-0">
+                                        <button type="submit" class="btn btn-dark" style="border-radius: 5px; background: #3B5D6B; border-style: none; width: 150px; height: 40px; font-style: normal;font-weight: 600;font-size: 15px;line-height: 22px; position: relative; bottom:0;padding-left: 2%">Prečítať viac</button>
                                     </div>
                                 </div>
                             </div>
-                            <div style="padding-left: 0%">
-                                <h3 style="padding-top: 3%">{{ $sprava->nazov_institucie }}</h3>
-                                <p style="font-weight: 400;font-size: 17px;line-height: 26px; overflow: hidden; width: 10ch;">Autor: {{ $sprava->ucastnik_mobility }}</p><br>
-                                <p style="font-style: normal; font-weight: 400; font-size: 15px; line-height: 22px; text-align: justify;"> {{ \Illuminate\Support\Str::words($sprava->popis, 40) }} </p>
-                                <br>
-                            </div>
-                            <button type="submit" class="btn btn-dark" style="border-radius: 5px; background: #3B5D6B; border-style: none; width: 150px; height: 40px; font-style: normal;font-weight: 600;font-size: 15px;line-height: 22px; position: relative; bottom:0;padding-left: 2%">Prečítať viac</button>
-                        </div>
+                        </form>
                     </div>
+                    @endforeach
                 </div>
-            </form>
-        @endforeach
-        <br>
-{{--        <div class="container text-left" style="padding-top: 6%; padding-bottom: 10%; padding-left: 1.5%">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col" style="position: relative">--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col">--}}
-{{--                            <img src="{{ asset('img/img.png')}}" style="width: 100%;height: auto;object-fit: cover;">--}}
-{{--                        </div>--}}
-{{--                        <p class="col" style="font-family: 'Poppins';font-style: normal;font-weight: 600;font-size: 17px;line-height: 26px;text-transform: uppercase; text-align: center; padding-top: 6%">masarykova univerzita</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col" style="position: relative">--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col">--}}
-{{--                            <img src="{{ asset('img/img.png')}}" style="width: 100%;height: auto;object-fit: cover;">--}}
-{{--                        </div>--}}
-{{--                        <p class="col" style="font-family: 'Poppins';font-style: normal;font-weight: 600;font-size: 17px;line-height: 26px;text-transform: uppercase; text-align: center; padding-top: 6%">masarykova univerzita</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col" style="position: relative">--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col">--}}
-{{--                            <img src="{{ asset('img/img.png')}}" style="width: 100%;height: auto;object-fit: cover;">--}}
-{{--                        </div>--}}
-{{--                        <p class="col" style="font-family: 'Poppins';font-style: normal;font-weight: 600;font-size: 17px;line-height: 26px;text-transform: uppercase; text-align: center; padding-top: 6%">masarykova univerzita</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col" style="position: relative">--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col">--}}
-{{--                            <img src="{{ asset('img/img.png')}}" style="width: 100%;height: auto;object-fit: cover;">--}}
-{{--                        </div>--}}
-{{--                        <p class="col" style="font-family: 'Poppins';font-style: normal;font-weight: 600;font-size: 17px;line-height: 26px;text-transform: uppercase; text-align: center; padding-top: 6%">masarykova univerzita</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--            </div>--}}
-{{--        </div>--}}
+            </div>
+        </div>
     </div>
 
 @endsection

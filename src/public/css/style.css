@@ -4,10 +4,10 @@ body {
 }
 
 h1 {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 60px;
-    color: #000000;
+    font-weight: 700 !important;
+    font-size: 40px !important;
+    line-height: 60px !important;
+    color: #000000 !important;
 }
 
 h2 {
@@ -197,7 +197,6 @@ h3 {
     }
 
     .top-padding-section .messages-small-text {
-        text-align: center !important;
         padding-right: 0 !important;
     }
 
@@ -585,6 +584,11 @@ h3 {
     font-weight: 600;
     font-size: 15px;
     line-height: 22px;
+}
+
+.top-padding-section .carousel-inner {
+    border: 2px solid #099364;
+    border-radius: 5px;
 }
 
 
