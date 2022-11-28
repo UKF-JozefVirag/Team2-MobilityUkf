@@ -66,9 +66,7 @@ Route::get('/anotherMobilities', function (){
     return view('anotherMobilities.index');
 });
 
-Route::get('/erasmus', function (){
-    return view('erasmus.detail');
-});
+Route::resource('/erasmus', \App\Http\Controllers\ErasmusPlusController::class);
 
 Route::get('/anotherMobilities', function (){
     return view('anotherMobilities.index');

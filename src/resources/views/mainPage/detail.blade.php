@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-7" style="padding-left: 0%">
                             <div class="container-pic-msg">
-                                <img src="{{ asset('img/'.$vyzva[0]->url)}}" style="width: 100%;height: auto; object-fit: cover;">
+                                <img src="{{ asset('institucie/'.$vyzva[0]->fotka_institucie)}}" style="width: 100%;height: auto; object-fit: cover;">
 {{--                                pridat fotku vyzvy --}}
                             </div>
                         </div>
@@ -56,6 +56,9 @@
                                                 @break
                                             @case(7)
                                                 2.PhD
+                                                @break
+                                            @case(8)
+                                                3.PhD
                                                 @break
                                             @default
                                                 Všetky

@@ -72,37 +72,39 @@
                                     <div class="col-lg align-items-end">
                                         <label for="inputTypMobility">Typ mobility</label>
                                         <select id="inputTypMobility" class="custom-select custom-select-md">
-                                            <option selected>Stáž</option>
-                                            <option>Študijný pobyt</option>
-                                            <option>Prednáškový pobyt</option>
-                                            <option>Školenie</option>
+                                            @foreach($typy_vyziev as $typ_vyzvy)
+                                                <option value="{{ $typ_vyzvy->id }}" {{ $loop->first ? 'selected="selected"' : '' }}>{{ $typ_vyzvy->nazov }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-lg align-items-end">
                                         <label for="inputFakulty">Fakulty</label>
                                         <select id="inputFakulty" class="custom-select custom-select-md">
-                                            {{--                                        Vypíše všetky fakulty zapísané v databaze a fakulta s id==1 bude vždy selected--}}
+                                            @foreach($fakulty as $fakulta)
+                                                <option value="{{$fakulta->id}}" {{ $loop->first ? 'selected="selected"' : '' }}>{{ $fakulta->nazov }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 
                                     <div class="col-lg align-items-end">
                                         <label for="inputRocnik">Ročník</label>
                                         <select id="inputRocnik" class="custom-select custom-select-md">
-                                            <option selected>1.Bc</option>
-                                            <option>2.Bc</option>
-                                            <option>3.Bc</option>
-                                            <option>1.Mgr</option>
-                                            <option>2.Mgr</option>
-                                            <option>1.Phd</option>
-                                            <option>2.Phd</option>
-                                            <option>3.Phd</option>
+                                            <option selected value="1">1.Bc</option>
+                                            <option value="2">2.Bc</option>
+                                            <option value="3">3.Bc</option>
+                                            <option value="4">1.Mgr</option>
+                                            <option value="5">2.Mgr</option>
+                                            <option value="6">1.Phd</option>
+                                            <option value="7">2.Phd</option>
+                                            <option value="8">3.Phd</option>
                                         </select>
                                     </div>
                                     <div class="col-lg align-items-end">
                                         <label for="inputKrajina">Krajina</label>
                                         <select id="inputKrajina" class="custom-select custom-select-md">
-                                            <option selected>Česká republika</option>
-                                            <option>USA</option>
+                                            @foreach($krajiny as $krajina)
+                                                <option value="{{$krajina->idkrajina}}" {{ $loop->first ? 'selected="selected"' : '' }}>{{ $krajina->nazov }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-lg align-self-end">
@@ -128,7 +130,7 @@
                 </div>
 
                 <div class="row">
-                    {{--@foreach($vyzvy as $vyzva)--}}
+                    @foreach($vyzvy as $vyzva)
                     <div class="col-md-6 col-lg-4">
                         <div class="mobility-card">
                             <div class="card-img">
@@ -138,27 +140,27 @@
                                 <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
                             </div>
                             <div class="card-text">
-                                <h4 class="termin">Prihlasovanie do {{--{{ Carbon\Carbon::parse($vyzva->datum_do)->format('d.m.Y') }}--}}</h4>
-                                <span>Česká republika</span>
+                                <h4 class="termin">Prihlasovanie do {{ Carbon\Carbon::parse($vyzva->datum_do)->format('d.m.Y') }}</h4>
+                                <span>{{ $vyzva->nazov_krajiny }}</span>
                                 <h3>
-                                    <a href="#">{{--{{ $vyzva->nazov_mobility }}--}}</a>
+                                    <a href="#">{{ $vyzva->nazov_mobility }}</a>
                                 </h3>
                                 <div class="d-flex">
                                     <div class="mr-auto float-left">
-                                        <span>{{--{{ $vyzva->nazov_vyzvy }}--}}</span>
+                                        <span>{{ $vyzva->nazov_vyzvy }}</span>
                                     </div>
 
                                     <div class="float-right">
-                                        <span>{{--{{  $vyzva->nazov_fakulty }}--}}</span>
+                                        <span>{{  $vyzva->nazov_fakulty }}</span>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center pt-4 mb-2">
-                                    <button type="button" class="btn btn-dark">Detail</button>
+                                    <a href="{{route('erasmus.show', $vyzva->id)}}" class="btn btn-dark">Detail</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {{--}}@endforeach--}}
+                    @endforeach
                 </div>
             </div>
         </section>
