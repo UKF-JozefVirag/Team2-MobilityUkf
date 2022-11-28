@@ -39,4 +39,6 @@ class MessagesController extends Controller
         return view('messages.detail', compact('sprava'));
     }
 
+
+
 }

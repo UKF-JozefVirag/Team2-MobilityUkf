@@ -52,6 +52,18 @@
         "popis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac feugiat leo. Curabitur elementum egestas nibh, ac pharetra ipsum interdum sit amet. Curabitur blandit purus lacinia bibendum pharetra. Aenean eu ante ac elit finibus varius. Quisque sapien mauris, laoreet non tristique at, semper quis dolor. Vestibulum semper augue risus, sed iaculis tellus iaculis venenatis. Donec at tincidunt turpis. Nam semper nec felis at posuere. Donec efficitur, ligula at malesuada porttitor, purus libero pulvinar elit, vel finibus augue elit eu eros. Cras at gravida nibh. Cras feugiat mi in iaculis venenatis. Sed at lectus libero. Morbi tempus efficitur urna id ultricies. Pellentesque molestie dolor quis leo finibus, a iaculis nulla laoreet. Nam ac nibh eu magna scelerisque facilisis sit amet quis dolor. In hac habitasse platea dictumst. Suspendisse in elit non eros sollicitudin gravida ac vitae lorem. Donec vitae quam nisi. Integer pulvinar mauris non commodo congue. Fusce pulvinar risus porttitor enim hendrerit, vel maximus enim tincidunt. Morbi facilisis, orci eu tempus consectetur, risus sapien laoreet ante, eu convallis eros sapien sit amet ex. Sed nisl metus, auctor dapibus semper vel, cursus sit amet arcu. Nullam mattis libero ac velit cursus rhoncus. Proin blandit tempus ligula nec tristique. Vivamus sollicitudin elit mi. Donec blandit nec ante at fermentum. Aliquam massa quam, iaculis sed tincidunt et, posuere at quam. In a enim a nisi tincidunt ultricies a et felis. Donec quis odio ac lectus sagittis consectetur. Mauris volutpat, ligula a efficitur lobortis, felis elit interdum risus, sit amet consectetur est mauris et risus. Nam accumsan dolor sed cursus pharetra. Nullam id elit malesuada, malesuada nisi at, tristique leo. Mauris nec risus blandit, lacinia arcu eu, commodo magna. Curabitur vel neque fringilla, tristique metus eget, euismod metus. Nullam eu justo volutpat, pharetra lectus eu, consequat sem. Pellentesque ultricies pulvinar odio, ac rutrum enim porttitor sit amet. Nunc et pharetra nulla. ",
         "sprava_id": 9,
         "vyzva_id": 9
+    },
+    {
+        "nazov": "testmob",
+        "popis": "testmobility desc",
+        "sprava_id": null,
+        "vyzva_id": 10
+    },
+    {
+        "nazov": "testmob",
+        "popis": "testmobility desc",
+        "sprava_id": null,
+        "vyzva_id": 11
     }
 
 ]

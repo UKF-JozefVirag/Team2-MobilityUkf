@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Vyzva;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 
@@ -22,7 +24,8 @@ class VyzvyController extends Controller
             ->join('stav', 'vyzva.stav_id', '=', 'stav.id')
             ->join('typ_vyzvy', 'vyzva.typ_vyzvy_id', '=', 'typ_vyzvy.id')
             ->join('mobilita', 'mobilita.vyzva_id', '=', 'vyzva.id')
-            ->select('vyzva.*', 'fakulta.nazov as nazov_fakulty', 'typ_vyzvy.nazov as nazov_vyzvy', 'stav.nazov as nazov_stavu', 'mobilita.nazov as nazov_mobility')
+            ->select('vyzva.*', 'fakulta.nazov as nazov_fakulty', 'typ_vyzvy.nazov as nazov_vyzvy', 'stav.nazov as nazov_stavu', 'mobilita.nazov as nazov_mobility', 'mobilita.sprava_id as spravaid')
+            ->where("vyzva.program", "<>", "Erasmus+")
             ->get();
         $fakulty = DB::table('fakulta')
             ->get();
@@ -52,7 +55,10 @@ class VyzvyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (Auth::user()->hasRole('1') || Auth::user()->hasRole('2')) {
+            dd($request);
+        }
+        else return Redirect::to('')->with('message', 'Neoprávnený prístup k údajom');
     }
 
     /**
@@ -63,7 +69,20 @@ class VyzvyController extends Controller
      */
     public function show($id)
     {
-        //
+        $vyzva = DB::table('vyzva')
+            ->join("fakulta", "vyzva.fakulta_id", "=", "fakulta.id")
+            ->join('stav', 'vyzva.stav_id', '=', 'stav.id')
+            ->join('typ_vyzvy', 'vyzva.typ_vyzvy_id', '=', 'typ_vyzvy.id')
+            ->join('mobilita', 'mobilita.vyzva_id', '=', 'vyzva.id')
+            ->join('vyzva_has_institucia', 'vyzva.id', '=', 'vyzva_has_institucia.vyzva_id')
+            ->join('institucia', 'vyzva_has_institucia.institucia_id', '=', 'institucia.id')
+            ->join('krajina', 'institucia.krajina_idkrajina', '=', 'krajina.idkrajina')
+            ->select('vyzva.*', 'fakulta.nazov as nazov_fakulty', 'typ_vyzvy.nazov as typ_vyzvy', 'stav.nazov as nazov_stavu',
+                'mobilita.nazov as nazov_mobility', 'institucia.nazov as nazov_institucie',
+                'institucia.mesto as mesto_institucie', 'institucia.url_fotka as fotka_institucie', 'krajina.nazov as nazov_krajiny')
+            ->where("vyzva.id", "=", $id)
+            ->get();
+        return view('mainPage.detail', compact('vyzva'));;
     }
 
     /**
@@ -74,7 +93,17 @@ class VyzvyController extends Controller
      */
     public function edit($id)
     {
-        //
+        $vyzva = Vyzva::query()
+            ->select('institucia.nazov as nazov_institucie', 'institucia.url_fotka as fotka_institucie', 'krajina.nazov as nazov_krajiny', 'users.name as meno_ucastnika')
+            ->join('vyzva_has_institucia', 'vyzva.id', '=', 'vyzva_has_institucia.vyzva_id')
+            ->join('institucia', 'institucia.id', '=', 'vyzva_has_institucia.institucia_id')
+            ->join('krajina', 'krajina.idkrajina', '=', 'institucia.krajina_idkrajina')
+            ->join('mobilita', 'vyzva.id', '=', 'mobilita.vyzva_id')
+            ->join('mobilita_has_users', 'mobilita_has_users.mobilita_id', '=', 'mobilita.id')
+            ->join('users', 'users.id', '=', 'mobilita_has_users.users_id')
+            ->where('vyzva.id', '=', $id)
+            ->get();
+        return view('ucastnik.sprava', compact('vyzva'));
     }
 
     /**

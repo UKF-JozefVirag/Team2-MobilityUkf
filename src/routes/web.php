@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 require __DIR__.'/auth.php';
 
 Route::resource('/', VyzvyController::class);
+Route::resource('/sprava', VyzvyController::class);
 
 Route::group(['middleware' => 'auth'], function (){
    Route::group([
@@ -37,15 +38,26 @@ Route::group(['middleware' => 'auth'], function (){
 
    });
 
+    Route::group([
+        'prefix' => 'referent',
+        'as' => 'referent.',
+    ], function (){
+        Route::resource('spravy', \App\Http\Controllers\Referent\MessagesController::class);
+        Route::resource('institucie', \App\Http\Controllers\Referent\InstitutionsController::class);
+    });
+
    Route::group([
       'prefix' => 'ucastnik',
       'as' => 'ucastnik.',
    ], function (){
        Route::get('vyzvy', [\App\Http\Controllers\Ucastnik\VyzvyController::class, 'index'])
            ->name('vyzvy.index');
+       Route::resource('sprava', \App\Http\Controllers\Ucastnik\MessagesController::class);
    });
 
 });
+
+Route::resource('/vyzvy', \App\Http\Controllers\VyzvyController::class);
 
 Route::resource('/messages', \App\Http\Controllers\MessagesController::class);
 

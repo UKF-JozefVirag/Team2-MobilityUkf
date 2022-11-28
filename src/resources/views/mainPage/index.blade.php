@@ -65,8 +65,8 @@
                                     </select>
                                 </div>
                                 <div class="col-lg align-items-end">
-                                    <label for="inputInstitucia">Inštitúcia</label>
-                                    <select id="inputInstitucia" class="custom-select custom-select-md">
+                                    <label for="inputProgram">Program</label>
+                                    <select id="inputProgram" class="custom-select custom-select-md">
                                         <option selected>Erasmus+</option>
                                         <option>SAIA</option>
                                         <option>DAAD</option>
@@ -115,43 +115,44 @@
 
             <div class="row">
                 @foreach($vyzvy as $vyzva)
-                    <div class="col-md-6 col-lg-4">
-                        <div class="mobility-card">
-                            <div class="card-img">
-                                <div class="vr">
-                                    <span>{{ Carbon\Carbon::parse($vyzva->datum_do)->isPast() ? "Ukončený" : "Otvorený" }}</span>
-                                </div>
-                                <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
-                            </div>
-                            <div class="card-text">
-                                <h4 class="termin">Prihlasovanie do {{ Carbon\Carbon::parse($vyzva->datum_do)->format('d.m.Y') }}</h4>
-                                <span>Česká republika</span>
-                                <h3>
-                                    <a href="#">{{ $vyzva->nazov_mobility }}</a>
-                                </h3>
-                                <div class="d-flex">
-                                    <div class="mr-auto float-left">
-                                        <span>{{ $vyzva->nazov_vyzvy }}</span>
-                                    </div>
+                    @csrf
+                    @method('PUT')
 
-                                    <div class="float-right">
-                                        <span>{{  $vyzva->nazov_fakulty }}</span>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="mobility-card">
+                                <div class="card-img">
+                                    <div class="vr">
+                                        <span>{{ Carbon\Carbon::parse($vyzva->datum_do)->isPast() ? "Ukončený" : "Otvorený" }}</span>
                                     </div>
+                                    <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
                                 </div>
-                                <div class="d-flex justify-content-center pt-4 mb-2">
-                                    <button type="button" class="btn btn-dark">Detail</button>
-{{--                                    @if(\Illuminate\Support\Facades\Auth::user()->hasRole('1'))--}}
-{{--                                        <a href="/ucastnik">--}}
-{{--                                            <button type="button" class="btn btn-dark" style="margin-left: 15px" href="/erasmus">Správa</button>--}}
-{{--                                        </a>--}}
-{{--                                    @endif--}}
-                                    <a href="/ucastnik/sprava">
-                                        <button type="button" class="btn btn-dark" style="margin-left: 15px">Správa</button>
-                                    </a>
+                                <div class="card-text">
+                                    <h4 class="termin">Prihlasovanie do {{ Carbon\Carbon::parse($vyzva->datum_do)->format('d.m.Y') }}</h4>
+                                    <span>Česká republika</span>
+                                    <h3>
+                                        <a href="#">{{ $vyzva->nazov_mobility }}</a>
+                                    </h3>
+                                    <div class="d-flex">
+                                        <div class="mr-auto float-left">
+                                            <span>{{ $vyzva->nazov_vyzvy }}</span>
+                                        </div>
+
+                                        <div class="float-right">
+                                            <span>{{  $vyzva->nazov_fakulty }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center pt-4 mb-2">
+                                        <a href="{{route('vyzvy.show', $vyzva->id)}}" class="btn btn-dark">Detail</a>
+                                        @if(\Illuminate\Support\Facades\Auth::user())
+                                            @if(\Illuminate\Support\Facades\Auth::user()->hasRole('1') && isset($vyzva->spravaid))
+                                                <a href=" {{route('ucastnik.sprava.edit', $vyzva->id)}}" class="btn btn-dark" style="margin-left: 15px" >Správa</a>
+                                            @endif
+                                        @endif
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 @endforeach
 
             </div>

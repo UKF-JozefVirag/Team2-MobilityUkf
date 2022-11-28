@@ -17,8 +17,8 @@ class CreateMobilitaTable extends Migration
             $table->integer('id', true);
             $table->string('nazov', 100);
             $table->text('popis');
-            $table->integer('sprava_id')->index('fk_mobilita_sprava1_idx');
-            $table->integer('vyzva_id')->index('fk_mobilita_vyzva1_idx');
+            $table->integer('sprava_id')->index('fk_mobilita_sprava1_idx')->nullable();
+            $table->integer('vyzva_id')->index('fk_mobilita_vyzva1_idx')->nullable();
         });
     }
 
