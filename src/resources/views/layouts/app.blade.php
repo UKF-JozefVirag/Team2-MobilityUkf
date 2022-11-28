@@ -72,6 +72,13 @@
                                 <a class="dropdown-item" href="/admin/messages">Messages</a>
                             @endif
 
+                            @if(\Illuminate\Support\Facades\Auth::user()->hasRole('2'))
+                                <a class="dropdown-item" href="/referent/vyzvy">Pridat vyzvy</a>
+                                <a class="dropdown-item" href="/referent/spravy">Spravy</a>
+                            @endif
+
+
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

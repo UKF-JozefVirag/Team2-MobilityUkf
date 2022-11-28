@@ -42,8 +42,8 @@ Route::group(['middleware' => 'auth'], function (){
         'prefix' => 'referent',
         'as' => 'referent.',
     ], function (){
-        Route::resource('spravy', \App\Http\Controllers\Referent\MessagesController::class);
-        Route::resource('institucie', \App\Http\Controllers\Referent\InstitutionsController::class);
+        Route::resource('/spravy', \App\Http\Controllers\Referent\MessagesController::class);
+        Route::resource('/institucie', \App\Http\Controllers\Referent\InstitutionsController::class);
     });
 
    Route::group([

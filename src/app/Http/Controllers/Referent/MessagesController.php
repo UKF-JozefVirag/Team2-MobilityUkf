@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Referent;
 
 use App\Http\Controllers\Controller;
+use App\Models\Sprava;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class MessagesController extends Controller
 {
@@ -12,9 +15,18 @@ class MessagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(){
+        if (Auth::user()->hasRole('2')) {
+            $spravy = Sprava::with('subory')
+                ->select('sprava.*', 'mobilita.nazov as mnazov', 'users.name as ucastnik_mobility')
+                ->join('mobilita', 'sprava.id', '=', 'mobilita.sprava_id')
+                ->join('mobilita_has_users', 'mobilita.id', '=', 'mobilita_has_users.mobilita_id')
+                ->join('users','users.id', '=', 'mobilita_has_users.users_id')
+                ->where('zverejnena', '=', '0')
+                ->get();
+            return view('referent.messages', compact('spravy'));
+        }
+        else return response('503', 503);
     }
 
     /**
@@ -67,9 +79,17 @@ class MessagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, Sprava $sprava){
+        if (Auth::user()->hasRole('2')) {
+
+            $ajdi = ($request->idcko);
+
+            DB::update('update sprava set zverejnena = 1 where id = ?', [$ajdi]);
+
+            $spravy = Sprava::with('subory')->where('zverejnena', '=', '0')->get();
+            return view('admin.messages', compact('spravy'));
+
+        } else return response('503', 503);
     }
 
     /**
