@@ -1,15 +1,17 @@
 <div class="modal-body">
+    <div class="navbar-brand menu-logo" style="padding-bottom:20px">
+        <img src="{{ asset('img/logo.png') }}" alt="logo FPVaI UKF" height="75px">
+    </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
+                <div class="card" style="border-color: #099364;">
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
                             <div class="row mb-3">
                                 <label for="email"
-                                       class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                                       class="col-md-4 col-form-label text-md-end">Prihlasovacie meno</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -26,7 +28,7 @@
 
                             <div class="row mb-3">
                                 <label for="password"
-                                       class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                                       class="col-md-4 col-form-label text-md-end">Heslo</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -48,7 +50,7 @@
                                                id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                         <label class="form-check-label" for="remember">
-                                            {{ __('Remember Me') }}
+                                            Zapamätať prihlásenie
                                         </label>
                                     </div>
                                 </div>
@@ -56,14 +58,14 @@
 
                             <div class="row mb-0 text-center">
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Login') }}
+                                    <button type="submit" class="btn btn-primary " style="background-color: #099364; width: 120px">
+                                        Prihlásiť sa
                                     </button>
                                 </div>
                                 <div class="col-md-12 pt-3">
                                     @if (Route::has('password.request'))
                                         <a href="{{ route('password.request') }}" style="color: black; font-size: 13px">
-                                            {{ __('Forgot Your Password?') }}
+                                            Zabudli ste heslo ?
                                         </a>
                                     @endif
                                 </div>

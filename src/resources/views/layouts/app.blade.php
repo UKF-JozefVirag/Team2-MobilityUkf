@@ -108,8 +108,18 @@
 <div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"><strong>Prihlásiť sa</strong></h5>
+            <div class="text-center" style="background-color: #099364; padding-top: 2%; padding-bottom: 2%">
+                <h2 style="color: white; text-align: center"><b>Prihlásenie</b></h2>
+                {{--                <div class="col-md-6" style="text-align: right">--}}
+                {{--                    <button type="button" class="btn btn-primary" style="background-color: #099364; border-color: #099364; width: 140px">--}}
+                {{--                        Prihlásenie--}}
+                {{--                    </button>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-md-6" style="text-align: left">--}}
+                {{--                    <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#registerModal" style="background-color: #099364; border-color: #099364; width: 140px">--}}
+                {{--                        Registrácia--}}
+                {{--                    </button>--}}
+                {{--                </div>--}}
             </div>
             <div class="modal-body" id="logInBody">
                 <!-- everything what is in login.blade -->
@@ -122,8 +132,18 @@
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"><strong>Prihlásiť sa</strong></h5>
+            <div class="text-center" style="background-color: #099364; padding-top: 2%; padding-bottom: 2%">
+                <h2 style="color: white; text-align: center"><b>Registrácia</b></h2>
+                {{--                    <div class="col-md-6" style="text-align: right">--}}
+                {{--                        <button type="button" class="btn btn-primary" style="background-color: #099364">--}}
+                {{--                            Prihlásiť sa--}}
+                {{--                        </button>--}}
+                {{--                    </div>--}}
+                {{--                    <div class="col-md-6" style="text-align: left">--}}
+                {{--                        <button type="button" class="btn btn-primary" style="background-color: #099364">--}}
+                {{--                            Registrovať sa--}}
+                {{--                        </button>--}}
+                {{--                    </div>--}}
             </div>
             <div class="modal-body" id="registerBody">
                 <!-- everything what is in register.blade -->
