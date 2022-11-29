@@ -32,7 +32,7 @@
         </button>
         <div class="collapse navbar-collapse menu-items" id="navbarSupportedContent" style="margin-left: 40px">
             <ul class="navbar-nav mr-auto" style="font-style: normal; font-weight: 700; font-size: 15px; line-height: 22px;">
-                <li class="nav-item active pr-1">
+                <li class="nav-item pr-1">
                     <a href="/" class="nav-link"><span>Domov</span></a>
                 </li>
                 <li class="nav-item pr-1">
@@ -45,7 +45,7 @@
                     <a href="/messages" class="nav-link"><span>Správy účasníkov</span></a>
                 </li>
                 <li class="nav-item pr-1">
-                    <a onclick="showContacts()" class="nav-link"><span>Kontakty</span></a>
+                    <a id="kontakty" onclick="showContacts()" class="nav-link"><span>Kontakty</span></a>
                 </li>
 
                 @guest
@@ -56,7 +56,7 @@
                     @endif
 
                     @if (Route::has('register'))
-                            <a class="nav-link" data-toggle="modal" data-target="#registerModal" id="registerButton" data-attr="{{ route('register') }}" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;  background: #3B5D6B; border-style: none;height: 40px; font-style: normal;font-weight: 700;font-size: 15px;line-height: 22px;">{{ __('Registrovať sa') }}</a>
+                            <a class="nav-link" data-toggle="modal" data-target="#registerModal" id="registerButton" data-attr="{{ route('register') }}" style="color: white; border-top-right-radius: 5px; border-bottom-right-radius: 5px;  background: #3B5D6B; border-style: none;height: 40px; font-style: normal;font-weight: 700;font-size: 15px;line-height: 22px;">{{ __('Registrovať sa') }}</a>
                         </li>
                     @endif
                 @else
@@ -336,6 +336,28 @@
             timeout: 8000
         })
     });
+</script>
+
+<script>
+
+    for (var i = 0; i < document.links.length; i++) {
+        if (document.links[i].href === document.URL) {
+            document.links[i].style.color = '#099364';
+        }
+    }
+    if (window.location.pathname === "/"){
+        for (var i = 0; i < 4; i++) {
+            document.links[i].style.color = '#FFFFFF';
+        }
+        document.getElementById("kontakty").style.color = '#FFFFFF';
+        if (document.getElementById("logInButton")!=null) {
+            document.getElementById("logInButton").style.color = '#FFFFFF';
+        }
+        if (document.getElementById("navbarDropdown")!=null){
+            document.getElementById("navbarDropdown").style.color = '#FFFFFF';
+        }
+    }
+
 </script>
 
 <script>
