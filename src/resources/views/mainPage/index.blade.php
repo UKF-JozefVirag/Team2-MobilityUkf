@@ -144,7 +144,7 @@
                                     <div class="d-flex justify-content-center pt-4 mb-2">
                                         <a href="{{route('vyzvy.show', $vyzva->id)}}" class="btn btn-dark">Detail</a>
                                         @if(\Illuminate\Support\Facades\Auth::user())
-                                            @if(\Illuminate\Support\Facades\Auth::user()->hasRole('1') && isset($vyzva->spravaid))
+                                            @if(\Illuminate\Support\Facades\Auth::user()->hasRole('1') && !isset($vyzva->spravaid))
                                                 <a href=" {{route('ucastnik.sprava.edit', $vyzva->id)}}" class="btn btn-dark" style="margin-left: 15px" >Správa</a>
                                             @endif
                                         @endif

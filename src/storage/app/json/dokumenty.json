@@ -1,38 +1,38 @@
 [
     {
-        "url": "/storage/app/testfiles/test.PDF",
+        "url": "test.PDF",
         "vyzva_id": 1
     },
     {
-        "url": "/storage/app/testfiles/test.PDF",
+        "url": "test.jpg",
         "vyzva_id": 2
     },
     {
-        "url": "/storage/app/testfiles/test.PDF",
+        "url": "test.pptx",
         "vyzva_id": 3
     },
     {
-        "url": "/storage/app/testfiles/test.PDF",
+        "url": "test.PDF",
         "vyzva_id": 4
     },
     {
-        "url": "/storage/app/testfiles/test.PDF",
+        "url": "test.PDF",
         "vyzva_id": 5
     },
     {
-        "url": "/storage/app/testfiles/test.PDF",
+        "url": "test.jpg",
         "vyzva_id": 6
     },
     {
-        "url": "/storage/app/testfiles/test.PDF",
+        "url": "test.PDF",
         "vyzva_id": 7
     },
     {
-        "url": "/storage/app/testfiles/test.PDF",
+        "url": "test.pptx",
         "vyzva_id": 8
     },
     {
-        "url": "/storage/app/testfiles/test.PDF",
+        "url": "test.jpg",
         "vyzva_id": 9
     }
 ]
