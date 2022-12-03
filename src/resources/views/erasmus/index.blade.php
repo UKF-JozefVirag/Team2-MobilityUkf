@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <body>
     <div class="top-padding-section">
         <div class="grey-bg-section">
             <div class="block-padding-section">
@@ -59,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <section class="section-search">
+        <section class="section-search" style="padding-top: 100px;">
             <div class="container">
                 <div class="row justify-content-center">
                     <h2>Mobility v krajinách EU</h2>
@@ -108,7 +107,7 @@
                                         </select>
                                     </div>
                                     <div class="col-lg align-self-end">
-                                        <input type="submit" value="Filtrovať"class="form-control">
+                                        <input type="submit" value="Filtrovať" class="form-control">
                                     </div>
                                 </div>
                             </form>
@@ -117,7 +116,7 @@
                 </div>
             </div>
         </section>
-        <section class="section-erasmus-text" style="padding-top: 134px;">
+        <section class="section-erasmus-text">
 
         </section>
 
@@ -164,7 +163,4 @@
                 </div>
             </div>
         </section>
-
-
-
 @endsection

@@ -28,7 +28,7 @@ class VyzvyController extends Controller
             ->join('institucia', 'vyzva_has_institucia.institucia_id', '=', 'institucia.id')
             ->join('krajina', 'institucia.krajina_idkrajina', '=', 'krajina.idkrajina')
             ->select('vyzva.*', 'fakulta.nazov as nazov_fakulty', 'typ_vyzvy.nazov as nazov_vyzvy', 'stav.nazov as nazov_stavu', 'mobilita.nazov as nazov_mobility', 'mobilita.sprava_id as spravaid', 'krajina.nazov as nazov_krajiny')
-            ->where("vyzva.program", "<>", "Erasmus+")
+            ->where('stav_id', '=', '1')
             ->get();
         $fakulty = DB::table('fakulta')
             ->get();
@@ -36,7 +36,10 @@ class VyzvyController extends Controller
             ->get();
         $krajiny = DB::table('krajina')
             ->get();
-        return view('mainPage.index', compact('vyzvy', 'fakulty', 'typy_vyziev', 'krajiny'));
+        $stavy = DB::table('stav')
+            ->get();
+
+        return view('mainPage.index', compact('vyzvy', 'fakulty', 'typy_vyziev', 'krajiny', 'stavy'));
     }
 
     public function __construct()
@@ -134,5 +137,51 @@ class VyzvyController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request) {
+        $vyzvy = Vyzva::query()
+            ->join("fakulta", "vyzva.fakulta_id", "=", "fakulta.id")
+            ->join('stav', 'vyzva.stav_id', '=', 'stav.id')
+            ->join('typ_vyzvy', 'vyzva.typ_vyzvy_id', '=', 'typ_vyzvy.id')
+            ->join('mobilita', 'mobilita.vyzva_id', '=', 'vyzva.id')
+            ->join('vyzva_has_institucia', 'vyzva.id', '=', 'vyzva_has_institucia.vyzva_id')
+            ->join('institucia', 'vyzva_has_institucia.institucia_id', '=', 'institucia.id')
+            ->join('krajina', 'institucia.krajina_idkrajina', '=', 'krajina.idkrajina')
+            ->select('vyzva.*', 'fakulta.nazov as nazov_fakulty', 'typ_vyzvy.nazov as nazov_vyzvy', 'stav.nazov as nazov_stavu', 'mobilita.nazov as nazov_mobility', 'mobilita.sprava_id as spravaid', 'krajina.nazov as nazov_krajiny')
+            ->where('stav_id', '=', '1');
+
+        if(!is_null($request->get('typ_vyzvy_id'))) {
+            $vyzvy = $vyzvy->where('typ_vyzvy_id', '=', $request->get('typ_vyzvy_id'));
+        }
+
+        if(!is_null($request->get('fakulta_id'))) {
+            $vyzvy = $vyzvy->where('fakulta_id', '=', $request->get('fakulta_id'));
+        }
+
+        if(!is_null($request->get('program'))) {
+            $vyzvy = $vyzvy->where('program', '=', $request->get('program'));
+        }
+
+        if(!is_null($request->get('rocnik'))) {
+            $vyzvy = $vyzvy->where('rocnik', '=', $request->get('rocnik'));
+        }
+
+        if(!is_null($request->get('krajina.nazov'))) {
+            $vyzvy = $vyzvy->where('krajina.nazov', '=', $request->get('krajina.nazov'));
+        }
+
+        $vyzvy = $vyzvy->get();
+
+        $fakulty = DB::table('fakulta')
+            ->get();
+        $typy_vyziev = DB::table('typ_vyzvy')
+            ->get();
+        $krajiny = DB::table('krajina')
+            ->get();
+        $stavy = DB::table('stav')
+            ->get();
+
+        return view('mainPage.index', compact('vyzvy', 'fakulty', 'typy_vyziev', 'krajiny', 'stavy'));
     }
 }

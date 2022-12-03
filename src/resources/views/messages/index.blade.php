@@ -48,6 +48,7 @@
                             </div>
                         </form>
                     </div>
+                    <?php $counter++; ?>
                     @endforeach
                 </div>
             </div>

@@ -25,18 +25,18 @@
             </div>
         </div>
 
-        @foreach($sprava[0]->subory as $subor)
-            <a href="{{ \Illuminate\Support\Facades\URL::asset('subory/'.$subor->url) }}"> {{ $subor->url }} </a>
-            <br>
-        @endforeach
-
-        <div class="container" style="padding-bottom: 5%; padding-top: 2%">
+        <div class="block-padding-section pt-3 pb-5">
             <div class="row">
-                <div class="col-md-6">
-                    <img src="{{ asset('img/img_1.png') }}" class="img-fluid" alt="image of mobility" style="border: 1px solid black">
+                <div class="col-md-12">
+                    <h3>Súbory na stiahnutie:</h3>
                 </div>
-                <div class="col-md-6">
-                    <img src="{{ asset('img/img_1.png') }}" class="img-fluid" alt="image of mobility" style="border: 1px solid black">
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    @foreach($sprava[0]->subory as $subor)
+                        <a style="color: #099364;" href="{{ \Illuminate\Support\Facades\URL::asset('subory/'.$subor->url) }}"> {{ $subor->url }} </a>
+                        <br>
+                    @endforeach
                 </div>
             </div>
         </div>

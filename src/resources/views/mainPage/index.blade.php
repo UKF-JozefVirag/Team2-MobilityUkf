@@ -44,39 +44,43 @@
             <div class="row pt-4">
                 <div class="col-md-12">
                     <div class="search-wrap">
-                        <form action="#">
+                        <form action="{{ route('search') }}" method="GET" role="search">
                             <div class="row">
                                 <div class="col-lg align-items-end">
                                     <label for="inputTypMobility">Typ mobility</label>
-                                    <select id="inputTypMobility" class="custom-select custom-select-md">
+                                    <select id="inputTypMobility" name="typ_vyzvy_id" class="custom-select custom-select-md">
+                                        <option value="">-</option>
                                         @foreach($typy_vyziev as $typ_vyzvy)
-                                            <option value="{{ $typ_vyzvy->id }}" {{ $loop->first ? 'selected="selected"' : '' }}>{{ $typ_vyzvy->nazov }}</option>
+                                            <option value="{{ $typ_vyzvy->id }}">{{ $typ_vyzvy->nazov }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <label for="inputFakulty">Fakulty</label>
-                                    <select id="inputFakulty" class="custom-select custom-select-md">
+                                    <select id="inputFakulty" name="fakulta_id" class="custom-select custom-select-md">
+                                        <option value="">-</option>
                                         {{--                                        Vypíše všetky fakulty zapísané v databaze a fakulta s id==1 bude vždy selected--}}
                                         @foreach($fakulty as $fakulta)
-                                            <option value="{{$fakulta->id}}" {{ $loop->first ? 'selected="selected"' : '' }}>{{ $fakulta->nazov }}</option>
+                                            <option value="{{$fakulta->id}}">{{ $fakulta->nazov }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <label for="inputProgram">Program</label>
-                                    <select id="inputProgram" class="custom-select custom-select-md">
-                                        <option selected>Erasmus+</option>
-                                        <option>SAIA</option>
-                                        <option>DAAD</option>
-                                        <option>IVF</option>
-                                        <option>Študijno-prednáškové pobyty</option>
+                                    <select id="inputProgram" name="program" class="custom-select custom-select-md">
+                                        <option value="">-</option>
+                                        <option value="Erasmus+">Erasmus+</option>
+                                        <option value="SAIA">SAIA</option>
+                                        <option value="DAAD">DAAD</option>
+                                        <option value="IVF">IVF</option>
+                                        <option value="Študijno-prednáškové pobyty">Študijno-prednáškové pobyty</option>
                                     </select>
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <label for="inputRocnik">Ročník</label>
-                                    <select id="inputRocnik" class="custom-select custom-select-md">
-                                        <option selected value="1">1.Bc</option>
+                                    <select id="inputRocnik" name="rocnik" class="custom-select custom-select-md">
+                                        <option value="">-</option>
+                                        <option value="1">1.Bc</option>
                                         <option value="2">2.Bc</option>
                                         <option value="3">3.Bc</option>
                                         <option value="4">1.Mgr</option>
@@ -88,9 +92,10 @@
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <label for="inputKrajina">Krajina</label>
-                                    <select id="inputKrajina" class="custom-select custom-select-md">
+                                    <select id="inputKrajina" name="krajina.nazov" class="custom-select custom-select-md">
+                                        <option value="">-</option>
                                         @foreach($krajiny as $krajina)
-                                            <option value="{{$krajina->idkrajina}}" {{ $loop->first ? 'selected="selected"' : '' }}>{{ $krajina->nazov }}</option>
+                                            <option value="{{$krajina->nazov}}">{{ $krajina->nazov }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -122,7 +127,7 @@
                             <div class="mobility-card">
                                 <div class="card-img">
                                     <div class="vr">
-                                        <span>{{ Carbon\Carbon::parse($vyzva->datum_do)->isPast() ? "Ukončený" : "Otvorený" }}</span>
+                                        <span>{{ $vyzva->nazov_stavu }}</span>
                                     </div>
                                     <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
                                 </div>

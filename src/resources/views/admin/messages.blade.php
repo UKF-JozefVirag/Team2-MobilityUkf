@@ -6,7 +6,7 @@
 
     <div class="top-padding-section">
         <div style="background-color: #099364; padding-top: 2%; padding-bottom: 2%; margin-top: 2%">
-            <h1 style="color: white !important; text-align: center"> Správy o účsati na mobilite pridané používateľmi</h1>
+            <h1 style="color: white !important; text-align: center"> Správy o účasti na mobilite pridané používateľmi</h1>
         </div>
     </div>
     @foreach($spravy as $sprava)

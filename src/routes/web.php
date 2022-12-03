@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 require __DIR__.'/auth.php';
 
 Route::resource('/', VyzvyController::class);
+Route::get('/search', 'App\Http\Controllers\VyzvyController@search')->name('search');
 Route::resource('/sprava', VyzvyController::class);
 
 Route::group(['middleware' => 'auth'], function (){
