@@ -25,7 +25,7 @@ class VyzvyController extends Controller
             ->join('typ_vyzvy', 'vyzva.typ_vyzvy_id', '=', 'typ_vyzvy.id')
             ->join('mobilita', 'mobilita.vyzva_id', '=', 'vyzva.id')
             ->join('vyzva_has_institucia', 'vyzva.id', '=', 'vyzva_has_institucia.vyzva_id')
-            ->join('institucia', 'vyzva_has_institucia.institucia_id', '=', 'institucia.id')
+            ->join('institucia', 'vyzva_has_institucia.institucia_id', '=',  'institucia.id')
             ->join('krajina', 'institucia.krajina_idkrajina', '=', 'krajina.idkrajina')
             ->select('vyzva.*', 'fakulta.nazov as nazov_fakulty', 'typ_vyzvy.nazov as nazov_vyzvy', 'stav.nazov as nazov_stavu', 'mobilita.nazov as nazov_mobility', 'mobilita.sprava_id as spravaid', 'krajina.nazov as nazov_krajiny')
             ->where('stav_id', '=', '1')
