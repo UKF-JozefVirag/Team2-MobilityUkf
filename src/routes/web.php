@@ -44,6 +44,7 @@ Route::group(['middleware' => 'auth'], function (){
     ], function (){
         Route::resource('/spravy', \App\Http\Controllers\Referent\MessagesController::class);
         Route::resource('/institucie', \App\Http\Controllers\Referent\InstitutionsController::class);
+        Route::resource('/vyzvy', \App\Http\Controllers\Referent\VyzvyController::class);
     });
 
    Route::group([

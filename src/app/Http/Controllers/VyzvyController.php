@@ -76,7 +76,7 @@ class VyzvyController extends Controller
      */
     public function show($id)
     {
-        $vyzva = DB::table('vyzva')
+        $vyzva = Vyzva::with('dokument')
             ->join("fakulta", "vyzva.fakulta_id", "=", "fakulta.id")
             ->join('stav', 'vyzva.stav_id', '=', 'stav.id')
             ->join('typ_vyzvy', 'vyzva.typ_vyzvy_id', '=', 'typ_vyzvy.id')

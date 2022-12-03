@@ -73,6 +73,12 @@
             </div>
         </div>
     </div>
+
+    @foreach($vyzva[0]->dokument as $subor)
+        <a href="{{ \Illuminate\Support\Facades\URL::asset('dokumenty_vyziev/'.$subor->url) }}"> {{ $subor->url }} </a>
+        <br>
+    @endforeach
+
     <div style="padding-top: 3%">
         <div style="padding-bottom: 3%">
             <div class="block-padding-section" >

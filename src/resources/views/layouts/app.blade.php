@@ -45,7 +45,7 @@
                     <a href="/messages" class="nav-link"><span>Správy účasníkov</span></a>
                 </li>
                 <li class="nav-item pr-1">
-                    <a id="kontakty" onclick="showContacts()" class="nav-link"><span>Kontakty</span></a>
+                    <a id="kontakty" onclick="showContacts()" class="nav-link" style="cursor: pointer;"><span>Kontakty</span></a>
                 </li>
 
                 @guest

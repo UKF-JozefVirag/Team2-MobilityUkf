@@ -135,7 +135,7 @@
                         <div class="mobility-card">
                             <div class="card-img">
                                 <div class="vr">
-                                    <span>{{--{{ Carbon\Carbon::parse($vyzva->datum_do)->isPast() ? "Ukončený" : "Otvorený" }}--}}</span>
+                                    <span>{{ Carbon\Carbon::parse($vyzva->datum_do)->isPast() ? "Ukončený" : "Otvorený" }}</span>
                                 </div>
                                 <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
                             </div>
