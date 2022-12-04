@@ -345,7 +345,7 @@
             document.links[i].style.color = '#099364';
         }
     }
-    if (window.location.pathname === "/"){
+    if (window.location.pathname === "/" || window.location.pathname.startsWith("/search")){
         for (var i = 0; i < 4; i++) {
             document.links[i].style.color = '#FFFFFF';
         }
