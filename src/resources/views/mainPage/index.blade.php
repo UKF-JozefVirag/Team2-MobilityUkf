@@ -48,20 +48,20 @@
                             <div class="row">
                                 <div class="col-lg align-items-end">
                                     <label for="inputTypMobility">Typ mobility</label>
-                                    <select id="inputTypMobility" name="typ_vyzvy_id" class="custom-select custom-select-md">
+                                    <select id="inputTypMobility" name="typ_vyzvy_nazov" class="custom-select custom-select-md">
                                         <option value="">-</option>
                                         @foreach($typy_vyziev as $typ_vyzvy)
-                                            <option value="{{ $typ_vyzvy->id }}">{{ $typ_vyzvy->nazov }}</option>
+                                            <option value="{{ $typ_vyzvy->nazov }}">{{ $typ_vyzvy->nazov }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <label for="inputFakulty">Fakulty</label>
-                                    <select id="inputFakulty" name="fakulta_id" class="custom-select custom-select-md">
+                                    <select id="inputFakulty" name="fakulta_nazov" class="custom-select custom-select-md">
                                         <option value="">-</option>
                                         {{--                                        Vypíše všetky fakulty zapísané v databaze a fakulta s id==1 bude vždy selected--}}
                                         @foreach($fakulty as $fakulta)
-                                            <option value="{{$fakulta->id}}">{{ $fakulta->nazov }}</option>
+                                            <option value="{{$fakulta->nazov}}">{{ $fakulta->nazov }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <label for="inputKrajina">Krajina</label>
-                                    <select id="inputKrajina" name="krajina.nazov" class="custom-select custom-select-md">
+                                    <select id="inputKrajina" name="krajina_nazov" class="custom-select custom-select-md">
                                         <option value="">-</option>
                                         @foreach($krajiny as $krajina)
                                             <option value="{{$krajina->nazov}}">{{ $krajina->nazov }}</option>
@@ -107,6 +107,11 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Zapnuté filtrovanie: {{ $filter }}</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -119,6 +124,7 @@
             </div>
 
             <div class="row">
+                @if($vyzvy->isNotEmpty())
                 @foreach($vyzvy as $vyzva)
                     @csrf
                     @method('PUT')
@@ -133,7 +139,7 @@
                                 </div>
                                 <div class="card-text">
                                     <h4 class="termin">Prihlasovanie do {{ Carbon\Carbon::parse($vyzva->datum_do)->format('d.m.Y') }}</h4>
-                                    <span>{{ $vyzva->nazov_krajiny }}</span>
+                                    <span>{{ $vyzva->krajina_nazov }}</span>
                                     <h3>
                                         <a href="#">{{ $vyzva->nazov_mobility }}</a>
                                     </h3>
@@ -147,10 +153,10 @@
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center pt-4 mb-2">
-                                        <a href="{{route('vyzvy.show', $vyzva->id)}}" class="btn btn-dark">Detail</a>
+                                        <a href="{{route('vyzvy.show', $vyzva->id)}}" class="btn btn-dark btn-detail">Detail</a>
                                         @if(\Illuminate\Support\Facades\Auth::user())
                                             @if(\Illuminate\Support\Facades\Auth::user()->hasRole('1') && !isset($vyzva->spravaid))
-                                                <a href=" {{route('ucastnik.sprava.edit', $vyzva->id)}}" class="btn btn-dark" style="margin-left: 15px" >Správa</a>
+                                                <a href=" {{route('ucastnik.sprava.edit', $vyzva->id)}}" class="btn btn-dark btn-sprava" style="margin-left: 15px" >Napísať správu</a>
                                             @endif
                                         @endif
 
@@ -159,7 +165,11 @@
                             </div>
                         </div>
                 @endforeach
-
+                @else
+                    <div class="col-md-12 text-center pb-4">
+                        <p>Bohužiaľ, nenašli sa žiadne výsledky vyhľadávania :(</p>
+                    </div>
+                @endif
             </div>
         </div>
     </section>

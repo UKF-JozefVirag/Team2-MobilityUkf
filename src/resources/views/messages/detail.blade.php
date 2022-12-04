@@ -5,9 +5,9 @@
     <body>
     <div class="top-padding-section">
         <div style="background-color: #099364; height: 600px;">
-            <div class="block-padding-section">
+            <div class="block-padding-section" style="padding: 0">
                 <h3 style="padding-top: 7%; text-align: center; color: white; padding-bottom: 1%">{{ $sprava[0]->ucastnik_mobility }}</h3>
-                <h1 style="text-align: center; color: white;">{{ $sprava[0]->typvyzva }} na {{ $sprava[0]->nazov_institucie }} v {{$sprava[0]->krajina}}</h1>
+                <h1 style="text-align: center; color: white;">{{ $sprava[0]->nadpis }}</h1>
                 <br>
                 <p style="color: white; text-align: center; padding-bottom: 5%">KI • Aplikovaná informatika • {{ Carbon\Carbon::parse($sprava[0]->datum_od)->format('d.m.Y') }} - {{ Carbon\Carbon::parse($sprava[0]->datum_do)->format('d.m.Y') }} </p>
             </div>

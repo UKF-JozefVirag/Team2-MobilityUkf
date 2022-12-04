@@ -23,6 +23,7 @@ require __DIR__.'/auth.php';
 
 Route::resource('/', VyzvyController::class);
 Route::get('/search', 'App\Http\Controllers\VyzvyController@search')->name('search');
+Route::get('/searchE', 'App\Http\Controllers\ErasmusPlusController@searchE')->name('searchE');
 Route::resource('/sprava', VyzvyController::class);
 
 Route::group(['middleware' => 'auth'], function (){

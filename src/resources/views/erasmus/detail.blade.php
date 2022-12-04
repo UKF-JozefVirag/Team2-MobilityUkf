@@ -20,7 +20,7 @@
                                         <h3 style="color: #ffffff;"> Krajina:</h3>
                                     </div>
                                     <div class="col-md-6 pb-3 text-left mt-1">
-                                        <p style="color: #ffffff;font-size: 20px;">{{ $vyzva[0]->nazov_krajiny }} </p>
+                                        <p style="color: #ffffff;font-size: 20px;">{{ $vyzva[0]->krajina_nazov }} </p>
                                     </div>
                                 </div>
                                 <div class="row">
