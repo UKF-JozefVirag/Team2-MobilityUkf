@@ -1,50 +1,70 @@
 [
     {
-        "institucia_id": 5,
-        "vyzva_id": 3
-    },
-    {
-        "institucia_id": 3,
-        "vyzva_id": 2
-    },
-    {
         "institucia_id": 1,
-        "vyzva_id": 4
-    },
-    {
-        "institucia_id": 4,
-        "vyzva_id": 3
-    },
-    {
-        "institucia_id": 7,
-        "vyzva_id": 3
-    },
-    {
-        "institucia_id": 8,
         "vyzva_id": 1
     },
     {
+        "institucia_id": 2,
+        "vyzva_id": 2
+    },
+    {
+        "institucia_id": 3,
+        "vyzva_id": 3
+    },
+    {
+        "institucia_id": 4,
+        "vyzva_id": 4
+    },
+    {
         "institucia_id": 5,
-        "vyzva_id": 6
-    },
-    {
-        "institucia_id": 1,
-        "vyzva_id": 8
-    },
-    {
-        "institucia_id": 1,
         "vyzva_id": 5
     },
     {
-        "institucia_id": 13,
+        "institucia_id": 6,
+        "vyzva_id": 6
+    },
+    {
+        "institucia_id": 7,
+        "vyzva_id": 7
+    },
+    {
+        "institucia_id": 8,
+        "vyzva_id": 8
+    },
+    {
+        "institucia_id": 9,
         "vyzva_id": 9
     },
     {
-        "institucia_id": 5,
+        "institucia_id": 10,
         "vyzva_id": 10
     },
     {
-        "institucia_id": 5,
+        "institucia_id": 11,
         "vyzva_id": 11
+    },
+    {
+        "institucia_id": 12,
+        "vyzva_id": 12
+    },
+    {
+        "institucia_id": 13,
+        "vyzva_id": 13
+    },
+    {
+        "institucia_id": 14,
+        "vyzva_id": 14
+    },
+    {
+        "institucia_id": 15,
+        "vyzva_id": 15
+    },
+    {
+        "institucia_id": 16,
+        "vyzva_id": 16
+    },
+    {
+        "institucia_id": 17,
+        "vyzva_id": 17
     }
 ]

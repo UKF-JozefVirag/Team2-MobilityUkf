@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 pb-3 text-left">
-                                        <h3 style="color: #ffffff;font-size: 20px;">Typ mobility: </h3>
+                                        <h3 style="color: #ffffff;">Typ mobility: </h3>
                                     </div>
                                     <div class="col-md-6 pb-3 text-left mt-1">
                                         <p style="color: #ffffff;font-size: 20px;">{{ $vyzva[0]->typ_vyzvy}}</p>

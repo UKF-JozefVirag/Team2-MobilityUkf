@@ -135,7 +135,7 @@
                                     <div class="vr">
                                         <span>{{ $vyzva->nazov_stavu }}</span>
                                     </div>
-                                    <img src="{{ asset('img/img.png') }}" alt="image of mobility" class="img-fluid">
+                                    <img src="{{ asset('institucie/'.$vyzva->url) }}" alt="image of mobility" class="img-fluid">
                                 </div>
                                 <div class="card-text">
                                     <h4 class="termin">Prihlasovanie do {{ Carbon\Carbon::parse($vyzva->datum_do)->format('d.m.Y') }}</h4>
