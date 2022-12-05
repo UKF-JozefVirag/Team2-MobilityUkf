@@ -60,6 +60,10 @@ h3 {
     .section-text-map .container-text {
         margin-top: -800px !important;
     }
+
+    .top-padding-section-bottom {
+        padding-top: 240px !important;
+    }
 }
 
 @media (max-width: 1200px) { /* screen smaller then 1200px */

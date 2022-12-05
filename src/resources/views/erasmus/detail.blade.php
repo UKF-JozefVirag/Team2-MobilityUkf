@@ -83,7 +83,7 @@
             </div>
         </div>
     </div>
-    <div style="padding-top: 180px;">
+    <div class="top-padding-section-bottom" style="padding-top: 180px;">
         <div style="padding-bottom: 3%">
             <div class="block-padding-section" >
                 <div style="padding-left: 3%; padding-right: 3%">
