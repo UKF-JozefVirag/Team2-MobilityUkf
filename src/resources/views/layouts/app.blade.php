@@ -36,7 +36,7 @@
                     <a href="/" class="nav-link"><span>Domov</span></a>
                 </li>
                 <li class="nav-item pr-1">
-                    <a href="/erasmus" class="nav-link"><span>Erasmus+</span></a>
+                    <a id="erplus" href="/erasmus" class="nav-link"><span>Erasmus+</span></a>
                 </li>
                 <li class="nav-item pr-1">
                     <a href="/anotherMobilities" class="nav-link"><span>Iné mobility</span></a>
@@ -213,7 +213,7 @@
                 <div class="row" style="padding-top: 8%">
                     <div class="col text-center" style="color:white;">
                         <div class="row">
-                            <div class="col" style="text-align: left; font-size: 15px;padding-top: 5%">
+                            <div class="col" style="text-align: left; font-size: 15px;padding-top: 5%; padding-right: 0px">
                                 <p>PaedDr. Anna Sandanusová, PhD.<br>
                                     doc. Ing. Viera Petlušová, PhD.<br>
                                     doc. RNDr. Anton Trník, PhD.<br>
@@ -344,8 +344,11 @@
         if (document.links[i].href === document.URL) {
             document.links[i].style.color = '#099364';
         }
+        if (window.location.pathname.startsWith("/searchE")){
+            document.getElementById("erplus").style.color = '#099364';
+        }
     }
-    if (window.location.pathname === "/" || window.location.pathname.startsWith("/search")){
+    if (window.location.pathname === "/" || window.location.pathname.startsWith("/search") && !window.location.pathname.startsWith("/searchE")){
         for (var i = 0; i < 4; i++) {
             document.links[i].style.color = '#FFFFFF';
         }
