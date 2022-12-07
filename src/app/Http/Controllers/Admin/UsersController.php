@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Redirect;
 
 class UsersController extends Controller
 {
-    public function index() {}
+    public function index() {
+
+    }
 
     public function edit(User $user) {
         if (Auth::user()->hasRole('3')) {
@@ -59,7 +61,6 @@ class UsersController extends Controller
     public function destroy(int $user) {
         if (Auth::user()->hasRole('3')) {
             DB::table('users')->where('id', $user)->delete();
-
             $institutions = Institucia::with('krajina')->get();
             $users = DB::table('users')->get();
             $countries = DB::table('krajina')->get();
@@ -67,5 +68,7 @@ class UsersController extends Controller
             return view('admin.dashboard', compact('users', 'institutions', 'countries', 'types'));
         } else return Redirect::to('')->with('message', 'Neoprávnený prístup k údajom');
     }
+
+
 
 }

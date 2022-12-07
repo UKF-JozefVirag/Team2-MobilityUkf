@@ -30,4 +30,5 @@ class Institucia extends Model
     public function typ_institucie(): BelongsTo {
         return $this->belongsTo(TypInstitucie::class);
     }
+
 }

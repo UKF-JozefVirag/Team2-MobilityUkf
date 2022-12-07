@@ -14,8 +14,8 @@ class AddForeignKeysToMobilitaHasUsersTable extends Migration
     public function up()
     {
         Schema::table('mobilita_has_users', function (Blueprint $table) {
-            $table->foreign(['users_id'], 'fk_mobilita_has_users_users1')->references(['id'])->on('users')->onUpdate('NO ACTION')->onDelete('NO ACTION');
-            $table->foreign(['mobilita_id'], 'fk_mobilita_has_users_mobilita1')->references(['id'])->on('mobilita')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+            $table->foreign(['users_id'], 'fk_mobilita_has_users_users1')->references(['id'])->on('users')->onUpdate('NO ACTION')->onDelete('CASCADE');
+            $table->foreign(['mobilita_id'], 'fk_mobilita_has_users_mobilita1')->references(['id'])->on('mobilita')->onUpdate('NO ACTION')->onDelete('CASCADE');
         });
     }
 

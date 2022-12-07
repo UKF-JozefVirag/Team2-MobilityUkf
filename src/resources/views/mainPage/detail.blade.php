@@ -102,7 +102,7 @@
         </div>
     </div>
 
-    <div style="padding-top: 50px">
+    <div class="top-padding-section-bottom" style="padding-top: 50px">
             <div class="block-padding-section">
                 <div class="container">
                     <h3 style="padding-top: 2%; padding-bottom: 1%">Informácie o mobilite</h3>

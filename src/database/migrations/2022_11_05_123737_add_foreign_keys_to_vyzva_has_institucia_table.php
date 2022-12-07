@@ -14,8 +14,8 @@ class AddForeignKeysToVyzvaHasInstituciaTable extends Migration
     public function up()
     {
         Schema::table('vyzva_has_institucia', function (Blueprint $table) {
-            $table->foreign(['vyzva_id'], 'fk_vyzva_has_institucia_vyzva1')->references(['id'])->on('vyzva')->onUpdate('NO ACTION')->onDelete('NO ACTION');
-            $table->foreign(['institucia_id'], 'fk_vyzva_has_institucia_institucia1')->references(['id'])->on('institucia')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+            $table->foreign(['vyzva_id'], 'fk_vyzva_has_institucia_vyzva1')->references(['id'])->on('vyzva')->onUpdate('NO ACTION')->onDelete('CASCADE');
+            $table->foreign(['institucia_id'], 'fk_vyzva_has_institucia_institucia1')->references(['id'])->on('institucia')->onUpdate('NO ACTION')->onDelete('CASCADE');
         });
     }
 

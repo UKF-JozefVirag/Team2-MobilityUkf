@@ -19,6 +19,8 @@ class SpravySeeder extends Seeder
         $json = Storage::disk('local')->get('/json/spravy.json');
         $spravy = json_decode($json, true);
 
+
+
         foreach ($spravy as $sprava){
             Sprava::query()->updateOrCreate([
                 'nadpis' => $sprava['nadpis'],
