@@ -9,13 +9,13 @@
                 <h3 style="padding-top: 7%; text-align: center; color: white; padding-bottom: 1%">{{ $sprava[0]->ucastnik_mobility }}</h3>
                 <h1 style="text-align: center; color: white;">{{ $sprava[0]->nadpis }}</h1>
                 <br>
-                <p style="color: white; text-align: center; padding-bottom: 5%">KI • Aplikovaná informatika • {{ Carbon\Carbon::parse($sprava[0]->datum_od)->format('d.m.Y') }} - {{ Carbon\Carbon::parse($sprava[0]->datum_do)->format('d.m.Y') }} </p>
+                <p style="color: white; text-align: center; padding-bottom: 5%">{{ $sprava[0]->nazov_institucie }} • {{ $sprava[0]->krajina }} • {{ Carbon\Carbon::parse($sprava[0]->datum_od)->format('d.m.Y') }} - {{ Carbon\Carbon::parse($sprava[0]->datum_do)->format('d.m.Y') }} </p>
             </div>
         </div>
         <div class="container" style="padding-bottom: 5%; position: relative; margin-top: -300px">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <img src="{{ asset('institucie/'.$sprava[0]->fotka) }}" alt="image of mobility" style="border: 1px solid black; width: 50%">
+                    <img class="messages-image" src="{{ asset('institucie/'.$sprava[0]->fotka) }}" alt="image of mobility" style="border: 1px solid black; width: 50%">
                 </div>
             </div>
         </div>

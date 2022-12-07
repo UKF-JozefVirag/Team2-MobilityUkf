@@ -12,7 +12,7 @@
     @foreach($spravy as $sprava)
         <div style="background: #F4F4F4; padding-bottom: 1%; padding-top: 1%">
         <div style="border: 3px solid; border-color: #099364; margin: 100px; padding: 2%; background-color: white">
-            <form action="{{ route('admin.messages.update', $sprava->id) }}" method="POST" name="forma" >
+            <form action="{{ route('admin.messages.update', $sprava->id) }}" method="POST" name="format" >
                 @method('PUT')
                 @csrf
 
