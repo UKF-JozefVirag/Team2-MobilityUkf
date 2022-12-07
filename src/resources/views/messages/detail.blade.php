@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-md-12">
                     @foreach($sprava[0]->subory as $subor)
-                        <a style="color: #099364;" href="{{ \Illuminate\Support\Facades\URL::asset('subory/'.$subor->url) }}"> {{ $subor->url }} </a>
+                        <a style="color: #099364;" href="{{ \Illuminate\Support\Facades\URL::asset('dokumenty_vyziev/'.$subor->url) }}"> {{ $subor->url }} </a>
                         <br>
                     @endforeach
                 </div>

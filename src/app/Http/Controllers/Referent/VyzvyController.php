@@ -53,11 +53,9 @@ class VyzvyController extends Controller
     public function store(Request $request)
     {
         if (Auth::user()->hasRole('2')){
-            $pokyny = $request->get('pokyny_k_vyzve');
-
             $nazov_fotky = "vyzva-".time().'.jpg';
             $request->file('fotka_vyzvy')->move(public_path('vyzvy'), $nazov_fotky);
-
+            $comment = $request->get('comment');
             $nazov_mobility = $request->get('nazov_mobility');
             $popis_mobility = $request->get('popis_mobility');
             $datum_od = $request->get('datum_od');
@@ -65,7 +63,6 @@ class VyzvyController extends Controller
             $fakulta = $request->get('fakulta');
             $typ_vyzvy = $request->get('typ_vyzvy');
             $institucia = $request->get('institucia');
-            $pokyny = $request->get('pokyny_k_vyzve');
             $rocnik = $request->get('rocnik');
             $program = $request->get('program');
 
@@ -84,7 +81,7 @@ class VyzvyController extends Controller
             $ddd = DB::table('vyzva')->insertGetId(
                 [   'datum_od' => $datum_od,
                     'datum_do' => $datum_do,
-                    'pokyny' => $pokyny,
+                    'pokyny' => $comment,
                     'rocnik' => $rocnik,
                     'url' => $nazov_fotky,
                     'program' => $program,
