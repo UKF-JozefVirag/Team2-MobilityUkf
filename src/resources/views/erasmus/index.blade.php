@@ -140,7 +140,11 @@
                                 <div class="vr">
                                     <span>{{ Carbon\Carbon::parse($vyzva->datum_do)->isPast() ? "Ukončený" : "Otvorený" }}</span>
                                 </div>
-                                <img src="{{ asset('institucie/'.$vyzva->url) }}" alt="image of mobility" class="img-fluid">
+                                @if(file_exists(public_path('institucie/'.$vyzva->url)))
+                                    <img src="{{ asset('institucie/'.$vyzva->url) }}" alt="image of mobility" class="img-fluid">
+                                @else
+                                    <img src="{{ asset('vyzvy/'.$vyzva->url) }}" alt="image of mobility" class="img-fluid">
+                                @endif
                             </div>
                             <div class="card-text">
                                 <h4 class="termin">Prihlasovanie do {{ Carbon\Carbon::parse($vyzva->datum_do)->format('d.m.Y') }}</h4>
